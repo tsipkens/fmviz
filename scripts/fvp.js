@@ -46,6 +46,11 @@ var svg = d3.select("#my_dataviz")
 d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", function(data) {
   d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/quality.csv", function(data2) {
 
+
+
+    //------------------------------------------------------------------------//
+    // GENERATE THE FIRST MAJOR PLOT
+
     // Add X axis
     var x = d3.scaleLinear()
       .domain([0, 85])
@@ -71,13 +76,14 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
 
-    // Color scale: give me a specie name, I return a color
-    var colorkeys = ["#351042", "#9C2263", "#E56A54", "#FAD298", "#FDECA8", "#FFFFFF"]
-    var keycodes = ["W", "K", "CP", "nW", "nWH", "ML"]
-    var keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
+    // assign colors and material types to variables
+    var colorkeys = ["#351042", "#9C2263", "#E56A54", "#FAD298", "#FDECA8", "#FFFFFF"],
+        keycodes = ["W", "K", "CP", "nW", "nWH", "ML"],
+        keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
     var color = d3.scaleOrdinal()
       .domain(keys)
       .range(colorkeys)
+
     // Add the isolines of quality
     var qualvec = [0.5, 2, 5, 10, 20, 50, 100, 200, 500]
     qualvec.forEach(function(qualno, idx) {
@@ -108,7 +114,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         .attr("y", y(1 - Math.exp(-(-9.8 * idx + 82.5) / 1000 * qualno)))
     })
 
-
+    //-- Add axis labels --//
     // Add X axis label:
     svg.append("text")
       .attr("text-anchor", "middle")
@@ -125,7 +131,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("text-anchor", "middle")
       .attr('transform', 'translate(' + (width + 35) + ',' + height / 2 + ')rotate(90)')
       .text("Penetration [fraction]")
-
 
 
     // Add dots
@@ -170,6 +175,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           .duration('50')
           .style("opacity", 0);
       });
+    //------------------------------------------------------------------------//
 
 
 
@@ -178,8 +184,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
 
-
-    // Listen to the slider?
+    //------------------------------------------------------------------------//
+    // slider controlling the aerodynamic diameter
     d3.select("#mySlider").on("change", function(d) {
       selectedNo = this.value
       updateData(selectedNo)
@@ -188,7 +194,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     // A function that update the chart
     function updateData(selectedNo) {
 
-      // Create new data with the selection?
+      // Create new data with the selection
       var dataFilter = data.map(function(d) {
         return {
           PressureDrop: d.PressureDrop,
@@ -238,16 +244,17 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
             .duration('50')
             .style("opacity", 0);
         });
-
     }
+    //------------------------------------------------------------------------//
 
 
 
 
 
 
-
+    //------------------------------------------------------------------------//
     // This function is gonna change the opacity and size of selected and unselected circles
+    // using checkbox for material types
     function updateMaterial(data) {
 
       // For each check box:
@@ -283,12 +290,13 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
     // And I initialize it at the beginning
     updateMaterial();
+    //------------------------------------------------------------------------//
 
 
 
-
-
-    // Add one dot in the legend for each name.
+    //------------------------------------------------------------------------//
+    // legend above plot
+    // add one dot in the legend for each material type
     svg_legend.selectAll("mydots")
       .data(keys)
       .enter()
@@ -303,7 +311,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .style("fill", function(d) {
         return color(d)
       })
-
     svg_legend.selectAll("legendLabels")
       .data(keys)
       .enter()
@@ -318,34 +325,32 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("text-anchor", "left")
       .style("alignment-baseline", "middle")
 
-    // Handmade legend
-    svg_legend.append("circle")
+    // legend for circles sizes
+    svg_legend.append("circle") // 10 g/cm2
       .attr("cx", 200).attr("cy", 10)
       .attr("r", 10 / 125 + 3.5).style("fill", "#333333")
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
-    svg_legend.append("circle")
+    svg_legend.append("text")
+      .attr("x", 215).attr("y", 10)
+      .text("10 g/cm²").attr("alignment-baseline", "middle")
+    svg_legend.append("circle") // 300 g/cm2
       .attr("cx", 200).attr("cy", 30)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 300 / 125 + 3.5).style("fill", "#333333")
-    svg_legend.append("circle")
+    svg_legend.append("text")
+      .attr("x", 215).attr("y", 30)
+      .text("300 g/cm²").attr("alignment-baseline", "middle")
+    svg_legend.append("circle") // 1000 g/cm2
       .attr("cx", 200).attr("cy", 50)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 1000 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 10)
-      .text("10 g/cm2").attr("alignment-baseline", "middle")
-    svg_legend.append("text")
-      .attr("x", 215).attr("y", 30)
-      .text("300 g/cm2").attr("alignment-baseline", "middle")
-    svg_legend.append("text")
       .attr("x", 215).attr("y", 50)
-      .text("1,000 g/cm2").attr("alignment-baseline", "middle")
-
-
-
+      .text("1,000 g/cm²").attr("alignment-baseline", "middle")
+    //------------------------------------------------------------------------//
 
 
 
