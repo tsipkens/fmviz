@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<!-- Load fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+
+
+
+<body>
+
+  <div class="navbar-custom">
+    <div id="navbar">
+      <ul class="nav">
+        <li><a href="https://arxiv.org/abs/2008.06001">MASK FILTRATION, Rogak et al.</a></li>
+        <li><a href="#">Created by Timothy Sipkens</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main">
+
+
+    <h2>Filtration versus pressure drop</h1>
+
+
+    <p align="justify">
+      This viz examines the filtration properties of common materials, using the data from
+      <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>. Filtration and
+      pressure drop are two of the most important properties of face masks.
+
+      Filtration occurs as a result of several mechanisms, including impaction, interception, diffusion,
+      and electrostatic diffusion. Impaction tends to dominate for larger particles, while diffusion
+      is most significant for smaller particles. Charges in the masks can enhance particle filtration.
+    </p>
+
+    <img src="imgs/01_schem.png" width="600px"></img>
+
+    <p align="justify">
+      Pressure drop, in contrast, denotes resistance. Lower pressure drops are preferable,
+      to allow for a more breathable mask and results in less leakage around the mask.
+
+      A good mask has a balance of both of these properties. The following plot considers
+      there properties for some common materials. Uncertainties are generally larger for low
+      fitration efficiencies (negative filtration filtration efficiencies occasionally reflect this).
+      Materials are coded according to their structure.
+    </p>
+
+    <h3>Legend</h3>
+    <div id="my_legend"></div>
+
+    <h3>Visualization controls</h3>
+
+    <!-- Add pressure drop upper limit control -->
+    <div class="control">
+      <b>Max. pressure drop to plot</b>
+      <input type="number" id="buttonXlim" value="90" style="width:45px;">
+      * Does not update isoquality lines.
+    </div>
+
+    <!-- Add a slider -->
+    <div class="control">
+      <b>Diameter selector</b>
+      <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
+      <i>d</i><sub>a</sub> = <output id="da">2.756</output> microns
+    </div>
+
+    <div>
+      <b>Material types</b>
+      <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="W" checked><label>Woven</label>
+      | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="K" checked><label>Knit</label>
+      | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="CP" checked><label>Cut pile</label>
+      | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="nW" checked><label> Non-woven</label>
+      | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="ML" checked><label>Multi-layer</label>
+    </div>
+
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz"></div>
+
+
+    <hr>
+
+
+  </div>
+
+<script src="scripts/fvp.js"></script>
+
+</body>
+</html>
