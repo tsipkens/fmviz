@@ -78,8 +78,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
     // assign colors and material types to variables
     var colorkeys = ["#351042", "#9C2263", "#E56A54", "#FAD298", "#FDECA8", "#FFFFFF"],
-        keycodes = ["W", "K", "CP", "nW", "nWH", "ML"],
-        keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
+      keycodes = ["W", "K", "CP", "nW", "nWH", "ML"],
+      keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
     var color = d3.scaleOrdinal()
       .domain(keys)
       .range(colorkeys)
@@ -180,35 +180,13 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
 
-
-
-
-
     //------------------------------------------------------------------------//
-    // slider controlling the aerodynamic diameter
-    d3.select("#mySlider").on("change", function(d) {
-      selectedNo = this.value
-      updateData(selectedNo)
-    })
-
-    // a function that update the chart
-    function updateData(selectedNo) {
-
-      // create new data with the selection
-      var dataFilter = data.map(function(d) {
-        return {
-          PressureDrop: d.PressureDrop,
-          value: d["Filt" + selectedNo],
-          Weight: d.Weight,
-          StructureCode: d.StructureCode,
-          SimpleName: d.SimpleName,
-          BasicCode: d.BasicCode
-        }
-      })
-
+    // a generic plot updater using a given data set
+    // e.g., used whenever the slider for da is changed
+    function updateData(data0) {
       // give these new data to update plot
       svg.selectAll("circle")
-        .data(dataFilter)
+        .data(data0)
         .transition()
         .duration(100)
         .attr("cx", function(d) {
@@ -250,10 +228,39 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
 
+    //------------------------------------------------------------------------//
+    // slider controlling the aerodynamic diameter
+    d3.select("#mySlider").on("change", function(d) {
+      selectedNo = this.value
+      updateSlider(selectedNo)
+    })
+
+    // a function that update the chart
+    function updateSlider(selectedNo) {
+
+      // create new data with the selection
+      var dataFilter = data.map(function(d) {
+        return {
+          PressureDrop: d.PressureDrop,
+          value: d["Filt" + selectedNo],
+          Weight: d.Weight,
+          StructureCode: d.StructureCode,
+          SimpleName: d.SimpleName,
+          BasicCode: d.BasicCode
+        }
+      })
+
+      updateData(dataFilter) // send to general data updater
+    }
+    //------------------------------------------------------------------------//
+
+
+
+
 
 
     //------------------------------------------------------------------------//
-    // This function is gonna change the opacity and size of selected and unselected circles
+    // This function will change the opacity and size of selected and unselected data
     // using checkbox for material types
     function updateMaterial(data) {
 
@@ -272,7 +279,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
               return d.Weight / 125 + 3.5;
             })
 
-          // Otherwise I hide it
+          // otherwise, hide the circles
         } else {
           svg.selectAll("." + mat)
             .transition()
@@ -295,7 +302,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
     //------------------------------------------------------------------------//
-    // legend above plot
+    // legend above the plot generated above
     // add one dot in the legend for each material type
     svg_legend.selectAll("mydots")
       .data(keys)
