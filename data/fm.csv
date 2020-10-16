@@ -32,8 +32,8 @@ Chiffon,W17,W17x6,W,1,Woven,Polyester,"Polyester, very lightweight, plain weave"
 Ribbed knit cotton,K3,K3,K,2,Knit,Cotton,"Medium weight, ribbed knit, red",1,None,0.9,222,16,28,0.89,0.9,0.87,0.85,0.82,0.75,0.72,0.69,0.64,0.59,0.5,0.43,0.3,0.25,0,0,
 Ribbed knit cotton,K3,K3,K,2,Knit,Cotton,"Medium weight, ribbed knit, red",1,None,0.9,222,18,31,0.91,0.9,0.86,0.82,0.77,0.71,0.66,0.64,0.57,0.5,0.42,0.31,0.24,0.19,NaN,0,
 "Double knit jersey, yellow",K4,K4,K,2,Knit,Cotton,"Lightweight, jersey, interlock knit, yellow",1,None,,182,5,50,0.87,0.87,0.86,0.85,0.84,0.81,0.81,0.8,0.78,0.76,0.73,0.73,0.63,0.63,0.2,0,258%
-"Double knit jersey, yellow",K4,,K,2,Knit,Cotton,"Lightweight, jersey, interlock knit, yellow",1,None,,182,5,54,0.97,0.94,0.91,0.89,0.85,0.82,0.81,0.8,0.77,0.68,0.55,0.56,0.44,NaN,NaN,NaN,
-"Double knit jersey, yellow",K4,,K,2,Knit,Cotton,"Lightweight, jersey, interlock knit, yellow",4,None,,728,5,57,0.96,0.94,0.92,0.89,0.86,0.82,0.8,0.8,0.75,0.69,0.63,0.72,0.43,NaN,NaN,NaN,
+"Double knit jersey, yellow",K4,K4,K,2,Knit,Cotton,"Lightweight, jersey, interlock knit, yellow",1,None,,182,5,54,0.97,0.94,0.91,0.89,0.85,0.82,0.81,0.8,0.77,0.68,0.55,0.56,0.44,NaN,NaN,NaN,
+"Double knit jersey, yellow",K4,K4x4,K,2,Knit,Cotton,"Lightweight, jersey, interlock knit, yellow",4,None,,728,5,57,0.96,0.94,0.92,0.89,0.86,0.82,0.8,0.8,0.75,0.69,0.63,0.72,0.43,NaN,NaN,NaN,
 "Double knit jersey, yellow",K4,K4x6,K,2,Knit,Cotton,"Lightweight, jersey, interlock knit, yellow",6,None,,1092,36,60,0.56,0.52,0.42,0.35,0.28,0.19,0.16,0.14,0.12,0.09,0.05,0.04,0.02,0.05,0,NA,
 "Fine gauge, single knit jersey, beige",K5,K5,K,2,Knit,Cotton blend,"Cotton blend, lightweight, fine-gauge jersey, single knit, beige",1,None,0.6,212,34,25,0.94,0.92,0.86,0.81,0.72,0.63,0.58,0.53,0.42,0.25,0.14,0.08,0.05,0,0,0,
 Single loopback knit cotton,K6,K6,K,2,Knit,Cotton blend,"Cotton blend, medium weight, single loopback knit, brown",1,None,0.82,270,26,21,0.94,0.93,0.89,0.85,0.79,0.72,0.69,0.65,0.58,0.51,0.42,0.34,0.26,0.12,0.2,NaN,
