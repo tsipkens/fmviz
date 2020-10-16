@@ -39,7 +39,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
     // Add X axis
     var x = d3.scaleLinear()
-      .domain([0, 90])
+      .domain([0, 85])
       .range([ 0, width ]);
     var xAxis = svg.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -90,8 +90,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           .attr("class", "Qlabel")
           .attr("dx", "0px")
           .attr("dy", "0px")
-          .attr("x", x(-10 * idx + 85))
-          .attr("y", y(1 - Math.exp(-(-10 * idx + 85) / 1000 * qualno)))
+          .attr("x", x(-9.8 * idx + 82.5))
+          .attr("y", y(1 - Math.exp(-(-9.8 * idx + 82.5) / 1000 * qualno)))
         })
 
 
@@ -149,31 +149,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
 
-
-
-
-      // A function that update the plot for a given xlim value
-      function updatePlot() {
-
-        // Get the value of the button
-        xlim = this.value
-
-        // Update X axis
-        x.domain([0,xlim])
-        xAxis.transition().duration(90).call(d3.axisBottom(x))
-        xAxis2.transition().duration(90).call(d3.axisTop(x))
-
-        // Update chart
-        svg.selectAll("circle")
-           .data(data)
-           .transition()
-           .duration(100)
-           .attr("cx", function (d) { return x(d.PressureDrop); } )
-
-      }
-
-      // Add an event listener to the button created in the html part
-      d3.select("#buttonXlim").on("input", updatePlot )
 
 
 
