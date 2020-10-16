@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 
-<meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
+  <title>FMVIZ: Mask filtration</title>
+  <meta name="description" content="This viz examines the filtration properties of common materials, using the data from Rogak et al.">
+  <meta name="keywords" content="face mask, mask filtration, experiment, viz, COVID-19, science, aerosols, PPE">
 
-<!-- Load d3.js -->
-<script src="https://d3js.org/d3.v4.js"></script>
+  <link rel="icon" type="image/png" href="imgs/icon.png">
 
-<!-- Load fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
-<link href="css/index.css" rel="stylesheet">
+  <!-- Load d3.js -->
+  <script src="https://d3js.org/d3.v4.js"></script>
+
+  <!-- Load fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+</head>
 
 
 
@@ -31,9 +38,12 @@
 
       <p align="justify">
         This viz examines the filtration properties of common materials, using the data from
-        <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>. Filtration and
+        <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>, which is relevant to
+        preventing the spread of the COVID-19 and other respiratory diseases. Filtration and
         pressure drop are two of the most important properties of face masks.
+      </p>
 
+      <p align="justify">
         Filtration occurs as a result of several mechanisms, including impaction, interception, diffusion,
         and electrostatic diffusion. Impaction tends to dominate for larger particles, while diffusion
         is most significant for smaller particles. Charges in the masks can enhance particle filtration.
