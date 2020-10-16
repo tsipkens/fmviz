@@ -49,7 +49,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
     // Add Y axis
     var y = d3.scaleLinear()
-      .domain([-0.1, 1.0])
+      .domain([-0.05, 1.05])
       .range([ height, 0]);
     var yrv = d3.scaleLinear()
       .domain([1+0.1, 1-1.0])
