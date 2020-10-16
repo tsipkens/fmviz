@@ -135,7 +135,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
              div_tool.transition()
                 .duration(50)
                 .style("opacity", 1);
-             div_tool.html(d.SimpleName + ' (' + d.BasicCode + ')')
+             div_tool.html(d.SimpleName + ' (' + d.SampleCode + ')')
                .style("left", d3.event.pageX + "px")
                .style("top", d3.event.pageY + "px");
         })
