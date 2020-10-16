@@ -265,7 +265,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
             .attr("stroke-width", 0.3)
             .style("fill", function(d){ return color(d)})
 
-        svg_legend.selectAll("mylabels")
+        svg_legend.selectAll("legendLabels")
           .data(keys)
           .enter()
           .append("text")
