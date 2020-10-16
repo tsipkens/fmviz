@@ -63,7 +63,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
     // Color scale: give me a specie name, I return a color
-    var colorkeys = [ "#E0606F", "#2C97DF", "#2CBF6E", "#F0C664", "#EAAD26", "#353C46"]
+    var colorkeys = [ "#351042", "#9C2263", "#E56A54", "#FAD298", "#FDECA8", "#FFFFFF"]
     var keycodes = ["W", "K", "CP", "nW", "nWH", "ML" ]
     var keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)" ]
     var color = d3.scaleOrdinal()
