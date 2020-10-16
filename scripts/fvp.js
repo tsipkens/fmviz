@@ -34,8 +34,8 @@ var svg = d3.select("#my_dataviz")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/no2/data/fm.csv", function(data) {
-  d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/no2/data/quality.csv", function(data2) {
+d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", function(data) {
+  d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/quality.csv", function(data2) {
 
     // Add X axis
     var x = d3.scaleLinear()
