@@ -191,10 +191,10 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       updateData(selectedNo)
     })
 
-    // A function that update the chart
+    // a function that update the chart
     function updateData(selectedNo) {
 
-      // Create new data with the selection
+      // create new data with the selection
       var dataFilter = data.map(function(d) {
         return {
           PressureDrop: d.PressureDrop,
@@ -206,7 +206,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         }
       })
 
-      // Give these new data to update plot
+      // give these new data to update plot
       svg.selectAll("circle")
         .data(dataFilter)
         .transition()
@@ -258,7 +258,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     function updateMaterial(data) {
 
       // For each check box:
-      d3.selectAll(".checkbox").each(function(d) {
+      d3.selectAll(".cbMaterial").each(function(d) {
         cb = d3.select(this);
         mat = cb.property("value")
 
@@ -286,7 +286,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     }
 
     // When a button change, I run the update function
-    d3.selectAll(".checkbox").on("change", updateMaterial);
+    d3.selectAll(".cbMaterial").on("change", updateMaterial);
 
     // And I initialize it at the beginning
     updateMaterial();

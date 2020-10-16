@@ -47,6 +47,11 @@ div.control {
   padding-bottom: 5px;
 }
 
+.cbMaterial {
+  width:10px;
+  height:10px;
+}
+
 a {
   color: #4e79a7;
 }
