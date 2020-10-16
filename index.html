@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -31,74 +29,75 @@
     <h2>Filtration versus pressure drop</h1>
 
 
-    <p align="justify">
-      This viz examines the filtration properties of common materials, using the data from
-      <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>. Filtration and
-      pressure drop are two of the most important properties of face masks.
+      <p align="justify">
+        This viz examines the filtration properties of common materials, using the data from
+        <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>. Filtration and
+        pressure drop are two of the most important properties of face masks.
 
-      Filtration occurs as a result of several mechanisms, including impaction, interception, diffusion,
-      and electrostatic diffusion. Impaction tends to dominate for larger particles, while diffusion
-      is most significant for smaller particles. Charges in the masks can enhance particle filtration.
-    </p>
+        Filtration occurs as a result of several mechanisms, including impaction, interception, diffusion,
+        and electrostatic diffusion. Impaction tends to dominate for larger particles, while diffusion
+        is most significant for smaller particles. Charges in the masks can enhance particle filtration.
+      </p>
 
-    <img src="imgs/01_schem.png" width="600px"></img>
+      <img src="imgs/01_schem.png" width="600px"></img>
 
-    <p align="justify">
-      Pressure drop, in contrast, denotes resistance. Lower pressure drops are preferable,
-      to allow for a more breathable mask and results in less leakage around the mask.
+      <p align="justify">
+        Pressure drop, in contrast, denotes resistance. Lower pressure drops are preferable,
+        to allow for a more breathable mask and results in less leakage around the mask.
 
-      A good mask has a balance of both of these properties. The following plot considers
-      there properties for some common materials. Uncertainties are generally larger for low
-      fitration efficiencies (negative filtration filtration efficiencies occasionally reflect this).
-      Materials are coded according to their structure.
-    </p>
+        A good mask has a balance of both of these properties. The following plot considers
+        there properties for some common materials. Uncertainties are generally larger for low
+        fitration efficiencies (negative filtration filtration efficiencies occasionally reflect this).
+        Materials are coded according to their structure.
+      </p>
 
-    <p align="justify">
-      In the plot below, dashed lines correspond to line of constant quality, using
-      the natural number as a base ane pressures in kPa. A good quality denotes a
-      hybrid of good filtration while maintaining a lower pressure drop.
+      <p align="justify">
+        In the plot below, dashed lines correspond to line of constant quality, using
+        the natural number as a base ane pressures in kPa. A good quality denotes a
+        hybrid of good filtration while maintaining a lower pressure drop.
 
-      For material codes, the first component denotes the material structure, such as <b>nW</b>
-      for non-woven; followed by an optional <b>x*</b> code to
-      denote if multiple layers were used during the test
-      (e.g., <b>x2</b> for two layers of the material); and finally an optional code
-      denoting if a treatment was applied to the mask (i.e., <b>HS</b> for
-      heat treatment, <b>IPA</b> for isopropyl alcohol treatments, <b>WD</b>
-      for laundering, and <b>SW</b> for washing with soap and water).
-    </p>
+        For material codes, the first component denotes the material structure, such as <b>nW</b>
+        for non-woven; followed by an optional <b>x*</b> code to
+        denote if multiple layers were used during the test
+        (e.g., <b>x2</b> for two layers of the material); and finally an optional code
+        denoting if a treatment was applied to the mask (i.e., <b>HS</b> for
+        heat treatment, <b>IPA</b> for isopropyl alcohol treatments, <b>WD</b>
+        for laundering, and <b>SW</b> for washing with soap and water).
+      </p>
 
-    <h3>Legend</h3>
-    <div id="my_legend"></div>
+      <h3>Legend</h3>
+      <div id="my_legend"></div>
 
-    <h3>Visualization controls</h3>
+      <h3>Visualization controls</h3>
 
-    <!-- Add a slider -->
-    <div class="control">
-      <b>Diameter selector</b>
-      <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
-      <i>d</i><sub>a</sub> = <output id="da">2.756</output> microns
-    </div>
+      <!-- Add a slider -->
+      <div class="control">
+        <b>Diameter selector</b>
+        <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
+        <i>d</i><sub>a</sub> = <output id="da">2.756</output> microns
+      </div>
 
-    <div>
-      <b>Material types</b>
-      <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="W" checked><label>Woven</label>
-      | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="K" checked><label>Knit</label>
-      | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="CP" checked><label>Cut pile</label>
-      | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="nW" checked><label>Non-woven</label>
-      | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="nWH" checked><label>Non-woven, Halyard</label>
-      | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="ML" checked><label>Multi-layer</label>
-    </div>
+      <div>
+        <b>Material types</b>
+        <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="W" checked><label>Woven</label>
+        | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="K" checked><label>Knit</label>
+        | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="CP" checked><label>Cut pile</label>
+        | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="nW" checked><label>Non-woven</label>
+        | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="nWH" checked><label>Non-woven, Halyard</label>
+        | <input type="checkbox" style="width:10px;height:10px;" class="checkbox" value="ML" checked><label>Multi-layer</label>
+      </div>
 
-    <!-- Create a div where the graph will take place -->
-    <div id="my_dataviz"></div>
+      <!-- Create a div where the graph will take place -->
+      <div id="my_dataviz"></div>
 
 
-    <hr>
+      <hr>
 
 
   </div>
 
-<script src="scripts/fvp.js"></script>
+  <script src="scripts/fvp.js"></script>
 
 </body>
+
 </html>
