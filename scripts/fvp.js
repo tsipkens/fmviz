@@ -158,8 +158,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       })
       .on('mouseover', function(d) {
         d3.select(this).transition()
-          .duration('50')
-          .attr('opacity', '.85');
+          .duration(50)
+          .attr('opacity', .85);
         div_tool.transition()
           .duration(50)
           .style("opacity", 1);
@@ -169,10 +169,10 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       })
       .on('mouseout', function(d) {
         d3.select(this).transition()
-          .duration('50')
-          .attr('opacity', '1');
+          .duration(50)
+          .attr('opacity', 1);
         div_tool.transition()
-          .duration('50')
+          .duration(50)
           .style("opacity", 0);
       });
     //------------------------------------------------------------------------//
@@ -202,25 +202,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         .attr("stroke-width", 0.3)
         .style("fill", function(d) {
           return color(d.StructureCode);
-        })
-        .on('mouseover', function(d) {
-          d3.select(this).transition()
-            .duration('50')
-            .attr('opacity', '.85');
-          div_tool.transition()
-            .duration(50)
-            .style("opacity", 1);
-          div_tool.html(d.SimpleName)
-            .style("left", d3.event.pageX + "px")
-            .style("top", d3.event.pageY + "px");
-        })
-        .on('mouseout', function(d) {
-          d3.select(this).transition()
-            .duration('50')
-            .attr('opacity', '1');
-          div_tool.transition()
-            .duration('50')
-            .style("opacity", 0);
         });
     }
     //------------------------------------------------------------------------//
@@ -246,7 +227,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           Weight: d.Weight,
           StructureCode: d.StructureCode,
           SimpleName: d.SimpleName,
-          BasicCode: d.BasicCode
+          BasicCode: d.BasicCode,
+          SampleCode: d.SampleCode
         }
       })
 
