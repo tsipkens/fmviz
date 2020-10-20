@@ -77,7 +77,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
     // assign colors and material types to variables
-    var colorkeys = ["#FFFFFF", "#FDECA8", "#FAD298", "#E56A54", "#9C2263", "#351042"],
+    var colorkeys = ["#DAF7A6", "#FFC300", "#FF5733", "#900C3F", "#581845", "url(#diagonal-stripe-1)"],
       keycodes = ["W", "K", "CP", "nW", "nWH", "ML"],
       keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
     var color = d3.scaleOrdinal()
@@ -324,20 +324,20 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("x", 215).attr("y", 10)
       .text("10 g/cm²").attr("alignment-baseline", "middle")
     svg_legend.append("circle") // 300 g/cm2
-      .attr("cx", 200).attr("cy", 30)
+      .attr("cx", 200).attr("cy", 35)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 300 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 30)
+      .attr("x", 215).attr("y", 35)
       .text("300 g/cm²").attr("alignment-baseline", "middle")
     svg_legend.append("circle") // 1000 g/cm2
-      .attr("cx", 200).attr("cy", 50)
+      .attr("cx", 200).attr("cy", 60)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 1000 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 50)
+      .attr("x", 215).attr("y", 60)
       .text("1,000 g/cm²").attr("alignment-baseline", "middle")
     //------------------------------------------------------------------------//
 
