@@ -77,7 +77,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
     // assign colors and material types to variables
-    var colorkeys = ["#351042", "#9C2263", "#E56A54", "#FAD298", "#FDECA8", "#FFFFFF"],
+    var colorkeys = ["#FFFFFF", "#FDECA8", "#FAD298", "#E56A54", "#9C2263", "#351042"],
       keycodes = ["W", "K", "CP", "nW", "nWH", "ML"],
       keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
     var color = d3.scaleOrdinal()
