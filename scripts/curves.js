@@ -224,6 +224,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     slicedData = getDataFromCode(val);
     data2 = formatSlicedData(slicedData);
 
+    var pweight = 0,
+        pdrop = 0;
     for (aa in slicedData) {
       if (slicedData[aa]==null) {
         svg_pc.select("#p" + aa)
@@ -239,7 +241,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
             })
           )
       } else {
-        console.log(slicedData[aa].StructureCode)
+        pweight = pweight + Number(slicedData[aa].Weight);
+        pdrop = pdrop + Number(slicedData[aa].PressureDrop);
+
         svg_pc.select("#p" + aa)
           .datum(data2)
           .transition()
@@ -268,6 +272,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
             return y_pc(1 - d['yall'])
           })
         )
+
+      document.getElementById("pweight").value = pweight;  // estimated weight (sum)
+      document.getElementById("pdrop").value = pdrop;  // estimate pressure drop (sum)
     }
 
     updateCurve(currentCodes)

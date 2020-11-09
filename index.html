@@ -52,116 +52,168 @@
     <h1 style="padding-top:10px;color:#F69E00;margin-bottom:0px;">MASK FILTRATION</h1>
     <h1 style="font-size:16px;font-family:Roboto;margin-top:0px;padding-bottom:60px">How good are common materials?</h1>
 
-    <h2>Filtration versus pressure drop</h2>
+    <p>
+      The primary function of any mask is to filter particle contaminants out of air as it passes
+      through the mask, which is relevant to preventing the spread of the COVID-19
+      and other respiratory diseases. Filtration occurs as a result of several mechanisms, including
+      <b>impaction</b>, <b>interception</b>, <b>diffusion</b>,
+      and <b>electrostatic attraction</b>.
+    </p>
 
-
-      <p>
-        This viz examines the filtration properties of common materials, using the data from
-        <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>, which is relevant to
-        preventing the spread of the COVID-19 and other respiratory diseases. Filtration and
-        pressure drop are two of the most important properties of face masks.
-      </p>
-
-      <p>
-        Filtration occurs as a result of several mechanisms, including impaction, interception, diffusion,
-        and electrostatic diffusion. Impaction tends to dominate for larger particles, while diffusion
-        is most significant for smaller particles. Charges in the masks can enhance particle filtration.
-      </p>
-
-      <div style="text-align:center;">
-        <img src="imgs/01_schem.png" style="max-width:500px;width:100%;"></img>
-      </div>
-
-      <p>
-        Pressure drop, in contrast, denotes resistance. Lower pressure drops are preferable,
-        to allow for a more breathable mask and results in less leakage around the mask.
-
-        A good mask has a balance of both of these properties. The following plot considers
-        there properties for some common materials. Uncertainties are generally larger for low
-        fitration efficiencies (negative filtration filtration efficiencies occasionally reflect this).
-        Materials are coded according to their structure.
-      </p>
-
-      <p>
-        In the plot below, dashed lines correspond to line of constant quality, using
-        the natural number as a base ane pressures in kPa. A good quality denotes a
-        hybrid of good filtration while maintaining a lower pressure drop.
-
-        For material codes, the first component denotes the material structure, such as <b>nW</b>
-        for non-woven; followed by an optional <b>x*</b> code to
-        denote if multiple layers were used during the test
-        (e.g., <b>x2</b> for two layers of the material); and finally an optional code
-        denoting if a treatment was applied to the mask (i.e., <b>HS</b> for
-        heat treatment, <b>IPA</b> for isopropyl alcohol treatments, <b>WD</b>
-        for laundering, and <b>SW</b> for washing with soap and water).
-      </p>
-
-      <h3>Legend</h3>
-      <div id="my_legend"></div>
-
-      <h3>Visualization controls</h3>
-
-      <!-- Add a slider -->
-      <div class="control">
-        <b>Diameter selector</b>
-        <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
-        <i>d</i><sub>a</sub> = <output id="da">2.756</output> microns
-      </div>
-
-      <div>
-        <b>Material types</b>
-        <input type="checkbox" class="cbMaterial" value="W" checked><label>Woven</label>
-        | <input type="checkbox" class="cbMaterial" value="K" checked><label>Knit</label>
-        | <input type="checkbox" class="cbMaterial" value="CP" checked><label>Cut pile</label>
-        | <input type="checkbox" class="cbMaterial" value="nW" checked><label>Non-woven</label>
-        | <input type="checkbox" class="cbMaterial" value="nWH" checked><label>Non-woven, Halyard</label>
-        | <input type="checkbox" class="cbMaterial" value="ML" checked><label>Multi-layer</label>
-      </div>
-
-      <!-- Create a div where the graph will take place -->
-      <div id="my_dataviz"></div>
-
-      <script src="scripts/fvp.js"></script>
-
+    <div style="text-align:center;">
+      <img src="imgs/01_schem.svg" style="max-width:700px;width:100%;padding-top:10px;"></img>
     </div>
 
-    <div class="main">
+    <p>
+      Impaction tends to dominate for larger particles,
+      while diffusion is most significant for smaller particles. Electrostatic charges
+      in the mask, as are typically present in N95-compliant masks, tend to enhance
+      particle filtration but also tend to hold of rather poorly to some sanitization methods.
+    </p>
 
-      <h2>Penetration curves</h2>
+  </div>
+
+  <div class="main">
+
+    <h2>Filtration versus pressure drop</h2>
+
+    <p>
+      This first viz examines the filtration properties of common materials, using the data from
+      <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>. In addition to filtration,
+      this viz considers the effect of a second important property: <b>pressure drop</b>.
+    </p>
+
+    <p>
+      Pressure drop denotes resistance. Lower pressure drops are preferable,
+      to allow for a more breathable mask and results in less leakage around the mask.
+
+      A good mask has a balance of both of these properties. The following plot considers
+      there properties for some common materials. Uncertainties are generally larger for low
+      fitration efficiencies (negative filtration filtration efficiencies occasionally reflect this).
+      Materials are coded according to their structure.
+    </p>
+
+    <p>
+      In the plot below, dashed lines correspond to line of constant quality, using
+      the natural number as a base ane pressures in kPa. A good quality denotes a
+      hybrid of good filtration while maintaining a lower pressure drop.
+
+      For material codes, the first component denotes the material structure, such as <b>nW</b>
+      for non-woven; followed by an optional <b>x*</b> code to
+      denote if multiple layers were used during the test
+      (e.g., <b>x2</b> for two layers of the material); and finally an optional code
+      denoting if a treatment was applied to the mask (i.e., <b>HS</b> for
+      heat treatment, <b>IPA</b> for isopropyl alcohol treatments, <b>WD</b>
+      for laundering, and <b>SW</b> for washing with soap and water).
+    </p>
+
+    <h3>Legend</h3>
+    <div id="my_legend"></div>
+
+    <h3>Visualization controls</h3>
+
+    <!-- Add a slider -->
+    <div class="control">
+      <b>Diameter selector</b>
+      <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
+      <i>d</i><sub>a</sub> = <output id="da">2.756</output> microns
+    </div>
+
+    <div>
+      <b>Material types</b>
+      <input type="checkbox" class="cbMaterial" value="W" checked><label>Woven</label>
+      | <input type="checkbox" class="cbMaterial" value="K" checked><label>Knit</label>
+      | <input type="checkbox" class="cbMaterial" value="CP" checked><label>Cut pile</label>
+      | <input type="checkbox" class="cbMaterial" value="nW" checked><label>Non-woven</label>
+      | <input type="checkbox" class="cbMaterial" value="nWH" checked><label>Non-woven, Halyard</label>
+      | <input type="checkbox" class="cbMaterial" value="ML" checked><label>Multi-layer</label>
+    </div>
+
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz"></div>
+
+    <script src="scripts/fvp.js"></script>
+
+  </div>
+
+  <div class="main">
+
+    <h2>Size-resolved mask filtration</h2>
+
+    <p>
+      Not all particle sizes are filtered in the same way. Small particles
+      tend to pass through masks more easily. This second viz examines
+      the size-resolved mask filtration data. Generally, curves higher on
+      the plot are preferred, through, they may have an unreasonable pressure drop.
+
+      Note that the curves all have a similar trend, where the filtration
+      efficiency decreases as the particles get smaller (to the left).
+      The most penetrating particle size (MPPS), that is, the minimum
+      in these kinds of curves, typically occurs in the 50-500 nm range and
+      is the focus of several other similar studies. Here we focus on the larger
+      particles, which remain relevant for bioaerosol applications.
+    </p>
+
+    <p>
+      In this plot, the black, dashed line indicates an
+      estimate of the filtration expected for a multi-layered mask,
+      which can include up to <b>three layers</b>, as selected using the
+      dropdown boxes below.
+
+      Estimates for multi-layered masks are only approximate, computed using
+      the product of filtration efficiencies for individual layers.
+      This also gives no indication of the feasibility of the different layers,
+      as they do not have a standardized weight or pressure drop. See
+      <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>
+      for more information.
+    </p>
+
+    <p>
+      Coloured lines indicate individual filter layers, which can be added,
+      removed, or changed using the dropdown boxes. The colours themselves
+      correspond to the material classes shown in the plot above (for example,
+      yellow is for knitted materials).
+    </p>
+
+    <p>
+      Note that some materials contribute very little to the filtration properties but
+      may have other advantages, such as absorbing moisture inside the mask.
+    </p>
+
+    <p>
+      <b>Material 1: </b>
+      <select id="selectCode">
+        <option>None</option>
+      </select>
+    </p>
+
+    <p>
+      <b>Material 2: </b>
+      <select id="selectCode2">
+        <option>None</option>
+      </select>
+    </p>
+
+    <p>
+      <b>Material 3: </b>
+      <select id="selectCode3">
+        <option>None</option>
+      </select>
+    </p>
 
 
-        <p>
-          This second viz examines the trends in the penetetration of
-          mask materials with particle size. The black, dashed line indicates
-          the prodcut of the different layers as a first approximation of
-          the performance of a multi-layer mask composed of those materials.
-          Generally, curves higher on the plot are preferred, through,
-          they may have an unreasonable pressure drop.
-        </p>
-
-        <p>
-          <b>Material 1: </b>
-          <select id="selectCode">
-            <option>None</option>
-          </select>
-        </p>
-
-        <p>
-          <b>Material 2: </b>
-          <select id="selectCode2">
-            <option>None</option>
-          </select>
-        </p>
-
-        <p>
-          <b>Material 3: </b>
-          <select id="selectCode3">
-            <option>None</option>
-          </select>
-        </p>
+    <div style="padding-top:5px;">
+      <b>Estimated weight: </b>
+      <output id="pweight">-</output> g/m<sup>2</sup>
+    </div>
+    <div style="padding-top:5px;padding-bottom:15px;">
+      <b>Estimated pressure drop: </b>
+      <output id="pdrop">-</output> Pa
+    </div>
 
 
-        <div id="pen_curve"></div>
+
+    <div id="pen_curve"></div>
 
   </div>
 

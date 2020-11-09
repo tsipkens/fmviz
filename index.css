@@ -2,7 +2,7 @@ body {
   margin: auto 0px;
   padding: 0px;
   font-family: 'Roboto', serif;
-  font-size: 10pt;
+  font-size: 11pt;
   min-height: 100%;
 }
 
@@ -25,7 +25,7 @@ h2 {
 }
 
 a {
-  color: #4e79a7;
+  color: #c56183;
 }
 
 hr {
@@ -80,8 +80,8 @@ div.main {
   margin: 0 auto;
   max-width: 900px;
   width: 90%;
-  padding-top: 80px;
-  padding-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 div.control {
