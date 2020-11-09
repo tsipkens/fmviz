@@ -68,7 +68,10 @@
       Impaction tends to dominate for larger particles,
       while diffusion is most significant for smaller particles. Electrostatic charges
       in the mask, as are typically present in N95-compliant masks, tend to enhance
-      particle filtration but also tend to hold of rather poorly to some sanitization methods.
+      particle filtration but also tend to hold up rather poorly when the mask
+      is sanitized, such that the sanitization method needs to be considered carefully.
+      For example, washing most N95-compliant masks with soap and water significantly
+      reduces their filtration properties.
     </p>
 
   </div>
@@ -79,7 +82,7 @@
 
     <p>
       This first viz examines the filtration properties of common materials, using the data from
-      <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>. In addition to filtration,
+      <a href="https://arxiv.org/abs/2008.06001">Rogak et al</a>. In addition to filtration,
       this viz considers the effect of a second important property: <b>pressure drop</b>.
     </p>
 
@@ -90,13 +93,10 @@
       A good mask has a balance of both of these properties. The following plot considers
       there properties for some common materials. Uncertainties are generally larger for low
       fitration efficiencies (negative filtration filtration efficiencies occasionally reflect this).
-      Materials are coded according to their structure.
     </p>
 
     <p>
-      In the plot below, dashed lines correspond to line of constant quality, using
-      the natural number as a base ane pressures in kPa. A good quality denotes a
-      hybrid of good filtration while maintaining a lower pressure drop.
+      Materials are coded according to their structure.
 
       For material codes, the first component denotes the material structure, such as <b>nW</b>
       for non-woven; followed by an optional <b>x*</b> code to
@@ -105,6 +105,13 @@
       denoting if a treatment was applied to the mask (i.e., <b>HS</b> for
       heat treatment, <b>IPA</b> for isopropyl alcohol treatments, <b>WD</b>
       for laundering, and <b>SW</b> for washing with soap and water).
+    </p>
+
+    <p>
+      In the plot below, dashed lines correspond to line of constant quality, using
+      the natural number as a base ane pressures in kPa. A good (or high) quality denotes a
+      hybrid of good filtration while maintaining a lower pressure drop. Masks with
+      the highest quality in this study include N95-compliant and surgical masks.
     </p>
 
     <h3>Legend</h3>
@@ -141,7 +148,7 @@
     <h2>Size-resolved mask filtration</h2>
 
     <p>
-      Not all particle sizes are filtered in the same way. Small particles
+      Not all particle sizes are filtered in the same way. For example, small particles
       tend to pass through masks more easily. This second viz examines
       the size-resolved mask filtration data. Generally, curves higher on
       the plot are preferred, through, they may have an unreasonable pressure drop.
@@ -227,8 +234,8 @@
       <p>
         Source data for this viz is available in the supporting Github repository
         <a href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">here</a>.
-        This package was released under an MIT license. This work was completed by
-        researchers at the University of British Columbia.
+        This package is released under an <a href="">GNU GPLv3 license</a>.
+        This work was completed by researchers at the University of British Columbia.
       </p>
 
       <p style="padding-bottom:35px;">
