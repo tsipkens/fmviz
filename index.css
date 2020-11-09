@@ -15,8 +15,13 @@ p {
 
 h1 {
   text-align: center;
-  font-size:45px;
+  font-size: 45px;
   font-family: Montserrat;
+}
+
+h2 {
+  font-size: 25px;
+  margin-bottom: 5px;
 }
 
 a {
@@ -75,6 +80,7 @@ div.main {
   margin: 0 auto;
   width: 900px;
   padding-top: 80px;
+  padding-bottom: 60px;
 }
 
 div.control {
