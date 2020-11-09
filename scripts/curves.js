@@ -2,7 +2,7 @@
 
 
 
-var currentCodes = ["W3","None","None"];  // starting materials
+var currentCodes = ["W16","W11","None"];  // starting materials
 
 
 

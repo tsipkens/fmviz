@@ -78,7 +78,8 @@ div.footer {
 /* For main components */
 div.main {
   margin: 0 auto;
-  width: 900px;
+  max-width: 900px;
+  width: 90%;
   padding-top: 80px;
   padding-bottom: 60px;
 }
