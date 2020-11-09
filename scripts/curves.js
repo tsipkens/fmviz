@@ -279,19 +279,48 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
     updateCurve(currentCodes)
 
-  // slider controlling the aerodynamic diameter
+    var updateMaskColor = function (code, no) {
+      if (code=="None") {
+        letter = "none"
+      } else if ((code[0]=="K") || (code[0]=="W")) {
+        letter = code[0]
+      } else if ((code.slice(0, 2)=="CP") || ((code.slice(0, 2)=="nW"))) {
+        letter = code.slice(0, 2)
+      } else {
+        letter = "other"
+      }
+      console.log(letter)
+      document.getElementById("img_l" + (no + 1)).src =
+        "imgs/mask_" + letter + ".svg";  // select image to display
+
+      // label image with text that displays code
+      if (code!="None") {
+        document.getElementById("txt_l" + (no + 1)).innerHTML = code;
+      } else {
+        document.getElementById("txt_l" + (no + 1)).innerHTML = "";
+      }
+
+    }
+    updateMaskColor(currentCodes[0], 0)  // update colours of masks show to user
+    updateMaskColor(currentCodes[1], 1)
+    updateMaskColor(currentCodes[2], 2)
+
+  // dropdown menus picking different layer materials
   d3.select("#selectCode").on("change", function() {
     currentCodes[0] = this.value;
+    updateMaskColor(currentCodes[0], 0)
     updateCurve(currentCodes)
   })
 
   d3.select("#selectCode2").on("change", function() {
     currentCodes[1] = this.value;
+    updateMaskColor(currentCodes[1], 1)
     updateCurve(currentCodes)
   })
 
   d3.select("#selectCode3").on("change", function() {
     currentCodes[2] = this.value;
+    updateMaskColor(currentCodes[2], 2)
     updateCurve(currentCodes)
   })
 

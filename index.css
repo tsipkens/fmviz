@@ -46,6 +46,7 @@ hr {
   position: fixed;
   width: 100%;
   font-size: 10pt;
+  z-index: 20;
 }
 
 .nav li {
@@ -92,6 +93,21 @@ div.control {
   width:10px;
   height:10px;
 }
+
+/*  */
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
 
 /* Associated with plot elements --> */
 div.tooltip {
