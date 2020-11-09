@@ -38,11 +38,7 @@
         <rect width="1" height="3" transform="translate(0,0)" fill="#CCCCCC"></rect>
         <rect width="2" height="3" transform="translate(1,0)" fill="#FBFBFB"></rect>
       </pattern>
-    </defs>
-  </svg>
 
-  <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
-    <defs>
       <pattern id="diagonal-stripe-2" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
         <rect width="1" height="3" transform="translate(0,0)" fill="#900C3F"></rect>
         <rect width="2" height="3" transform="translate(1,0)" fill="#581845"></rect>
@@ -50,23 +46,23 @@
     </defs>
   </svg>
 
-  <div class="main">
+  <div class="main" style="display:fixed; top:0px;">
 
 
     <h1 style="padding-top:10px;color:#F69E00;margin-bottom:0px;">MASK FILTRATION</h1>
     <h1 style="font-size:16px;font-family:Roboto;margin-top:0px;padding-bottom:45px">How good are common materials?</h1>
 
-    <h2>Filtration versus pressure drop</h1>
+    <h2>Filtration versus pressure drop</h2>
 
 
-      <p align="justify">
+      <p>
         This viz examines the filtration properties of common materials, using the data from
         <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>, which is relevant to
         preventing the spread of the COVID-19 and other respiratory diseases. Filtration and
         pressure drop are two of the most important properties of face masks.
       </p>
 
-      <p align="justify">
+      <p>
         Filtration occurs as a result of several mechanisms, including impaction, interception, diffusion,
         and electrostatic diffusion. Impaction tends to dominate for larger particles, while diffusion
         is most significant for smaller particles. Charges in the masks can enhance particle filtration.
@@ -74,7 +70,7 @@
 
       <img src="imgs/01_schem.png" width="600px"></img>
 
-      <p align="justify">
+      <p>
         Pressure drop, in contrast, denotes resistance. Lower pressure drops are preferable,
         to allow for a more breathable mask and results in less leakage around the mask.
 
@@ -84,7 +80,7 @@
         Materials are coded according to their structure.
       </p>
 
-      <p align="justify">
+      <p>
         In the plot below, dashed lines correspond to line of constant quality, using
         the natural number as a base ane pressures in kPa. A good quality denotes a
         hybrid of good filtration while maintaining a lower pressure drop.
@@ -124,19 +120,19 @@
       <div id="my_dataviz"></div>
 
 
-      <hr>
+      <hr></hr>
 
 
-      <h2>Penetration curves</h1>
+      <h2>Penetration curves</h2>
 
 
-        <p align="justify">
+        <p>
           This second viz examines the trends in the penetetration of
           mask materials with particle size. The black, dashed line indicates
           the prodcut of the different layers as a first approximation of
           the performance of a multi-layer mask composed of those materials.
           Generally, curves higher on the plot are preferred, through,
-          they may have an unreasonable pressure drop. 
+          they may have an unreasonable pressure drop.
         </p>
 
         <p>
@@ -161,38 +157,36 @@
         </p>
 
 
-      <div id="pen_curve"></div>
+        <div id="pen_curve"></div>
 
-    </div>
-
-    <div class="footer">
-      <div class="main" style="padding-top:0px;">
-
-
-        <h4>Source data and citing this work</h4>
-
-        <p align="justify">
-          Source data for this viz is available in the supporting Github repository
-          <a href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">here</a>.
-          This package was released under an MIT license. This work was completed by
-          researchers at the University of British Columbia.
-        </p>
-
-        <p align="justify" style="padding-bottom:35px;">
-          Consider citing this repository directly, as well as the corresponding paper:
-          <a href="https://arxiv.org/abs/2008.06001"> S. N. Rogak, T. A. Sipkens, M. Guan,
-            H. Nikookar, D. V. Figueroa, J. Wang.
-            "Properties of materials considered for improvised masks." Submitted to
-            <i>Aerosol Science and Technology</i>.
-          </a>
-        </p>
-
-
-    </div>
   </div>
 
   <script src="scripts/fvp.js"></script>
   <script src="scripts/curves.js"></script>
+
+  <div class="footer" stlye="bottom:0px;">
+    <div class="main" style="padding-top:0px;">
+
+      <h4>Source data and citing this work</h4>
+
+      <p>
+        Source data for this viz is available in the supporting Github repository
+        <a href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">here</a>.
+        This package was released under an MIT license. This work was completed by
+        researchers at the University of British Columbia.
+      </p>
+
+      <p style="padding-bottom:35px;">
+        Consider citing this repository directly, as well as the corresponding paper:
+        <a href="https://arxiv.org/abs/2008.06001"> S. N. Rogak, T. A. Sipkens, M. Guan,
+          H. Nikookar, D. V. Figueroa, J. Wang.
+          "Properties of materials considered for improvised masks." Submitted to
+          <i>Aerosol Science and Technology</i></a>.
+      </p>
+
+
+    </div>
+  </div>
 
 </body>
 

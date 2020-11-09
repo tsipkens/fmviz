@@ -3,6 +3,14 @@ body {
   padding: 0px;
   font-family: 'Roboto', serif;
   font-size: 10pt;
+  min-height: 100%;
+}
+
+p {
+  text-align: justify;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0px;
 }
 
 h1 {
@@ -60,7 +68,6 @@ div.footer {
   margin-bottom: 0px;
   padding-bottom: 0 px;
   border-top: 1px solid #DDDDDD;
-  border-bottom: 1px solid #111111;
 }
 
 /* For main components */
