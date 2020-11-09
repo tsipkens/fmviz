@@ -284,6 +284,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         letter = "none"
       } else if ((code[0]=="K") || (code[0]=="W")) {
         letter = code[0]
+      } else if ((code.slice(0, 3)=="nW2") || ((code.slice(0, 3)=="nW3")) || ((code.slice(0, 3)=="nW4"))) {
+        letter = "nWH"
       } else if ((code.slice(0, 2)=="CP") || ((code.slice(0, 2)=="nW"))) {
         letter = code.slice(0, 2)
       } else {
@@ -297,7 +299,13 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       if (code!="None") {
         document.getElementById("txt_l" + (no + 1)).innerHTML = code;
       } else {
-        document.getElementById("txt_l" + (no + 1)).innerHTML = "";
+        document.getElementById("txt_l" + (no + 1)).innerHTML = "&nbsp";
+      }
+
+      if ((code.slice(0, 2)=="CP") || ((code.slice(0, 2)=="nW"))) {
+        document.getElementById("txt_l" + (no + 1)).style.color = "#FFFFFF"
+      } else {
+        document.getElementById("txt_l" + (no + 1)).style.color = "#000000"
       }
 
     }
