@@ -87,17 +87,21 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   // get all material codes
   var all_codes = [], all_mats = [];
   for (aa in data) {
-    all_codes[aa] = data[aa].BasicCode;
-    all_mats[aa] = data[aa].SimpleName;
+    all_codes[aa] = data[aa].SampleCode;
+    all_mats[aa] = data[aa].SimpleName + " (" + data[aa].SampleCode + ")";
   }
 
   all_codes = all_codes.filter((item, i, ar) => ar.indexOf(item) === i); // get only unique entries
   all_mats = all_mats.filter((item, i, ar) => ar.indexOf(item) === i); // get only unique entries
 
+
+  console.log(all_codes)
+  console.log(all_mats)
+
   var populateDropDown = function (dropDown) {
     for(ii in all_codes) {
         var el = document.createElement("option");
-        el.textContent = all_mats[ii] + ' (' + all_codes[ii] + ')';
+        el.textContent = all_mats[ii];
         el.value = all_codes[ii];
         dropDown.appendChild(el);
       }
@@ -119,7 +123,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       } else {
         sliceNo = 0;
         for (aa in data) {
-          if (data[aa].BasicCode==codeVal[cc]) { sliceNo = aa; break; }
+          if (data[aa].SampleCode==codeVal[cc]) { sliceNo = aa; break; }
         }
         slicedData[cc] = (data[sliceNo]);
       }
@@ -244,6 +248,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         pweight = pweight + Number(slicedData[aa].Weight);
         pdrop = pdrop + Number(slicedData[aa].PressureDrop);
 
+        // will produce errors for a few materials with NaN values in filtration range
         svg_pc.select("#p" + aa)
           .datum(data2)
           .transition()
@@ -260,7 +265,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         }
       }
 
-      console.log(data2)
       svg_pc.select("#pall")
         .datum(data2)
         .transition()
@@ -291,7 +295,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       } else {
         letter = "other"
       }
-      console.log(letter)
       document.getElementById("img_l" + (no + 1)).src =
         "imgs/mask_" + letter + ".svg";  // select image to display
 
