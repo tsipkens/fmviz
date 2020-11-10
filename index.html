@@ -134,32 +134,8 @@
       therein.
     </p>
 
-    <h3>Legend</h3>
-    <div id="my_legend"></div>
-
-    <h3>Visualization controls</h3>
-
-    <!-- Add a slider -->
-    <div class="control">
-      <b>Diameter selector</b>
-      <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
-      <i>d</i><sub>a</sub> = <output id="da">2.756</output> microns
-    </div>
-
-    <div>
-      <b>Material types</b>
-      <input type="checkbox" class="cbMaterial" value="W" checked><label>Woven</label>
-      | <input type="checkbox" class="cbMaterial" value="K" checked><label>Knit</label>
-      | <input type="checkbox" class="cbMaterial" value="CP" checked><label>Cut pile</label>
-      | <input type="checkbox" class="cbMaterial" value="nW" checked><label>Non-woven</label>
-      | <input type="checkbox" class="cbMaterial" value="nWH" checked><label>Non-woven, Halyard</label>
-      | <input type="checkbox" class="cbMaterial" value="ML" checked><label>Multi-layer</label>
-    </div>
-
-    <!-- Create a div where the graph will take place -->
-    <div id="my_dataviz"></div>
-
-    <script src="scripts/fvp.js"></script>
+    <iframe name="viz1" src="fvp.html" width="920px" height="780px" frameborder="0" scrolling="auto">
+    </iframe>
 
   </div>
 
@@ -217,57 +193,10 @@
       constructing an effective mask.
     </p>
 
-
-    <div class="row">
-      <div class="column">
-        <p>
-          <b>Layer 1: </b>
-          <select id="selectCode">
-            <option>None</option>
-          </select>
-        </p>
-
-        <p>
-          <b>Layer 2: </b>
-          <select id="selectCode2">
-            <option>None</option>
-          </select>
-        </p>
-
-        <p>
-          <b>Layer 3: </b>
-          <select id="selectCode3">
-            <option>None</option>
-          </select>
-        </p>
-
-
-        <div style="padding-top:5px;">
-          <b>Estimated weight: </b>
-          <output id="pweight">-</output> g/cm<sup>2</sup>
-        </div>
-        <div style="padding-top:5px;padding-bottom:15px;">
-          <b>Estimated pressure drop: </b>
-          <output id="pdrop">-</output> Pa
-        </div>
-      </div>
-
-      <div class="column" style="position:relative;">
-        <img src="imgs/mask_none.svg" id='img_l1' width="120px;" style="position:relative;z-index:3;top:0px;left:0px;">
-        <img src="imgs/mask_none.svg" id='img_l2' width="120px;" style="position:relative;z-index:2;top:35px;left:-124px;">
-        <img src="imgs/mask_none.svg" id='img_l3' width="120px;" style="position:relative;z-index:1;top:70px;left:-248px;">
-        <div id='txt_l1' style="position:relative;z-index:4;top:-40px;width:120px;left:0px;text-align:center">-</div>
-        <div id='txt_l2' style="position:relative;z-index:4;top:-18px;width:120px;left:0px;text-align:center">-</div>
-        <div id='txt_l3' style="position:relative;z-index:4;top:0px;width:120px;left:0px;text-align:center">-</div>
-      </div>
-    </div>
-
-
-    <div id="pen_curve"></div>
+    <iframe name="viz2" src="curves.html" width="920px" height="650px" frameborder="0" scrolling="auto">
+    </iframe>
 
   </div>
-
-  <script src="scripts/curves.js"></script>
 
   <div class="footer" stlye="bottom:0px;">
     <div class="main" style="padding-top:0px;padding-bottom:0px;">
