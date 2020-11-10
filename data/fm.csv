@@ -47,7 +47,7 @@ Spandex polyester,K10,K10,K,2,Knit,Spandex blend,"95% polyester with 5% spandexÂ
 Spandex polyester,K10,K10 WDx10,K,2,Knit,Spandex blend,"95% polyester with 5% spandexÂ , medium weight, interlock knit, black",1,Launder,,230,7,37,0.95,0.93,0.9,0.89,0.86,0.83,0.8,0.8,0.77,0.73,0.68,0.56,0.59,0.42,0,0,
 Nylon,K11,K11,K,2,Knit,Nylon-spandex blend,"95% nylon with 5% spandex, lightweight, single knit, red",1,None,0.4,161,5,15,0.98,0.98,0.97,0.96,0.95,0.94,0.93,0.93,0.93,0.92,0.9,0.87,0.81,0.91,0.4,0,68%
 Nylon,K11,K11 WDx10 ,K,2,Knit,Nylon-spandex blend,"95% nylon with 5% spandex, lightweight, single knit, red",1,Launder,,161,6,21,0.98,0.97,0.95,0.95,0.93,0.91,0.91,0.88,0.88,0.87,0.85,0.77,0.81,0.55,NaN,0,
-Nylon,K11,K1x3,K,2,Knit,Nylon-spandex blend,"95% nylon with 5% spandex, lightweight, single knit, red",3,None,1.28,497,15,2,0.97,0.98,0.98,0.98,0.99,0.96,0.97,0.98,0.97,0.99,0.99,1.04,0.89,0.79,0.57,0,
+Nylon,K11,K11x3,K,2,Knit,Nylon-spandex blend,"95% nylon with 5% spandex, lightweight, single knit, red",3,None,1.28,497,15,2,0.97,0.98,0.98,0.98,0.99,0.96,0.97,0.98,0.97,0.99,0.99,1.04,0.89,0.79,0.57,0,
 Velour,CP1,CP1,CP,3,Cut pile,Velour,"Cotton, polyester, and spandex blend, medium weight, knit short cut pile, sky blue",1,None,,242,8,31,0.92,0.91,0.89,0.89,0.86,0.83,0.82,0.8,0.78,0.75,0.7,0.59,0.54,0.42,0,0,
 Velour,CP1,CP1 WDx10,CP,3,Cut pile,Velour,"Cotton, polyester, and spandex blend, medium weight, knit short cut pile, sky blue",1,Launder,,242,13,22,0.91,0.91,0.89,0.88,0.86,0.82,0.8,0.78,0.75,0.69,0.67,0.51,0.44,0.18,0,0,
 Velour,CP1,CP1x4,CP,3,Cut pile,Velour,"Cotton, polyester, and spandex blend, medium weight, knit short cut pile, sky blue",4,None,5.37,966,40,27,0.68,0.68,0.64,0.62,0.56,0.47,0.42,0.4,0.34,0.26,0.19,0.11,0.15,0,0,0,
