@@ -11,34 +11,36 @@
 </head>
 
 <body>
-
-  <h3>Legend</h3>
-  <div id="my_legend"></div>
-
-  <h3>Visualization controls</h3>
-
-  <!-- Add a slider -->
-  <div class="control">
-    <b>Diameter selector</b>
-    <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
-    <i>d</i><sub>a</sub> = <output id="da">2.756</output> microns
-  </div>
-
   <div>
-    <b>Material types</b>
-    <input type="checkbox" class="cbMaterial" value="W" checked><label>Woven</label>
-    | <input type="checkbox" class="cbMaterial" value="K" checked><label>Knit</label>
-    | <input type="checkbox" class="cbMaterial" value="CP" checked><label>Cut pile</label>
-    | <input type="checkbox" class="cbMaterial" value="nW" checked><label>Non-woven</label>
-    | <input type="checkbox" class="cbMaterial" value="nWH" checked><label>Non-woven, Halyard</label>
-    | <input type="checkbox" class="cbMaterial" value="ML" checked><label>Multi-layer</label>
+
+    <h3>Legend</h3>
+    <div id="my_legend"></div>
+
+    <h3>Visualization controls</h3>
+
+    <!-- Add a slider -->
+    <div class="control">
+      <b>Diameter selector</b>
+      <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
+      <i>d</i><sub>a</sub> = <output id="da">2.756</output> microns
+    </div>
+
+    <div>
+      <b>Material types</b>
+      <input type="checkbox" class="cbMaterial" value="W" checked><label>Woven</label>
+      | <input type="checkbox" class="cbMaterial" value="K" checked><label>Knit</label>
+      | <input type="checkbox" class="cbMaterial" value="CP" checked><label>Cut pile</label>
+      | <input type="checkbox" class="cbMaterial" value="nW" checked><label>Non-woven</label>
+      | <input type="checkbox" class="cbMaterial" value="nWH" checked><label>Non-woven, Halyard</label>
+      | <input type="checkbox" class="cbMaterial" value="ML" checked><label>Multi-layer</label>
+    </div>
+
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz"></div>
+
+    <script src="scripts/fvp.js"></script>
+
   </div>
-
-  <!-- Create a div where the graph will take place -->
-  <div id="my_dataviz"></div>
-
-  <script src="scripts/fvp.js"></script>
-
 </body>
 
 </html>
