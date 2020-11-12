@@ -98,15 +98,55 @@
     </p>
 
     <p>
-      Materials are coded according to their structure.
+      Throughout this web app, materials are coded according to their
+      structure, number of layers, and treatment. For example, a code
+      denoting a knit material that has been laundered multiple times is:
 
-      For material codes, the first component denotes the material structure, such as <b>nW</b>
-      for non-woven; followed by an optional <b>x*</b> code to
-      denote if multiple layers were used during the test
-      (e.g., <b>x2</b> for two layers of the material); and finally an optional code
-      denoting if a treatment was applied to the mask (i.e., <b>HS</b> for
-      heat treatment, <b>IPA</b> for isopropyl alcohol treatments, <b>WD</b>
-      for laundering, and <b>SW</b> for washing with soap and water).
+      <div>
+        <img src="imgs/matlcodes.svg" style="width:180px;margin-top:-5px;margin-bottom:8px;">
+      </div>
+
+      Expanding on the various components of this code:
+
+      <ul>
+        <li style="padding-top:4px;">
+          The first letter or pair of letters generally denotes the material structure,
+          using <b>W</b> for woven materials, <b>K</b> for knit materials,
+          <b>CP</b> for cut pile materials (e.g., corduroy), and <b>nW</b> for non-woven
+          materials. Composite masks, such as the N95-compliant materials tested,
+          have different codes (e.g., <b>ASTM</b> for surgical masks that adhere to the
+          ASTM standard).
+
+          The different material structures can added or removed from the plot using the
+          checkboxes in the controls above the first plot.
+        </li>
+
+        <li style="padding-top:4px;">
+          The second component is a number used to identify the different
+          materials within a given material structure. As the number is only
+          used to identify the material, it does not contain any information
+          about the material makeup or structure.
+        </li>
+
+        <li style="padding-top:4px;">
+          Next, some codes append <b>x*</b> to denote if multiple layers
+          were used during the test. For example <b>K4x2</b> is four layers of
+          the K4 material (Double-knit jersey, yellow). If the <b>x*</b>
+          component is missing, a single layer of the material was used.
+        </li>
+
+        <li style="padding-top:4px;">
+          Finally, some codes append a space followed by a code denoting if
+          a sanitization treatment was applied to the material. Examples include,
+          <b>HS</b> for heat treatment, <b>IPA</b> for isopropyl alcohol treatments,
+          <b>WD</b> for laundering, and <b>SW</b> for washing with soap and water.
+          If no such code is appended, the material is in its original condition.
+          If santization was repeatedly applied, this latter part of the code
+          will also be appended with <b>x*</b> (e.g., <b>WDx10</b> denotes
+          materials laundered ten times).
+        </li>
+      </ul>
+
     </p>
 
     <p>
@@ -119,7 +159,7 @@
       therein.
     </p>
 
-    <iframe name="viz1" src="fvp.html" width="920px" height="780px" frameborder="0" scrolling="auto">
+    <iframe name="viz1" src="fvp.html" width="920px" height="800px" frameborder="0" scrolling="auto">
     </iframe>
 
   </div>
@@ -178,7 +218,7 @@
       constructing an effective mask.
     </p>
 
-    <iframe name="viz2" src="curves.html" width="920px" height="650px" frameborder="0" scrolling="auto">
+    <iframe name="viz2" src="curves.html" width="920px" height="660px" frameborder="0" scrolling="auto">
     </iframe>
 
   </div>
