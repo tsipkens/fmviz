@@ -66,7 +66,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .domain([-0.05, 1.05])
       .range([height, 0]);
     var yrv = d3.scaleLinear()
-      .domain([1 + 0.1, 1 - 1.0])
+      .domain([1.05, -0.05])
       .range([height, 0]); // reverse axis for penetration
     svg.append("g")
       .call(d3.axisLeft(y));
