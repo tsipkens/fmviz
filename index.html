@@ -30,7 +30,7 @@
   <script src="https://d3js.org/d3.v4.js"></script>
 
   <!-- Load fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Open+Sans:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
 </head>
 
@@ -42,8 +42,8 @@
   <div class="navbar-custom">
     <div id="navbar">
       <ul class="nav">
-        <li><a href="https://arxiv.org/abs/2008.06001"><b style="font-family:Montserrat;font-size:11pt;color:black;">MASK FILTRATION</b>, Rogak et al.</a></li>
-        <li><a href="#">Created by Timothy Sipkens</a></li>
+        <li><b style="font-family:Montserrat;font-size:11pt;color:black;">FACE MASK<br>FILTRATION</b></li>
+        <li><a href="https://arxiv.org/abs/2008.06001">Created by Timothy Sipkens in cooperation with<br>Rogak, Guan, Nikookar, Figueroa, and Wang</a></li>
       </ul>
     </div>
   </div>
@@ -51,8 +51,12 @@
   <div class="main">
 
 
-    <h1 style="padding-top:10px;color:#F69E00;margin-bottom:0px;">MASK FILTRATION</h1>
-    <h1 style="font-size:16px;font-family:Roboto;margin-top:0px;padding-bottom:60px">How good are common materials?</h1>
+    <h1 style="padding-top:45px;color:#F69E00;margin-bottom:0px;">FACE MASKS</h1>
+    <h1 style="font-size:16px;font-family:Roboto;margin-top:0px;padding-bottom:60px">How good are common materials at filtration?</h1>
+
+    <div style="text-align:center;padding-bottom:40px;">
+      <img src="imgs/icon.png" style="width:15%;max-width:250px;">
+    </div>
 
     <p>
       The primary function of any mask is to filter particle contaminants out of air as it passes
@@ -100,16 +104,13 @@
     <p>
       Throughout this web app, materials are coded according to their
       structure, number of layers, and treatment. For example, a code
-      denoting a knit material that has been laundered multiple times is:
-
-      <div>
-        <img src="imgs/matlcodes.svg" style="width:180px;margin-top:-5px;margin-bottom:8px;">
-      </div>
+      denoting a knit material that has been laundered multiple times is
+      <b>K4x4 WDx4</b>.
 
       Expanding on the various components of this code:
 
       <ul>
-        <li style="padding-top:4px;">
+        <li style="padding-top:0px;">
           The first letter or pair of letters generally denotes the material structure,
           using <b>W</b> for woven materials, <b>K</b> for knit materials,
           <b>CP</b> for cut pile materials (e.g., corduroy), and <b>nW</b> for non-woven
@@ -121,21 +122,21 @@
           checkboxes in the controls above the first plot.
         </li>
 
-        <li style="padding-top:4px;">
+        <li style="padding-top:6px;">
           The second component is a number used to identify the different
           materials within a given material structure. As the number is only
           used to identify the material, it does not contain any information
           about the material makeup or structure.
         </li>
 
-        <li style="padding-top:4px;">
+        <li style="padding-top:6px;">
           Next, some codes append <b>x*</b> to denote if multiple layers
           were used during the test. For example <b>K4x2</b> is four layers of
           the K4 material (Double-knit jersey, yellow). If the <b>x*</b>
           component is missing, a single layer of the material was used.
         </li>
 
-        <li style="padding-top:4px;">
+        <li style="padding-top:6px;">
           Finally, some codes append a space followed by a code denoting if
           a sanitization treatment was applied to the material. Examples include,
           <b>HS</b> for heat treatment, <b>IPA</b> for isopropyl alcohol treatments,

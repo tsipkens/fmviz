@@ -52,6 +52,7 @@ hr {
 .nav li {
   display: block;
   padding: 20px;
+  text-align: right;
 }
 
 .nav li:first-child {
