@@ -1,7 +1,7 @@
 body {
   margin: auto 0px;
   padding: 0px;
-  font-family: 'Roboto', serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 11pt;
   min-height: 100%;
 }
@@ -137,7 +137,8 @@ div.tooltip {
 
 /* Associated with table of data */
 table {
-  font-family: arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11pt;
   border-collapse: collapse;
   width: 100%;
 }
@@ -156,4 +157,8 @@ table tr td {
 
 tr:nth-child(even) {
   background-color: #FAFAFA;
+}
+
+tr:nth-child(1) {
+  font-family: Montserrat;
 }
