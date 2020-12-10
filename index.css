@@ -133,6 +133,11 @@ div.tooltip {
   font-size: 8pt;
 }
 
+#matdens_label {
+  font-family: Roboto;
+  font-weight: bold;
+}
+
 
 
 /* Associated with table of data */
@@ -147,20 +152,30 @@ td, th {
   border: 1px solid #DDDDDD;
   text-align: left;
   padding: 8px;
-  border-left: 0;
 }
 
 table tr td {
   border-left: 0;
   border-right: 0;
+  vertical-align: top;
 }
 
 tr:nth-child(even) {
   background-color: #FAFAFA;
 }
 
-tr:nth-child(1) {
+tr:nth-child(1) td {
   font-family: Montserrat;
+  background-color: #FEF5E7;
+  vertical-align: bottom;
+  font-size: 12.5px;
+  border: 1px solid #999999;
+  border-left: 0;
+  border-right: 0;
+}
+
+table tr:hover {
+  background-color: #F2F3F4;
 }
 
 
@@ -176,7 +191,7 @@ iframe {
 
 .iframe-container3 {
   overflow: hidden;
-  padding-top: 375%;
+  padding-top: 350%;
   position: relative;
 }
 
@@ -193,14 +208,14 @@ iframe {
 }
 
 
-/* Format indented, grey text regions */
+/* Format indented text regions */
 .text-indent {
   margin-top:15px;
   margin-bottom:15px;
   padding-left:18px;
   padding-right:18px;
   border-left:3px #CCCCCC solid;
-  color:#777777
+  color: #999999;
 }
 
 .text-indent p:first-child {

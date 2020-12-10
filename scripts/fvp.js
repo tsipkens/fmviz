@@ -315,29 +315,33 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .style("alignment-baseline", "middle")
 
     // legend for circles sizes
+    svg_legend.append("text")
+      .attr("x", 188).attr("y", 10)
+      .text("Material weight").attr("alignment-baseline", "left")
+      .attr('id', 'matdens_label')
     svg_legend.append("circle") // 10 g/cm2
-      .attr("cx", 200).attr("cy", 10)
+      .attr("cx", 200).attr("cy", 30)
       .attr("r", 10 / 125 + 3.5).style("fill", "#333333")
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 10)
+      .attr("x", 215).attr("y", 30)
       .text("10 g/cm²").attr("alignment-baseline", "middle")
     svg_legend.append("circle") // 300 g/cm2
-      .attr("cx", 200).attr("cy", 35)
+      .attr("cx", 200).attr("cy", 55)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 300 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 35)
+      .attr("x", 215).attr("y", 55)
       .text("300 g/cm²").attr("alignment-baseline", "middle")
     svg_legend.append("circle") // 1000 g/cm2
-      .attr("cx", 200).attr("cy", 60)
+      .attr("cx", 200).attr("cy", 80)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 1000 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 60)
+      .attr("x", 215).attr("y", 80)
       .text("1,000 g/cm²").attr("alignment-baseline", "middle")
     //------------------------------------------------------------------------//
 
