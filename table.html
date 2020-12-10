@@ -22,6 +22,7 @@
       content += '<td><b>FILTER MATERIAL</b></td>';
       content += "<td><b>CODE</b></td>";
       content += "<td><b># LAYERS</b></td>";
+      content += "<td><b>TREATMENT</b></td>";
       content += "<td><b>PRESSURE <br>DROP [Pa]</b></td>";
       content += "<td><b>% FILTRATION</b></td>";
       content += "<td><b>% PENETRATION</b></td>";
@@ -30,12 +31,13 @@
       rowname = ' ';
 
       data.forEach(function(row) {
-        if (!(row.SimpleName==rowname)) {
+        if (!(row.SampleCode==rowname)) {
           content += "<tr>";
           content += "<td>" + row.SimpleName + "</td>";
           content += "<td>" + row.SampleCode + "</td>";
           content += "<td>" + row.Layers + "</td>";
-          if (row.PressureDrop>=50) {
+          content += "<td>" + row.Treatment + "</td>";
+          if (row.PressureDrop>=55) {
             content += '<td><font color="#E74C3C">' + row.PressureDrop + '</font></td>';
           } else {
             content += '<td>' + row.PressureDrop + '</td>';
@@ -50,7 +52,7 @@
           content += "</tr>";
         }
 
-        rowname = row.SimpleName;
+        rowname = row.SampleCode;
       });
       document.getElementById("tableid").innerHTML = content;
     });
