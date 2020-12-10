@@ -35,7 +35,7 @@
           content += "<td>" + row.SimpleName + "</td>";
           content += "<td>" + row.SampleCode + "</td>";
           content += "<td>" + row.Layers + "</td>";
-          if (row.PressureDrop>45) {
+          if (row.PressureDrop>=50) {
             content += '<td><font color="#E74C3C">' + row.PressureDrop + '</font></td>';
           } else {
             content += '<td>' + row.PressureDrop + '</td>';
