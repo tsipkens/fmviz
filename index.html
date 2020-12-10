@@ -7,24 +7,24 @@
 
   <!-- facebook open graph tags -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tsipkens.github.io/fmviz"/>
-  <meta property="og:title" content="FMViz: Face mask filtration"/>
-  <meta property="og:image" content="https://tsipkens.github.io/fmviz/imgs/00_fmviz_preview.png"/>
-  <meta property="og:site_name" content="FMViz"/>
-  <meta property="og:description" content="These visualizations examine the filtration properties of common face mask materials, using the data from Rogak et al."/>
+  <meta property="og:url" content="https://tsipkens.github.io/fmviz" />
+  <meta property="og:title" content="FMViz: Face mask filtration" />
+  <meta property="og:image" content="https://tsipkens.github.io/fmviz/imgs/00_fmviz_preview.png" />
+  <meta property="og:site_name" content="FMViz" />
+  <meta property="og:description" content="These visualizations examine the filtration properties of common face mask materials, using the data from Rogak et al." />
 
-  <meta name="author" content="Timothy Sipkens"/>
-  <meta name="keywords" content="face mask, mask filtration, experiment, viz, COVID-19, science, aerosols, PPE"/>
+  <meta name="author" content="Timothy Sipkens" />
+  <meta name="keywords" content="face mask, mask filtration, experiment, viz, COVID-19, science, aerosols, PPE" />
 
-  <meta name=”twitter:card” content="summary_large_image"/>
-  <meta name=”twitter:domain” content="https://tsipkens.github.io/fmviz"/>
-  <meta name=”twitter:url” content="https://tsipkens.github.io/fmviz"/>
-  <meta name="twitter:site" content="@tsipkens"/>
-  <meta name="title" property="twitter:title" content="FMViz: Face mask filtration"/>
-  <meta name=”twitter:description” content="These visualizations examine the filtration properties of common face mask materials, using the data from Rogak et al."/>
-  <meta name="twitter:image" content="https://tsipkens.github.io/fmviz/imgs/00_fmviz_preview.png"/>
+  <meta name=”twitter:card” content="summary_large_image" />
+  <meta name=”twitter:domain” content="https://tsipkens.github.io/fmviz" />
+  <meta name=”twitter:url” content="https://tsipkens.github.io/fmviz" />
+  <meta name="twitter:site" content="@tsipkens" />
+  <meta name="title" property="twitter:title" content="FMViz: Face mask filtration" />
+  <meta name=”twitter:description” content="These visualizations examine the filtration properties of common face mask materials, using the data from Rogak et al." />
+  <meta name="twitter:image" content="https://tsipkens.github.io/fmviz/imgs/00_fmviz_preview.png" />
 
-  <link rel="icon" type="image/png" href="https://tsipkens.github.io/fmviz/imgs/icon.png"/>
+  <link rel="icon" type="image/png" href="https://tsipkens.github.io/fmviz/imgs/icon.png" />
 
   <!-- Load d3.js -->
   <script src="https://d3js.org/d3.v4.js"></script>
@@ -108,48 +108,60 @@
       structure, number of layers, and treatment. For example, a code
       denoting a knit material that has been laundered multiple times is
       <b>K4x4 WDx4</b>.
+    </p>
 
-      Expanding on the various components of this code:
+    <div class="text-indent">
+      <p>
+        Expanding on the various components of this code:
+      </p>
 
-      <ul>
-        <li style="padding-top:0px;">
-          The first letter or pair of letters generally denotes the material structure,
-          using <b>W</b> for woven materials, <b>K</b> for knit materials,
-          <b>CP</b> for cut pile materials (e.g., corduroy), and <b>nW</b> for non-woven
-          materials. Composite masks, such as the N95-compliant materials tested,
-          have different codes (e.g., <b>ASTM</b> for surgical masks that adhere to the
-          ASTM standard).
+      <p>
+        1. The first letter or pair of letters generally denotes the material structure,
+        using <b>W</b> for woven materials, <b>K</b> for knit materials,
+        <b>CP</b> for cut pile materials (e.g., corduroy), and <b>nW</b> for non-woven
+        materials. Composite masks, such as the N95-compliant materials tested,
+        have different codes (e.g., <b>ASTM</b> for surgical masks that adhere to the
+        ASTM standard).
 
-          The different material structures can added or removed from the plot using the
-          checkboxes in the controls above the first plot.
-        </li>
+        The different material structures can added or removed from the plot using the
+        checkboxes in the controls above the first plot.
+      </p>
 
-        <li style="padding-top:6px;">
-          The second component is a number used to identify the different
-          materials within a given material structure. As the number is only
-          used to identify the material, it does not contain any information
-          about the material makeup or structure.
-        </li>
+      <p>
+        2. The second component is a number used to identify the different
+        materials within a given material structure. As the number is only
+        used to identify the material, it does not contain any information
+        about the material makeup or structure.
+      </p>
 
-        <li style="padding-top:6px;">
-          Next, some codes append <b>x*</b> to denote if multiple layers
-          were used during the test. For example <b>K4x2</b> is four layers of
-          the K4 material (Double-knit jersey, yellow). If the <b>x*</b>
-          component is missing, a single layer of the material was used.
-        </li>
+      <p>
+        3. Next, some codes append <b>x*</b> to denote if multiple layers
+        were used during the test. For example <b>K4x2</b> is four layers of
+        the K4 material (Double-knit jersey, yellow). If the <b>x*</b>
+        component is missing, a single layer of the material was used.
+      </p>
 
-        <li style="padding-top:6px;padding-bottom:10px;">
-          Finally, some codes append a space followed by a code denoting if
-          a sanitization treatment was applied to the material. Examples include,
-          <b>HS</b> for heat treatment, <b>IPA</b> for isopropyl alcohol treatments,
-          <b>WD</b> for laundering, and <b>SW</b> for washing with soap and water.
-          If no such code is appended, the material is in its original condition.
-          If santization was repeatedly applied, this latter part of the code
-          will also be appended with <b>x*</b> (e.g., <b>WDx10</b> denotes
-          materials laundered ten times).
-        </li>
-      </ul>
+      <p>
+        4. Finally, some codes append a space followed by a code denoting if
+        a sanitization treatment was applied to the material. Examples include,
+        <b>HS</b> for heat treatment, <b>IPA</b> for isopropyl alcohol treatments,
+        <b>WD</b> for laundering, and <b>SW</b> for washing with soap and water.
+        If no such code is appended, the material is in its original condition.
+        If santization was repeatedly applied, this latter part of the code
+        will also be appended with <b>x*</b> (e.g., <b>WDx10</b> denotes
+        materials laundered ten times).
+      </p>
+    </div>
 
+    <p>
+      We occasionally characterize the materials by their colour, as there is often
+      limited information available about the specific material properties (thread count).
+      Instead, the range of similar materials is ued to indicate the potential spread
+      of filtration and pressure drop that could be associated with a
+      type of material.
+    </p>
+
+    <p>
       In the plot below, dashed lines correspond to line of constant quality, using
       the natural number as a base ane pressures in kPa. A good (or high) quality denotes a
       hybrid of good filtration while maintaining a lower pressure drop. Masks with
@@ -229,13 +241,15 @@
 
   <div class="main">
 
-    <h2>TABLE OF FILTRATION AT 2.756 MICRONS</h2>
+    <h2>TABLE OF FILTRATION AT 2.8 MICRONS</h2>
 
     <p>
       The following table lists the filtration efficiency for
       all of the materials for particles with an aerodynamic diameter of
-      <i>d</i><sub>a</sub> = 2.756  microns.
-      (<a href="#!" onclick="navigator.clipboard.writeText('<iframe src=&quot;https://tsipkens.github.io/fmviz/table.html&quot; width=&quot;920px&quot; height=&quot;3320px&quot; frameborder=&quot;0&quot; scrolling=&quot;auto&quot;></iframe>');">Copy embed link</a>)
+      <i>d</i><sub>a</sub> = 2.8 microns.
+      (<a href="#!" onclick="navigator.clipboard.writeText('<iframe src=&quot;https://tsipkens.github.io/fmviz/table.html&quot; width=&quot;920px&quot; height=&quot;3320px&quot; frameborder=&quot;0&quot; scrolling=&quot;auto&quot;></iframe>');">Copy
+        embed
+        link</a>)
     </p>
 
     <div class="iframe-container3">

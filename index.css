@@ -164,6 +164,7 @@ tr:nth-child(1) {
 }
 
 
+/* Format iframes */
 iframe {
   border: 0;
   height: 100%;
@@ -189,4 +190,23 @@ iframe {
   overflow: hidden;
   padding-top:89%;
   position: relative;
+}
+
+
+/* Format indented, grey text regions */
+.text-indent {
+  margin-top:15px;
+  margin-bottom:15px;
+  padding-left:18px;
+  padding-right:18px;
+  border-left:3px #CCCCCC solid;
+  color:#777777
+}
+
+.text-indent p:first-child {
+  padding-top:0px;
+}
+
+.text-indent p:last-child {
+  padding-bottom:0px;
 }
