@@ -326,7 +326,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("stroke-width", 0.3)
     svg_legend.append("text")
       .attr("x", 215).attr("y", 30)
-      .text("10 g/cm²").attr("alignment-baseline", "middle")
+      .text("10 g/m²").attr("alignment-baseline", "middle")
     svg_legend.append("circle") // 300 g/cm2
       .attr("cx", 200).attr("cy", 55)
       .attr("stroke", "black")
@@ -334,7 +334,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("r", 300 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
       .attr("x", 215).attr("y", 55)
-      .text("300 g/cm²").attr("alignment-baseline", "middle")
+      .text("300 g/m²").attr("alignment-baseline", "middle")
     svg_legend.append("circle") // 1000 g/cm2
       .attr("cx", 200).attr("cy", 80)
       .attr("stroke", "black")
@@ -342,7 +342,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("r", 1000 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
       .attr("x", 215).attr("y", 80)
-      .text("1,000 g/cm²").attr("alignment-baseline", "middle")
+      .text("1,000 g/m²").attr("alignment-baseline", "middle")
     //------------------------------------------------------------------------//
 
 
