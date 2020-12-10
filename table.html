@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Open+Sans:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+
+  <script src="https://d3js.org/d3.v4.js"></script>
+</head>
+
+<body>
+  <table id="tableid">
+  </table>
+
+  <script type="text/javascript" charset="utf-8">
+    d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", function(data) {
+      var content = '';
+
+      content += "<tr>";
+      content += "<td><b>FILTER MATERIAL</b></td>";
+      content += "<td><b>CODE</b></td>";
+      content += "<td><b># LAYERS</b></td>";
+      content += "<td><b>PRESSURE <br>DROP [Pa]</b></td>";
+      content += "<td><b>% FILTRATION</b></td>";
+      content += "<td><b>% PENETRATION</b></td>";
+      content += "</tr>";
+
+      rowname = ' ';
+
+      data.forEach(function(row) {
+        if (!(row.SimpleName==rowname)) {
+          content += "<tr>";
+          content += "<td>" + row.SimpleName + "</td>";
+          content += "<td>" + row.SampleCode + "</td>";
+          content += "<td>" + row.Layers + "</td>";
+          content += "<td>" + row.PressureDrop + "</td>";
+          content += "<td>" + (100 - Math.round(row.Filt9 * 100)) + "</td>";
+          content += "<td>" + Math.round(row.Filt9 * 100, 1) + "</td>";
+          content += "</tr>";
+        }
+
+        rowname = row.SimpleName;
+      });
+      document.getElementById("tableid").innerHTML = content;
+    });
+  </script>
+</body>
+
+</html>

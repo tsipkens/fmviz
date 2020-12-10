@@ -20,7 +20,7 @@ h1 {
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 5px;
   font-family: Montserrat;
 }
@@ -131,4 +131,29 @@ div.tooltip {
 .Qlabel {
   color: #CCCCCC;
   font-size: 8pt;
+}
+
+
+
+/* Associated with table of data */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #DDDDDD;
+  text-align: left;
+  padding: 8px;
+  border-left: 0;
+}
+
+table tr td {
+  border-left: 0;
+  border-right: 0;
+}
+
+tr:nth-child(even) {
+  background-color: #FAFAFA;
 }
