@@ -35,13 +35,18 @@
           content += "<td>" + row.SimpleName + "</td>";
           content += "<td>" + row.SampleCode + "</td>";
           content += "<td>" + row.Layers + "</td>";
-          if (row.PressureDrop>10) {
-            content += '<td>' + row.PressureDrop + '</td>';
+          if (row.PressureDrop>45) {
+            content += '<td><font color="#E74C3C">' + row.PressureDrop + '</font></td>';
           } else {
             content += '<td>' + row.PressureDrop + '</td>';
           }
-          content += "<td>" + (100 - Math.round(row.Filt9 * 100)) + "</td>";
-          content += "<td>" + Math.round(row.Filt9 * 100, 1) + "</td>";
+          if ((100 - Math.round(row.Filt9 * 100))>75) {
+            content += '<td><font color="#2ECC71">' + (100 - Math.round(row.Filt9 * 100)) + "</font></td>";
+            content += '<td><font color="#2ECC71">' + Math.round(row.Filt9 * 100, 1) + "</font></td>";
+          } else {
+            content += "<td>" + (100 - Math.round(row.Filt9 * 100)) + "</td>";
+            content += "<td>" + Math.round(row.Filt9 * 100, 1) + "</td>";
+          }
           content += "</tr>";
         }
 
