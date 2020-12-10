@@ -162,3 +162,31 @@ tr:nth-child(even) {
 tr:nth-child(1) {
   font-family: Montserrat;
 }
+
+
+iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.iframe-container3 {
+  overflow: hidden;
+  padding-top: 375%;
+  position: relative;
+}
+
+.iframe-container2 {
+  overflow: hidden;
+  padding-top: 73%;
+  position: relative;
+}
+
+.iframe-container1 {
+  overflow: hidden;
+  padding-top:89%;
+  position: relative;
+}
