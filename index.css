@@ -161,7 +161,7 @@ table tr td {
 }
 
 tr:nth-child(even) {
-  background-color: #FAFAFA;
+  background-color: #FDFDFD;
 }
 
 tr:nth-child(1) td {
@@ -191,7 +191,7 @@ iframe {
 
 .iframe-container3 {
   overflow: hidden;
-  padding-top: 350%;
+  padding-top: 373%;
   position: relative;
 }
 

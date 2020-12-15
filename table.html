@@ -23,6 +23,7 @@
       content += "<td><b>CODE</b></td>";
       content += "<td><b># LAYERS</b></td>";
       content += "<td><b>TREATMENT</b></td>";
+      content += "<td><b>QUALITY</b></td>";
       content += "<td><b>PRESSURE <br>DROP [Pa]</b></td>";
       content += "<td><b>% FILTRATION</b></td>";
       content += "<td><b>% PENETRATION</b></td>";
@@ -45,14 +46,23 @@
           } else {
             content += "<td>" + row.Treatment + "</td>";
           }
+          if (row.Quality>=30) {
+            content += '<td><font color="#2ECC71">' + row.Quality + '</font></td>';
+          } else {
+            if (row.Quality=='#NUM!') {
+              content += '<td><font color="#2ECC71">→ ∞</font></td>';
+            } else {
+              content += '<td>' + row.Quality + '</td>';
+            }
+          }
           if (row.PressureDrop>=55) {
             content += '<td><font color="#E74C3C">' + row.PressureDrop + '</font></td>';
           } else {
             content += '<td>' + row.PressureDrop + '</td>';
           }
           if ((100 - Math.round(row.Filt9 * 100))>75) {
-            content += '<td><font color="#2ECC71">' + (100 - Math.round(row.Filt9 * 100)) + "</font></td>";
-            content += '<td><font color="#2ECC71">' + Math.round(row.Filt9 * 100, 1) + "</font></td>";
+            content += '<td><font color="#1D8348">' + (100 - Math.round(row.Filt9 * 100)) + "</font></td>";
+            content += '<td><font color="#1D8348">' + Math.round(row.Filt9 * 100, 1) + "</font></td>";
           } else {
             content += "<td>" + (100 - Math.round(row.Filt9 * 100)) + "</td>";
             content += "<td>" + Math.round(row.Filt9 * 100, 1) + "</td>";
