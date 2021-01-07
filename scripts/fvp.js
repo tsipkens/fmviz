@@ -134,6 +134,14 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
     // Add dots
+    var treatmentText = function(d) {
+      if (d.Treatment != 'None') {
+        return '<span style="color:#DDAAAA"> + ' + d.Treatment + '</span>';
+      } else {
+        return ''
+      }
+    }
+
     svg.append('g')
       .selectAll("dot")
       .data(data)
@@ -163,7 +171,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         div_tool.transition()
           .duration(50)
           .style("opacity", 1);
-        div_tool.html(d.SimpleName + ' (' + d.SampleCode + ')')
+        div_tool.html(d.SimpleName + ' (' + d.BasicCode + treatmentText(d) + ')')
           .style("left", d3.event.pageX + "px")
           .style("top", d3.event.pageY + "px");
       })
