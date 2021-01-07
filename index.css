@@ -189,9 +189,9 @@ iframe {
   width: 100%;
 }
 
-.iframe-container3 {
+.iframe-container1 {
   overflow: hidden;
-  padding-top: 373%;
+  padding-top:89%;
   position: relative;
 }
 
@@ -201,12 +201,11 @@ iframe {
   position: relative;
 }
 
-.iframe-container1 {
+.iframe-container3 {
   overflow: hidden;
-  padding-top:89%;
+  padding-top: 373%;
   position: relative;
 }
-
 
 /* Format indented text regions */
 .text-indent {
