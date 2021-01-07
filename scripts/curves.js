@@ -91,8 +91,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     all_mats[aa] = data[aa].SimpleName + " (" + data[aa].SampleCode + ")";
   }
 
-  all_codes = all_codes.filter((item, i, ar) => ar.indexOf(item) === i); // get only unique entries
-  all_mats = all_mats.filter((item, i, ar) => ar.indexOf(item) === i); // get only unique entries
+  all_codes = all_codes.filter(function(item, i, ar) { return ar.indexOf(item) === i }); // get only unique entries
+  all_mats = all_mats.filter(function(item, i, ar) { return ar.indexOf(item) === i }); // get only unique entries
 
 
   console.log(all_codes)
