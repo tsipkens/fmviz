@@ -13,7 +13,7 @@ var margin = {
     bottom: 50,
     left: 60
   },
-  width = 900 - margin.left - margin.right,
+  width = 870 - margin.left - margin.right,
   height = 500 - margin.top - margin.bottom;
 
 // for tooltips
