@@ -133,7 +133,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .text("Penetration [fraction]")
 
 
-    // Add dots
+    // Add dots with labels for name/treatment
     var treatmentText = function(d) {
       if (d.Treatment != 'None') {
         return '<span style="color:#DDAAAA"> + ' + d.Treatment + '</span>';

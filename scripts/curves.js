@@ -86,9 +86,16 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
   // get all material codes
   var all_codes = [], all_mats = [];
+  var treatmentText = function(d) {
+    if (d.Treatment != 'None') {
+      return ' + ' + d.Treatment + '';
+    } else {
+      return ''
+    }
+  }
   for (aa in data) {
     all_codes[aa] = data[aa].SampleCode;
-    all_mats[aa] = data[aa].SimpleName + " (" + data[aa].SampleCode + ")";
+    all_mats[aa] = data[aa].SimpleName + " (" + data[aa].BasicCode + treatmentText(data[aa]) +")";
   }
 
   all_codes = all_codes.filter(function(item, i, ar) { return ar.indexOf(item) === i }); // get only unique entries
