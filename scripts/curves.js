@@ -25,8 +25,8 @@ var margin_pc = {
   bottom: 50,
   left: 60
 }
-  width_pc = 870 - margin_pc.left - margin_pc.right,
-  height_pc = 450 - margin_pc.top - margin_pc.bottom;
+  width_pc = 860 - margin_pc.left - margin_pc.right,
+  height_pc = 430 - margin_pc.top - margin_pc.bottom;
 
 // append the svg object to the body of the page
 var svg_pc = d3.select("#pen_curve")
