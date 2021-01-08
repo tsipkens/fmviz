@@ -2,7 +2,7 @@
 
 
 
-var currentCodes = ["W16","W11","None"];  // starting materials
+var currentCodes = ["W5","nW5","K7"];  // starting materials
 
 
 
@@ -94,8 +94,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     }
   }
   for (aa in data) {
-    all_codes[aa] = data[aa].SampleCode;
-    all_mats[aa] = data[aa].SimpleName + " (" + data[aa].BasicCode + treatmentText(data[aa]) +")";
+    all_codes[aa] = data[aa].CaseCode;
+    all_mats[aa] = data[aa].SimpleName + treatmentText(data[aa]) + " (" + data[aa].CaseCode + ")";
   }
 
   all_codes = all_codes.filter(function(item, i, ar) { return ar.indexOf(item) === i }); // get only unique entries

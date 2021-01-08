@@ -166,7 +166,8 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(1) td {
-  font-family: Montserrat;
+  font-family: Open Sans;
+  font-weight: 600;
   background-color: #FFD893;
   vertical-align: bottom;
   font-size: 12.5px;
@@ -197,6 +198,7 @@ iframe {
 }
 
 .iframe-container2 {
+  margin-top:15px;
   overflow: hidden;
   padding-top: 73%;
   position: relative;
@@ -204,7 +206,7 @@ iframe {
 
 .iframe-container3 {
   overflow: hidden;
-  padding-top: 390%;
+  padding-top: 365%;
   position: relative;
 }
 

@@ -32,14 +32,14 @@
       rowname = ' ';
 
       data.forEach(function(row) {
-        if (!(row.SampleCode==rowname)) {
+        if (!(row.CaseCode==rowname)) {
           content += "<tr>";
           content += "<td>" + row.SimpleName + "</td>";
           content += "<td>" + row.SampleCode + "</td>";
           content += "<td>" + row.Layers + "</td>";
           if (row.Treatment=="None") {
             content += "<td>-</td>";
-          } else if ((row.Treatment=="Launder")||(row.Treatment=="Soap + washed")) {
+          } else if ((row.Treatment.includes("Launder"))||(row.Treatment=="Soap + washed")) {
             content += '<td><font color="#3498DB">' + row.Treatment + '</font></td>';
           } else if (row.Treatment.includes("Heat")) {
             content += '<td><font color="#FFA07A">' + row.Treatment + '</font></td>';
@@ -70,7 +70,7 @@
           content += "</tr>";
         }
 
-        rowname = row.SampleCode;
+        rowname = row.CaseCode;
       });
       document.getElementById("tableid").innerHTML = content;
     });
