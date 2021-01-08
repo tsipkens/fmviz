@@ -86,31 +86,79 @@
     <h2>FILTRATION & PRESSURE DROP</h2>
 
     <p>
-      This first viz examines the filtration properties of common materials, using the data from
-      <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al</a>. In addition to filtration,
-      this viz considers the effect of a second important property: <b>pressure drop</b>.
+      This first viz uses data from
+      <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al</a>
+      to examine the filtration properties of face masks alongside a
+      a second important property: <b>pressure drop</b>.
+      Filtration has rather intuitive consequences for face masks. If a face
+      masks has poor filtration properties, particles (perhaps containing virus) are allowed to
+      pass through the fabric and reach the wearer, reducing the utility
+      of the mask.
+      The consequences of a poor pressure drop are less direct.
+      Pressure drop denotes resistance. In this respect,
+      a low pressure drop is preferable for two reasons. It (1) makes
+      for a more breathable mask, which is less likely to irritate the wearer, and
+      (2) results in less leakage around the mask, improving
+      the overall utility of the mask.
     </p>
 
     <p>
-      Pressure drop denotes resistance and is one of the other common
-      parameters reported in testing face masks. Lower pressure drops are preferable
-      in that they make for a more breathable mask and result in less
-      leakage around the mask.
-
       A good mask has a balance of both of these properties. The following plot considers
-      these properties for some common materials. Uncertainties in this data are generally larger for low
+      these properties for some common materials. Uncertainties in the data are generally larger for low
       fitration efficiencies (negative filtration efficiencies occasionally reflect this; they
       are artifacts of the measurements and are not physical).
     </p>
 
-    <p>
-      Throughout this web app, materials are coded according to their
-      structure, number of layers, and treatment. For example, a code
-      denoting a knit material that has been laundered multiple times is
-      <b>K4x4 WDx4</b>.
-    </p>
-
+    <button type="button" class="collapsible">+ Why are some of the materials identified by their physcial colour?</button>
     <div class="text-indent">
+      <p>
+        We occasionally characterize the materials by their physical colour. This is
+        done as there is often limited information available about the specific material properties (thread count).
+        In this regard, the colour is simply used to denote different materials within
+        a similar material class.
+
+        Accordingly, this data should be interpretted as indicated the potential variability
+        of filtration and pressure drop that could be associated with a given
+        type of material.
+      </p>
+
+      <p>
+        A pertinent example is the knit cottons, which have variable quality
+        despite being a similar materials to the consumer.
+      </p>
+    </div>
+
+    <button type="button" class="collapsible">+ What do the dashed lines in the figure represent? The short answer: quality.</button>
+    <div class="text-indent">
+      <p>
+        In the plot below, dashed lines correspond to line of constant <b>quality</b>.
+      </p>
+
+      <p>
+        A good (or high) quality denotes a hybrid of good filtration
+        while maintaining a low pressure drop. Infinite quality would correspond
+        to a material that filters all of the particles, with no pressure drop.
+        Naturally, real materials have trouble realizing this ideal. Masks with
+        the highest quality in this study include N95-compliant and surgical masks.
+        N95-compliant masks in some cases essentially blocked 100% of particles
+        (within the limits of the current measurement apparatus), such that the quality approached ∞.
+        Calculations use the natural number as a base and pressures in kPa.
+        For more details on how quality is defined and what it means, we refer the reader
+        to <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al.</a> and the references
+        therein.
+      </p>
+    </div>
+
+    <button type="button" class="collapsible">+ What do the extra letters in brackets mean (e.g., W5)?</button>
+    <div class="text-indent">
+      <p>
+        In the associated paper and throughout this web app, studied cases are coded according
+        to their structure, number of layers, and santization treatment. For example, a code
+        denoting a knit material that has been laundered multiple times is
+        <b>K4x4 WDx4</b>. A list of the codes is included in the table at the bottom
+        of this page.
+      </p>
+
       <p>
         Expanding on the various components of this code:
       </p>
@@ -153,29 +201,6 @@
       </p>
     </div>
 
-    <p>
-      We occasionally characterize the materials by their colour, as there is often
-      limited information available about the specific material properties (thread count).
-      Instead, the range of similar materials is ued to indicate the potential spread
-      of filtration and pressure drop that could be associated with a
-      type of material.
-    </p>
-
-    <p>
-      In the plot below, dashed lines correspond to line of constant <b>quality</b>.
-      A good (or high) quality denotes a hybrid of good filtration
-      while maintaining a lower pressure drop. Infinite quality would correspond
-      to a material that filters all of the particles, with no pressure drop.
-      Naturally, real materials cannot realize this ideal. Masks with
-      the highest quality in this study include N95-compliant and surgical masks.
-      N95-compliant masks in some cases essentially blocked 100% of particles
-      (within the limits of the current measurement apparatus), such that the quality approached ∞.
-      Calculations use the natural number as a base and pressures in kPa.
-      For more details on how quality is defined and what it means, we refer the reader
-      to <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a> and the references
-      therein.
-    </p>
-
     <div class="iframe-container1">
       <iframe name="viz1" src="fvp.html" frameborder="0" scrolling="auto">
       </iframe>
@@ -185,57 +210,91 @@
 
   <div class="main">
 
-    <h2>SIZE-RESOLVED MASK FILTRATION</h2>
+    <h2>SIZE-RESOLVED, MULTI-LAYERED MASK FILTRATION</h2>
 
     <p>
       Not all particle sizes are filtered in the same way. For example, small particles
       tend to pass through masks more easily, resulting in lower filtration efficiencies.
-      This second viz examines the size-resolved mask filtration data. Generally, points higher on
-      the plot are preferred, through, these materials may result in an unreasonable pressure
-      drops that make the mask uncomfortable to wear.
+      This second viz examines the size-resolved mask filtration of the data from
+      <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al</a>.
+      Generally, curves higher on the plot are preferred, through, these materials
+      may result in an unreasonable pressure drops that make the mask uncomfortable to wear
+      and lead to larger amounts of leakage.
     </p>
 
     <p>
-      Note that the curves all have a similar trend, where the filtration
-      efficiency decreases as the particles get smaller (to the left).
-      The most penetrating particle size (MPPS), that is, the minimum
-      in these kinds of curves, typically occurs in the 50-500 nm range and
-      is the focus of several other similar studies (see references in
-      <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>). Here we
-      focus on the larger particles, which remain relevant for bioaerosol applications.
-    </p>
-
-    <p>
-      In this plot, the black, dashed line indicates an
-      estimate of the filtration expected for a multi-layered mask,
-      which can include up to <b>three layers</b>, as selected using the
-      dropdown boxes below.
-
-      Estimates for multi-layered masks are only <i>approximate</i>, computed using
+      In addition, this viz is used to estimate the filtration properties of
+      masks composed of multiple layers.
+      In this regard, solid, coloured lines indicate individual filter layers, while
+      the black, dashed line corresponds to an estimate combining all of the
+      selected feature layers.
+      Estimates for multi-layered masks are only <b>APPROXIMATE</b>, computed using
       the product of filtration efficiencies for individual layers.
-      This also gives no indication of the feasibility of the different layers,
-      as they do not have a standardized weight or pressure drop. We again refer
-      the interested reader to
-      <a href="https://arxiv.org/abs/2008.06001">Rogak et al.</a>
-      for a more detailed discussion.
     </p>
 
     <p>
-      Coloured lines indicate individual filter layers, which can be added,
-      removed, or changed using the dropdown boxes. The colours themselves
-      correspond to the material classes shown in the plot above (for example,
-      yellow is for knitted materials).
+      Individual feature layers can be added,
+      removed, or changed using the dropdown boxes and
+      can include up to <b>THREE LAYERS</b>, the number recommended by the WHO.
     </p>
 
-    <p>
-      Note that some materials contribute very little to the filtration properties but
-      may have other advantages, such as absorbing moisture inside the mask.
+    <button type="button" class="collapsible">+ Note that all of the curves have a similar trend!</button>
+    <div class="text-indent">
+      <p>
+        It is well-established that the filtration
+        efficiency consistently decreases as the particles get smaller (to the left)
+        for this size range.
+        The most penetrating particle size (MPPS), that is, the minimum
+        in these kinds of curves, typically occurs in the 50-500 nm range and
+        is the focus of several other similar studies (see references in
+        <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al.</a>). Here we
+        focus on the larger particles, which remain relevant for bioaerosol applications.
+      </p>
+    </div>
 
-      We also note that the focus of this data was also on
-      the <b>materials</b> themselves. As such, these curves do not consider
-      leakage around the mask, which is another important feature in
-      constructing an effective mask.
-    </p>
+    <button type="button" class="collapsible">+ Are all of these mask combinations realistic?</button>
+    <div class="text-indent">
+      <p>
+        Not necessarily! This viz does not give an indication of the feasibility of the different layers,
+        as they do not have a standardized weight, pressure drop, thickness, or compatibility.
+        We again refer the interested reader to
+        <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al.</a>
+        for a more detailed discussion.
+      </p>
+    </div>
+
+    <button type="button" class="collapsible">+ What do the line colours in this viz mean?</button>
+    <div class="text-indent">
+      <p>
+        The colours of the solid lines
+        correspond to the material classes for the individual filter layers,
+        with the same colours as those used in the previous viz (for example,
+        yellow is for knitted materials).
+      </p>
+    </div>
+
+    <button type="button" class="collapsible">+ Why might one consider the poor filter layers?</button>
+    <div class="text-indent">
+      <p>
+        While some materials contribute very little to the filtration properties, they
+        may have other advantages. For example, some layers may absorb moisture.
+        However, it is important that these layer do not add a lot of pressure drop
+        to the mask, for reasons noted above.
+      </p>
+    </div>
+
+    <button type="button" class="collapsible">+ What about leakage around the mask?</button>
+    <div class="text-indent">
+      <p>
+        We note that the focus of this data is on
+        the <b>MATERIALS</b> themselves. As such, these curves <b>DO NOT</b> consider
+        leakage around the mask. This is another vary important feature in
+        constructing an effective masks but requires different kinds of
+        tests that are wearer-specific.
+      </p>
+    </div>
+
+    <p></p>
 
     <div class="iframe-container2">
       <iframe name="viz2" src="curves.html" frameborder="0" scrolling="auto">
@@ -297,6 +356,25 @@
 
     </div>
   </div>
+
+  <script>
+
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+
+  </script>
 
 </body>
 

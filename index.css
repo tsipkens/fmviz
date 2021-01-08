@@ -8,8 +8,8 @@ body {
 
 p {
   text-align: justify;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   margin: 0px;
 }
 
@@ -212,18 +212,35 @@ iframe {
 
 /* Format indented text regions */
 .text-indent {
-  margin-top:15px;
-  margin-bottom:15px;
+  padding-top:15px;
+  padding-bottom:15px;
   padding-left:18px;
   padding-right:18px;
-  border-left:3px #CCCCCC solid;
-  color: #999999;
+  border: 1px #F3F3F3 solid;
+  display: none;
+  background-color: #FDFDFD;
 }
 
 .text-indent p:first-child {
-  padding-top:0px;
+  padding-top: 5px;
 }
 
 .text-indent p:last-child {
-  padding-bottom:0px;
+  padding-bottom: 5px;
+}
+
+
+/* For hidden text notes */
+.collapsible {
+  background-color: #F3F3F3;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  margin: 0px;
+  margin-top: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11pt;
 }
