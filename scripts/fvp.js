@@ -137,7 +137,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     var treatmentText = function(d) {
       if (d.Treatment != 'None') {
         if (typeof(d.Treatment)=='undefined') {
-          return ''
+          return '';
+        } else if (d.Treatment == 'IPA') {
+          return ', ' + d.Treatment + '';
         } else {
           return ', ' + d.Treatment.toLowerCase() + '';
         }
