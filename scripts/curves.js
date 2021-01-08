@@ -88,7 +88,11 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   var all_codes = [], all_mats = [];
   var treatmentText = function(d) {
     if (d.Treatment != 'None') {
-      return ' + ' + d.Treatment + '';
+      if (typeof(d.Treatment)=='undefined') {
+        return ''
+      } else {
+        return ', ' + d.Treatment.toLowerCase() + '';
+      }
     } else {
       return ''
     }
