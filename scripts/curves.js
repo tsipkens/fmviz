@@ -130,7 +130,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       } else {
         sliceNo = 0;
         for (aa in data) {
-          if (data[aa].SampleCode==codeVal[cc]) { sliceNo = aa; break; }
+          if (data[aa].CaseCode==codeVal[cc]) { sliceNo = aa; break; }
         }
         slicedData[cc] = (data[sliceNo]);
       }
