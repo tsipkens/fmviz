@@ -25,7 +25,7 @@ var margin_pc = {
   bottom: 50,
   left: 60
 }
-  width_pc = 750 - margin_pc.left - margin_pc.right,
+  width_pc = 720 - margin_pc.left - margin_pc.right,
   height_pc = 410 - margin_pc.top - margin_pc.bottom;
 
 // append the svg object to the body of the page
