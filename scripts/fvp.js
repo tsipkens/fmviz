@@ -136,7 +136,11 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     // Add dots with labels for name/treatment
     var treatmentText = function(d) {
       if (d.Treatment != 'None') {
-        return '<span style="color:#DDAAAA"> + ' + d.Treatment + '</span>';
+        if (typeof(d.Treatment)=='undefined') {
+          return ''
+        } else {
+          return ', ' + d.Treatment.toLowerCase() + '';
+        }
       } else {
         return ''
       }
