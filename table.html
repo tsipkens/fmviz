@@ -39,7 +39,7 @@
           content += "<td>" + row.Layers + "</td>";
           if (row.Treatment=="None") {
             content += "<td>-</td>";
-          } else if ((row.Treatment.includes("Launder"))||(row.Treatment=="Soap + washed")) {
+          } else if ((row.Treatment.includes("Launder"))||(row.Treatment.includes("soap"))) {
             content += '<td><font color="#3498DB">' + row.Treatment + '</font></td>';
           } else if (row.Treatment.includes("Heat")) {
             content += '<td><font color="#FFA07A">' + row.Treatment + '</font></td>';
