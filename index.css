@@ -20,9 +20,10 @@ h1 {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 27px;
   margin-bottom: 5px;
-  font-family: Montserrat;
+  font-family: Open Sans;
+  font-weight: 600;
 }
 
 a {
