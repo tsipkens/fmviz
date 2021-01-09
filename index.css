@@ -37,6 +37,16 @@ hr {
   margin-bottom: 35px;
 }
 
+select {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11pt;
+}
+
+option {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11pt;
+}
+
 /*  For navigation */
 .nav {
   display: flex;
