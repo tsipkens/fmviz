@@ -288,7 +288,7 @@
       <p>
         We note that the focus of this data is on
         the <b>MATERIALS</b> themselves. As such, these curves <b>DO NOT</b> consider
-        leakage around the mask. This is another vary important feature in
+        leakage around the mask. This is another very important feature in
         constructing an effective masks but requires different kinds of
         tests that are wearer-specific.
       </p>
@@ -358,22 +358,20 @@
   </div>
 
   <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
 
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
-  }
-
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
   </script>
 
 </body>
