@@ -54,7 +54,7 @@ h3 {
 h4 {
   font-size: 14pt;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a {
@@ -73,17 +73,17 @@ hr {
 }
 
 select {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 11pt;
 }
 
 option {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans',  Arial, sans-serif;
   font-size: 11pt;
 }
 
 .control-label {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /*  For navigation */
@@ -110,7 +110,7 @@ option {
 
 .nav li:first-child {
   margin-right: auto;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans' Arial, sans-serif;
   font-weight: 400;
   font-size: 12pt;
   color: black;
@@ -171,7 +171,7 @@ div.control {
 .axis {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 10pt;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 div.tooltip {
@@ -298,7 +298,7 @@ iframe {
   outline: none;
   margin: 0px;
   margin-top: 12px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 11pt;
   font-weight: 300;
 }
