@@ -9,12 +9,12 @@ function displayDiam(val) {
 // set the dimensions and margins of the graph
 var margin = {
     top: 30,
-    right: 50,
+    right: 60,
     bottom: 50,
-    left: 60
+    left: 70
   },
   width = 870 - margin.left - margin.right,
-  height = 500 - margin.top - margin.bottom;
+  height = 470 - margin.top - margin.bottom;
 
 // for tooltips
 var div_tool = d3.select("body").append("div")
@@ -57,8 +57,10 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .range([0, width]);
     var xAxis = svg.append("g")
       .attr("transform", "translate(0," + height + ")")
+      .attr("class", "axis")
       .call(d3.axisBottom(x));
     var xAxis2 = svg.append("g")
+      .attr("class", "axis")
       .call(d3.axisTop(x));
 
     // Add Y axis
@@ -69,10 +71,32 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .domain([1.05, -0.05])
       .range([height, 0]); // reverse axis for penetration
     svg.append("g")
-      .call(d3.axisLeft(y));
+      .attr("class", "axis")
+      .call(d3.axisLeft(y)
+        .tickFormat(d3.format(".0%")));
     svg.append("g")
       .attr("transform", "translate(" + width + ",0)")
-      .call(d3.axisRight(yrv))
+      .attr("class", "axis")
+      .call(d3.axisRight(yrv)
+        .tickFormat(d3.format(".0%")))
+
+    //-- Add axis labels --//
+    // Add X axis label:
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('x', width / 2)
+      .attr('y', height + 35)
+      .text("Pressure drop [Pa]");
+
+    // Y axis label:
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('transform', 'translate(-42,' + height / 2 + ')rotate(-90)')
+      .text("Filtration efficiency")
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('transform', 'translate(' + (width + 42) + ',' + height / 2 + ')rotate(90)')
+      .text("Penetration")
 
 
 
@@ -113,24 +137,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         .attr("x", x(-9.8 * idx + 82.5))
         .attr("y", y(1 - Math.exp(-(-9.8 * idx + 82.5) / 1000 * qualno)))
     })
-
-    //-- Add axis labels --//
-    // Add X axis label:
-    svg.append("text")
-      .attr("text-anchor", "middle")
-      .attr('x', width / 2)
-      .attr('y', height + 35)
-      .text("Pressure drop [Pa]");
-
-    // Y axis label:
-    svg.append("text")
-      .attr("text-anchor", "middle")
-      .attr('transform', 'translate(-35,' + height / 2 + ')rotate(-90)')
-      .text("Filtration efficiency [fraction]")
-    svg.append("text")
-      .attr("text-anchor", "middle")
-      .attr('transform', 'translate(' + (width + 35) + ',' + height / 2 + ')rotate(90)')
-      .text("Penetration [fraction]")
 
 
     // Add dots with labels for name/treatment
@@ -330,32 +336,32 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
     // legend for circles sizes
     svg_legend.append("text")
-      .attr("x", 188).attr("y", 10)
+      .attr("x", 188).attr("y", 14)
       .text("Material weight").attr("alignment-baseline", "left")
-      .attr('id', 'matdens_label')
+      .attr('class', 'control-label')
     svg_legend.append("circle") // 10 g/cm2
-      .attr("cx", 200).attr("cy", 30)
+      .attr("cx", 200).attr("cy", 32)
       .attr("r", 10 / 125 + 3.5).style("fill", "#333333")
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 30)
+      .attr("x", 215).attr("y", 32)
       .text("10 g/m²").attr("alignment-baseline", "middle")
     svg_legend.append("circle") // 300 g/cm2
-      .attr("cx", 200).attr("cy", 55)
+      .attr("cx", 200).attr("cy", 57)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 300 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 55)
+      .attr("x", 215).attr("y", 57)
       .text("300 g/m²").attr("alignment-baseline", "middle")
     svg_legend.append("circle") // 1000 g/cm2
-      .attr("cx", 200).attr("cy", 80)
+      .attr("cx", 200).attr("cy", 82)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 1000 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 80)
+      .attr("x", 215).attr("y", 82)
       .text("1,000 g/m²").attr("alignment-baseline", "middle")
     //------------------------------------------------------------------------//
 

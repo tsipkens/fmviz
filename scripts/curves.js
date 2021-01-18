@@ -21,9 +21,9 @@ var color_pc = function (keyCode) {
 
 var margin_pc = {
   top: 30,
-  right: 50,
+  right: 55,
   bottom: 50,
-  left: 60
+  left: 65
 }
   width_pc = 720 - margin_pc.left - margin_pc.right,
   height_pc = 410 - margin_pc.top - margin_pc.bottom;
@@ -47,9 +47,13 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .range([0, width_pc]);
   svg_pc.append("g")
     .attr("transform", "translate(0," + height_pc + ")")
-    .call(d3.axisBottom(x_pc));
+    .attr("class", "axis")
+    .call(d3.axisBottom(x_pc)
+      .tickFormat(d3.format(".1f")));
   svg_pc.append("g")
-    .call(d3.axisTop(x_pc));
+    .attr("class", "axis")
+    .call(d3.axisTop(x_pc)
+      .tickFormat(d3.format(".1f")));
 
   // Add Y axis
   var y_pc = d3.scaleLinear()
@@ -59,10 +63,14 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .domain([1 + 0.15, 1 - 1.15])
     .range([height_pc, 0]); // reverse axis for penetration
   svg_pc.append("g")
-    .call(d3.axisLeft(y_pc));
+    .attr("class", "axis")
+    .call(d3.axisLeft(y_pc)
+      .tickFormat(d3.format(".0%")));
   svg_pc.append("g")
     .attr("transform", "translate(" + width_pc + ",0)")
-    .call(d3.axisRight(yrv_pc))
+    .attr("class", "axis")
+    .call(d3.axisRight(yrv_pc)
+      .tickFormat(d3.format(".0%")))
 
 
   //-- Add axis labels --//
@@ -76,12 +84,12 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   // Y axis label:
   svg_pc.append("text")
     .attr("text-anchor", "middle")
-    .attr('transform', 'translate(-35,' + height_pc / 2 + ')rotate(-90)')
-    .text("Filtration efficiency [fraction]")
+    .attr('transform', 'translate(-42,' + height_pc / 2 + ')rotate(-90)')
+    .text("Filtration efficiency")
   svg_pc.append("text")
     .attr("text-anchor", "middle")
-    .attr('transform', 'translate(' + (width_pc + 35) + ',' + height_pc / 2 + ')rotate(90)')
-    .text("Penetration [fraction]")
+    .attr('transform', 'translate(' + (width_pc + 42) + ',' + height_pc / 2 + ')rotate(90)')
+    .text("Penetration")
 
 
   // get all material codes

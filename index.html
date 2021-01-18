@@ -11,7 +11,7 @@
   <meta property="og:title" content="FMViz: Face mask filtration" />
   <meta property="og:image" content="https://tsipkens.github.io/fmviz/imgs/00_fmviz_preview.png" />
   <meta property="og:site_name" content="FMViz" />
-  <meta property="og:description" content="These visualizations examine the filtration properties of common face mask materials, using the data from Rogak et al." />
+  <meta property="og:description" content="These visualizations examine the filtration properties of common face mask materials, using the data from Rogak et al. (2021)" />
 
   <meta name="author" content="Timothy Sipkens" />
   <meta name="keywords" content="face mask, mask filtration, experiment, viz, COVID-19, science, aerosols, PPE" />
@@ -21,7 +21,7 @@
   <meta name=”twitter:url” content="https://tsipkens.github.io/fmviz" />
   <meta name="twitter:site" content="@tsipkens" />
   <meta name="title" property="twitter:title" content="FMViz: Face mask filtration" />
-  <meta name=”twitter:description” content="These visualizations examine the filtration properties of common face mask materials, using the data from Rogak et al." />
+  <meta name=”twitter:description” content="These visualizations examine the filtration properties of common face mask materials, using the data from Rogak et al. (2021)" />
   <meta name="twitter:image" content="https://tsipkens.github.io/fmviz/imgs/00_fmviz_preview.png" />
 
   <link rel="icon" type="image/png" href="https://tsipkens.github.io/fmviz/imgs/icon.png" />
@@ -30,7 +30,7 @@
   <script src="https://d3js.org/d3.v4.js"></script>
 
   <!-- Load fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:&family=Open+Sans:&family=Roboto:display=swap" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
 </head>
 
@@ -42,8 +42,10 @@
   <div class="navbar-custom">
     <div id="navbar">
       <ul class="nav">
-        <li><b style="font-family:Montserrat;font-size:15px;color:black;">FACE MASK<br>FILTRATION</b></li>
-        <li><a href="https://arxiv.org/abs/2008.06001">Created by Timothy Sipkens in cooperation with<br>Rogak, Guan, Nikookar, Figueroa, and Wang</a></li>
+        <li>FACE MASK FILTRATION</li>
+        <li><a href="#hfvp">FILTRATION V. PRESSURE DROP</a></li>
+        <li><a href="#hdiy">DESIGN YOUR OWN MASK</a></li>
+        <li><a href="#htable">DATA TABLE</a></li>
       </ul>
     </div>
   </div>
@@ -51,8 +53,10 @@
   <div class="main">
 
 
-    <h1 style="padding-top:45px;color:#F69E00;margin-bottom:0px;">FACE MASKS</h1>
-    <h1 style="font-size:16px;font-family:Roboto;margin-top:0px;padding-bottom:30px">How good are common materials at filtration?</h1>
+    <h1 style="padding-top:45pt;margin-bottom:0px;">FACE MASKS</h1>
+    <h3 style="margin-top:0px;padding-bottom:30px;text-align:center">
+      How good are common materials at filtering the particles<br>relevant for constructing face masks?
+    </h1>
 
     <div style="text-align:center;padding-bottom:30px;">
       <img src="imgs/header_img.svg" style="width:20%;max-width:400px;">
@@ -83,11 +87,11 @@
 
   <div class="main">
 
-    <h2>FILTRATION & PRESSURE DROP</h2>
+    <h2 id="hfvp">FILTRATION & PRESSURE DROP</h2>
 
     <p>
       This first viz uses data from
-      <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al</a>
+      <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a>
       to examine the filtration properties of face masks alongside a
       second important property: <b>pressure drop</b>.
       Filtration has rather intuitive consequences for face masks. If a face
@@ -144,7 +148,7 @@
         (within the limits of the current measurement apparatus), such that the quality approached ∞.
         Calculations use the natural number as a base and pressures in kPa.
         For more details on how quality is defined and what it means, we refer the reader
-        to <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al.</a> and the references
+        to <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a> and the references
         therein.
       </p>
     </div>
@@ -210,7 +214,9 @@
 
   <div class="main">
 
-    <h2>SIZE-RESOLVED, MULTI-LAYERED MASK FILTRATION</h2>
+    <h2 id="hdiy">DESIGN YOUR OWN MASK</h2>
+
+    <h3>Considering size-resolved, multi-layer mask filtration.</h3>
 
     <p>
       Not all particle sizes are filtered in the same way. For example, small particles
@@ -229,7 +235,7 @@
       the black, dashed line corresponds to an estimate combining all of the
       selected feature layers.
       Estimates for multi-layered masks are only <b>APPROXIMATE</b>, computed using
-      the product of filtration efficiencies for individual layers.
+      the product of the particle penetration for individual layers.
     </p>
 
     <p>
@@ -247,7 +253,7 @@
         The most penetrating particle size (MPPS), that is, the minimum
         in these kinds of curves, typically occurs in the 50-500 nm range and
         is the focus of several other similar studies (see references in
-        <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al.</a>). Here we
+        <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a>). Here we
         focus on the larger particles, which remain relevant for bioaerosol applications.
       </p>
     </div>
@@ -258,7 +264,7 @@
         Not necessarily! This viz does not give an indication of the feasibility of the different layers,
         as they do not have a standardized weight, pressure drop, thickness, or compatibility.
         We again refer the interested reader to
-        <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al.</a>
+        <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a>
         for a more detailed discussion.
       </p>
     </div>
@@ -305,7 +311,7 @@
 
   <div class="main">
 
-    <h2>TABLE OF FILTRATION AT 2.8 MICRONS</h2>
+    <h2 id="htable">TABLE OF FILTRATION AT 2.8 MICRONS</h2>
 
     <p>
       The following table lists the filtration efficiency for
@@ -326,16 +332,18 @@
   <div class="footer" stlye="bottom:0px;">
     <div class="main" style="padding-top:0px;padding-bottom:0px;">
 
-      <h4>SOURCE DATA AND CITING THIS WORK</h4>
+      <h3>SOURCE DATA AND CITING THIS WORK</h4>
+
+      <p>
+        This graphic was created by Timothy Sipkens in cooperation with Rogak, Guan, Nikookar, Figueroa, and Wang
+        from the Univeristy of British Columbia and is associated with
+        <a href="https://arxiv.org/abs/2008.06001">this paper</a>.
+      </p>
 
       <p>
         Source data for this viz is available in the supporting Github repository
         <a href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">here</a>.
         This package is released under an <a href="LICENSE">GNU GPLv3 license</a>.
-        This work was completed by researchers at the University of British Columbia.
-      </p>
-
-      <p>
         Consider citing this repository directly, as well as the corresponding paper:
         <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321"> S. N. Rogak, T. A. Sipkens, M. Guan,
           H. Nikookar, D. V. Figueroa, J. Wang.
@@ -349,8 +357,8 @@
       </p>
 
       <p style="padding-bottom:50px;">
-        This graphic is not fully compatible with Internet Explorer.
-        This page has been tested with the latest releases of Edge, Chrome, or Firefox.
+        This page has been tested with the latest releases of Edge, Chrome, and Firefox,
+        as of December 2020.
       </p>
 
 
