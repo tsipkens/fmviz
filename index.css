@@ -2,7 +2,7 @@ body {
   margin: auto 0px;
   padding: 0px;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 11pt;
   min-height: 100%;
 }
@@ -21,7 +21,7 @@ b {
 h1 {
   text-align: center;
   font-size: 53pt;
-  font-family: Montserrat;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 200;
   color: #F69E00;
 }
