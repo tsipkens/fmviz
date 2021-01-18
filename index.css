@@ -2,7 +2,7 @@ body {
   margin: auto 0px;
   padding: 0px;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 11pt;
   min-height: 100%;
 }
@@ -22,7 +22,7 @@ h1 {
   text-align: center;
   font-size: 53pt;
   font-family: Montserrat;
-  font-weight: 300;
+  font-weight: 200;
   color: #F69E00;
 }
 
@@ -30,7 +30,7 @@ h2 {
   font-size: 27pt;
   margin-bottom: 5px;
   font-family: Open Sans;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 /* Accommodates for header bar to correct position jump-to links */
@@ -48,7 +48,7 @@ h3 {
   font-size: 14pt;
   margin-bottom: 9.5px;
   font-family: Open Sans;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 h4 {
@@ -171,7 +171,7 @@ div.control {
 .axis {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 10pt;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 div.tooltip {
@@ -200,7 +200,7 @@ div.tooltip {
 /* Associated with table of data */
 table {
   font-family: 'Open Sans', Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 11pt;
   border-collapse: collapse;
   width: 100%;
@@ -300,5 +300,5 @@ iframe {
   margin-top: 12px;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 11pt;
-  font-weight: 300;
+  font-weight: 200;
 }
