@@ -99,7 +99,6 @@ header {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 80%; /* Full width */
-  height: 5%;
 }
 
 .nav-list {
@@ -126,7 +125,7 @@ header {
 a.anchor {
   display: block;
   position: relative;
-  top: -80px;
+  top: -60px;
   visibility: hidden;
 }
 
