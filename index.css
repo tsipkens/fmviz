@@ -154,12 +154,12 @@ div.control {
 .cbMaterial {
   width: 10px;
   height: 10px;
+  margin-right: 3px;
 }
 
 /*  */
 .column {
   float: left;
-  width: 50%;
 }
 
 /* Clear floats after the columns */
