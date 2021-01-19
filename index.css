@@ -81,10 +81,6 @@ option {
   font-size: 11pt;
 }
 
-.control-label {
-  font-weight: 600;
-}
-
 /*  For navigation */
 header {
   display: flex;
@@ -168,6 +164,16 @@ div.control {
 /*  */
 .column {
   float: left;
+}
+
+.control-label {
+  font-weight: 600;
+}
+
+.p-control-column {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-align:left
 }
 
 /* Clear floats after the columns */
