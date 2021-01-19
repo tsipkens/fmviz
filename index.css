@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@300&family=Righteous&display=swap');
 
 * {
   padding: 0;
@@ -92,13 +92,13 @@ header {
   align-items: center;
   background-color: #FAFAFA;
   margin: 0px;
-  padding: 15px 10%;
+  padding: 0px;
   border-bottom: 1px solid #DDDDDD;
   font-size: 10pt;
   z-index: 20;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
-  width: 80%; /* Full width */
+  width: 100%;
 }
 
 .nav-list {
@@ -107,7 +107,7 @@ header {
 
 .nav-list li {
   display: inline-block;
-  padding: 5px 20px;
+  padding: 0.5% 10px;
 }
 
 .nav-link {

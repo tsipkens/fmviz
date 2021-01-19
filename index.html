@@ -38,17 +38,16 @@
 
 
 <body>
-
     <header id="navbar">
-      <a href="#h1" style="font-family: 'Open Sans' Arial, sans-serif; font-weight: 600; font-size: 15pt; text-decoration: none;">FMVIZ</a>
+      <a href="#h1" style="font-family:'Righteous';font-size:18pt;text-decoration:none;padding:15px 10px 15px 5%;">fmviz</a>
       <nav>
         <ul class="nav-list">
           <li><a href="#hfvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
           <li><a href="#hdiy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
         </ul>
       </nav>
-      <a href="#htable" class="nav-link">
-        <div style="display: flex; vertical-align: middle;">
+      <a href="#htable" class="nav-link" style="padding:15px 5% 15px 10px;">
+        <div style="display:flex;vertical-align:middle;">
           <img src="https://tsipkens.github.io/fmviz/imgs/data.svg" style="height:14pt; padding-right:5px;"></img>
           <span>LINK TO DATA</span>
         </div>
@@ -59,9 +58,9 @@
   <div class="main">
 
     <!-- Accounts for fixed navbar -->
+    <a class="anchor" id="h1"></a>
     <div style="padding-top:60px;"></div>
 
-    <a class="anchor" id="h1"></a>
     <h1 style="margin-bottom:0px;padding-bottom:0px;">FACE MASKS</h1>
     <h3 style="margin-top:0px;padding-top:0px;padding-bottom:30px;text-align:center;">
       <div style="margin:auto;width:100%;max-width:500px;">How good are common materials at filtering the particles relevant for constructing face masks?</span>
@@ -335,18 +334,28 @@
     <h2>SOURCE DATA</h2>
 
     <p>
-      Source data in CSV format is available in a supporting Github repository at
-      <a href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">https://github.com/tsipkens/fmviz/blob/main/data/fm.csv</a>.
-      Full details including the the quality and other properties for all of
-      the materials and treatments is available there.
+      Source data in CSV format is available online at:
+    </p>
+
+    <div style="display:flex;vertical-align:middle;">
+      <img src="https://tsipkens.github.io/fmviz/imgs/data.svg" style="height:14pt; padding-right:5px;"></img>
+      <a href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">https://github.com/tsipkens/fmviz/blob/main/data/fm.csv</a>
+    </div>
+
+
+    <p>
+      This includes full details including the the quality and other properties for all of
+      the materials and santization treatments.
       This package is released under an <a href="LICENSE">GNU GPLv3 license</a>.
+      Code supporting this web app is also openly available in the
+      associated <a href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">GitHub repository</a>.
     </p>
 
   </div>
 
 
   <div class="footer" id="hfooter" stlye="bottom:0px;">
-    <div class="main" style="padding-top:0px;padding-bottom:0px;">
+    <div class="main" style="padding-top:20px;padding-bottom:20px;">
 
       <h3>CITATION AND ACKNOWLEDGEMENTS</h4>
 
@@ -354,6 +363,9 @@
         This graphic was created by Timothy Sipkens in cooperation with Rogak, Guan, Nikookar, Figueroa, and Wang
         from the Univeristy of British Columbia and is associated with
         <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">this paper</a>.
+        The authors can be contacted at
+        <a href="mailto:tsipkens@mail.ubc.ca">tsipkens@mail.ubc.ca</a> or
+        <a href="mailto:rogak@mech.ubc.ca">rogak@mech.ubc.ca</a>.
       </p>
 
       <p>
