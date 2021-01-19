@@ -248,7 +248,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           StructureCode: d.StructureCode,
           SimpleName: d.SimpleName,
           BasicCode: d.BasicCode,
-          SampleCode: d.SampleCode
+          SampleCode: d.SampleCode,
+          CaseCode: d.CaseCode
         }
       })
 
