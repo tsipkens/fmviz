@@ -29,8 +29,7 @@
   <!-- Load d3.js -->
   <script src="https://d3js.org/d3.v4.js"></script>
 
-  <!-- Load fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <!-- Load styles -->
   <link href="index.css" rel="stylesheet">
 </head>
 
@@ -38,18 +37,20 @@
 
 <body>
 
+    <header id="navbar">
+      <div style="font-family: 'Open Sans' Arial, sans-serif; font-weight: 600; font-size: 15pt; color: black;">FMVIZ</div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#hfvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
+          <li><a href="#hdiy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
+        </ul>
+      </nav>
+      <div style="display: flex; vertical-align: middle;">
+        <img src="https://tsipkens.github.io/fmviz/imgs/data.svg" style="height:14pt; padding-right:5px;">
+        <a href="#htable" class="nav-link">LINK TO DATA</a>
+      </div>
+    </header>
 
-  <div class="navbar-custom">
-    <div id="navbar">
-      <ul class="nav">
-        <li>FACE MASK FILTRATION</li>
-        <li><a href="#hfvp">FILTRATION V. PRESSURE DROP</a></li>
-        <li><a href="#hdiy">DESIGN YOUR OWN MASK</a></li>
-        <li><a href="#htable">DATA TABLE</a></li>
-        <li><a href="#hfooter">SOURCE AND CITING</a></li>
-      </ul>
-    </div>
-  </div>
 
   <div class="main">
 
@@ -64,7 +65,7 @@
     </div>
 
     <p>
-      The primary function of any mask is to filter particle contaminants out of air as it passes
+      The primary function of any mask is to filter particles out of the air that passes
       through the mask, which is relevant to preventing the spread of the COVID-19
       and other respiratory diseases. Filtration occurs as a result of several mechanisms, including
       <b>impaction</b>, <b>interception</b>, <b>diffusion</b>,
@@ -91,7 +92,7 @@
     <h2 id="hfvp">FILTRATION & PRESSURE DROP</h2>
 
     <p>
-      This first viz uses data from
+      This first graphic uses data from
       <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a>
       to examine the filtration properties of face masks alongside a
       second important property: <b>pressure drop</b>.
@@ -112,6 +113,9 @@
       these properties for some common materials. Uncertainties in the data are generally larger for low
       fitration efficiencies (negative filtration efficiencies occasionally reflect this; they
       are artifacts of the measurements and are not physical).
+      Generally materials in the upper-left region of the plot (high filtration, low pressure drop)
+      are the best. N95 masks are located on the upper axis,
+      effectively filtering 100% of particles at these sizes.
     </p>
 
     <button type="button" class="collapsible">+ Why are some of the materials identified by their physcial colour?</button>
@@ -157,15 +161,14 @@
     <button type="button" class="collapsible">+ What do the extra letters in brackets mean (e.g., W5)?</button>
     <div class="text-indent">
       <p>
-        In the associated paper and throughout this web app, studied cases are coded according
-        to their structure, number of layers, and santization treatment. For example, a code
-        denoting a knit material that has been laundered multiple times is
-        <b>K4x4 WDx4</b>. A list of the codes is included in the table at the bottom
-        of this page.
+        Simply put, these are codes we assign to each case, composed of characters
+        identifying a material, its structure, number of layers used during measurement,
+        and treatment applied (e.g., laundered), if any. In most instances, the reader can
+        ignore these codes.
       </p>
 
       <p>
-        Expanding on the various components of this code:
+        For those more interested in these codes, we expand the various components:
       </p>
 
       <p>
@@ -203,6 +206,13 @@
         If santization was repeatedly applied, this latter part of the code
         will also be appended with <b>x*</b> (e.g., <b>WDx10</b> denotes
         materials laundered ten times).
+      </p>
+
+      <p>
+        For example, a code
+        denoting a knit material that has been laundered multiple times is
+        <b>K4x4 WDx4</b>. A list of the codes is included in the table at the bottom
+        of this page.
       </p>
     </div>
 
@@ -322,10 +332,11 @@
 
   </div>
 
+
   <div class="footer" id="hfooter" stlye="bottom:0px;">
     <div class="main" style="padding-top:0px;padding-bottom:0px;">
 
-      <h3>SOURCE DATA AND CITING THIS WORK</h4>
+      <h3>CITATION AND ACKNOWLEDGEMENTS</h4>
 
       <p>
         This graphic was created by Timothy Sipkens in cooperation with Rogak, Guan, Nikookar, Figueroa, and Wang
@@ -334,19 +345,11 @@
       </p>
 
       <p>
-        Source data for this viz is available in the supporting Github repository
-        <a href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">here</a>.
-        This package is released under an <a href="LICENSE">GNU GPLv3 license</a>.
         Consider citing this repository directly, as well as the corresponding paper:
         <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321"> S. N. Rogak, T. A. Sipkens, M. Guan,
           H. Nikookar, D. V. Figueroa, J. Wang.
           "Properties of materials considered for improvised masks."
           <i>Aerosol Science and Technology</i>. In press. doi: 10.1080/02786826.2020.1855321</a>.
-      </p>
-
-      <p>
-        We would also like to acknowledge the <a href="http://www.freemaskprojectvancouver.com/">Free Mask Project</a> for their
-        involvement and Eric Cytrynbaum for constructive feedback.
       </p>
 
       <p>
@@ -357,6 +360,11 @@
         improvised mask materials is the data compiled by
         <a href="https://www.maskfaq.com/testresults">Schempf (2020)</a> and
         the Michigan Mask Response team.
+      </p>
+
+      <p>
+        We would also like to acknowledge the <a href="http://www.freemaskprojectvancouver.com/">Free Mask Project</a> for their
+        involvement and Eric Cytrynbaum for constructive feedback.
       </p>
 
       <p style="padding-bottom:50px;">

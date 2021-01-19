@@ -1,6 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@300&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  margin: auto 0px;
-  padding: 0px;
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 300;
   font-size: 11pt;
@@ -22,7 +28,7 @@ h1 {
   text-align: center;
   font-size: 53pt;
   font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   color: #F69E00;
 }
 
@@ -59,6 +65,8 @@ h4 {
 
 a {
   color: #222222;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 
 a:hover {
@@ -87,42 +95,39 @@ option {
 }
 
 /*  For navigation */
-.nav {
+header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #FAFAFA;
-  list-style: none;
   margin: 0px;
-  padding: 0px;
+  padding: 15px 10%;
   border-bottom: 1px solid #DDDDDD;
-  position: fixed;
-  width: 100%;
   font-size: 10pt;
   z-index: 20;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 80%; /* Full width */
 }
 
-.nav li {
-  display: block;
-  padding: 20px;
-  padding-left: 25px;
-  padding-right: 25px;
-  text-align: left;
+.nav-list {
+  list-style: none;
 }
 
-.nav li:first-child {
-  margin-right: auto;
-  font-family: 'Open Sans' Arial, sans-serif;
-  font-weight: 400;
-  font-size: 12pt;
-  color: black;
+.nav-list li {
+  display: inline-block;
+  padding: 5px 20px;
 }
 
-.nav li a {
-  color: #666666;
+.nav-link {
   text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease 0s;
+  font-weight: 400;
 }
 
-.nav li a:hover {
-  color: #000000;
+.nav-link:hover {
+  color: #F69E00;
 }
 
 div.footer {
@@ -257,13 +262,7 @@ iframe {
 .iframe-container2 {
   margin-top:15px;
   overflow: hidden;
-  padding-top: 620px;
-  position: relative;
-}
-
-.iframe-container3 {
-  overflow: hidden;
-  padding-top: 3900px;
+  padding-top: 640px;
   position: relative;
 }
 
@@ -273,13 +272,11 @@ iframe {
   padding-bottom:15px;
   padding-left:18px;
   padding-right:18px;
-  border: 1px #F3F3F3 solid;
   display: none;
-  background-color: #FDFDFD;
 }
 
 .text-indent p:first-child {
-  padding-top: 5px;
+  padding-top: 0px;
 }
 
 .text-indent p:last-child {
@@ -289,16 +286,22 @@ iframe {
 
 /* For hidden text notes */
 .collapsible {
-  background-color: #F3F3F3;
+  background-color: #EEE;
   cursor: pointer;
   padding: 15px;
   width: 100%;
   border: none;
+  border-radius: 30px;
   text-align: left;
   outline: none;
   margin: 0px;
-  margin-top: 12px;
+  margin-top: 10px;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 11pt;
   font-weight: 200;
+  transition: all 0.3s ease 0s;
+}
+
+.collapsible:hover {
+  background-color: #FFBE66;
 }
