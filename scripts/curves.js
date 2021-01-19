@@ -130,13 +130,13 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       }
   }
 
-  populateDropDown(document.getElementById("selectCode"));
-  populateDropDown(document.getElementById("selectCode2"));
-  populateDropDown(document.getElementById("selectCode3"));
+  populateDropDown(document.getElementById("select-code"));
+  populateDropDown(document.getElementById("select-code2"));
+  populateDropDown(document.getElementById("select-code3"));
 
-  document.getElementById("selectCode").value = currentCodes[0];
-  document.getElementById("selectCode2").value = currentCodes[1];
-  document.getElementById("selectCode3").value = currentCodes[2];
+  document.getElementById("select-code").value = currentCodes[0];
+  document.getElementById("select-code2").value = currentCodes[1];
+  document.getElementById("select-code3").value = currentCodes[2];
 
   var getDataFromCode = function (codeVal) {
     var slicedData = []
@@ -340,19 +340,19 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     updateMaskColor(currentCodes[2], 2)
 
   // dropdown menus picking different layer materials
-  d3.select("#selectCode").on("change", function() {
+  d3.select("#select-code").on("change", function() {
     currentCodes[0] = this.value;
     updateMaskColor(currentCodes[0], 0)
     updateCurve(currentCodes)
   })
 
-  d3.select("#selectCode2").on("change", function() {
+  d3.select("#select-code2").on("change", function() {
     currentCodes[1] = this.value;
     updateMaskColor(currentCodes[1], 1)
     updateCurve(currentCodes)
   })
 
-  d3.select("#selectCode3").on("change", function() {
+  d3.select("#select-code3").on("change", function() {
     currentCodes[2] = this.value;
     updateMaskColor(currentCodes[2], 2)
     updateCurve(currentCodes)

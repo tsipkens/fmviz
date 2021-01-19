@@ -24,7 +24,7 @@
       </pattern>
     </defs>
   </svg>
-
+  
   <div>
 
     <h4 style="margin-block-start: 0.4em; margin-block-end: 0.4em;">Legend</h4>
@@ -39,14 +39,14 @@
       <i>d</i><sub>a</sub> = <output id="da">2.756</output> microns
     </div>
 
-    <div>
-      <span class="control-label">Material types</span>:
-      <input type="checkbox" class="cbMaterial" value="W" checked><label>Woven</label>
-      | <input type="checkbox" class="cbMaterial" value="K" checked><label>Knit</label>
-      | <input type="checkbox" class="cbMaterial" value="CP" checked><label>Cut pile</label>
-      | <input type="checkbox" class="cbMaterial" value="nW" checked><label>Non-woven</label>
-      | <input type="checkbox" class="cbMaterial" value="nWH" checked><label>Non-woven, Halyard</label>
-      | <input type="checkbox" class="cbMaterial" value="ML" checked><label>Multi-layer</label>
+    <div style="display:flex;">
+      <span class="control-label" style="flex: 0 0 auto;">Material types</span>:
+      <div class="cb-wrapper" style="border:none;padding-left:0px"><input type="checkbox" class="cb-material" value="W" checked><label>Woven</label></div>
+      <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="K" checked><label>Knit</label></div>
+      <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="CP" checked><label>Cut pile</label></div>
+      <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="nW" checked><label>Non-woven</label></div>
+      <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="nWH" checked><label>Non-woven, Halyard</label></div>
+      <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="ML" checked><label>Multi-layer</label></div>
     </div>
 
     <!-- Create a div where the graph will take place -->

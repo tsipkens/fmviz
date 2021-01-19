@@ -151,10 +151,18 @@ div.control {
   padding-bottom: 5px;
 }
 
-.cbMaterial {
-  width: 10px;
-  height: 10px;
+.cb-material {
+  width: 12px;
+  height: 12px;
   margin-right: 3px;
+}
+
+.cb-wrapper {
+  display: block;
+  padding-left: 5px;
+  margin-left: 5px;
+  border-left: 1px solid black;
+  flex: 0 0 auto;
 }
 
 /*  */
@@ -254,12 +262,12 @@ iframe {
 
 .iframe-container1 {
   overflow: hidden;
-  padding-top:770px;
+  padding-top: 770px;
   position: relative;
 }
 
 .iframe-container2 {
-  margin-top:15px;
+  margin-top: 15px;
   overflow: hidden;
   padding-top: 640px;
   position: relative;

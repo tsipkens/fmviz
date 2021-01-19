@@ -267,7 +267,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     function updateMaterial(data) {
 
       // For each check box:
-      d3.selectAll(".cbMaterial").each(function(d) {
+      d3.selectAll(".cb-material").each(function(d) {
         cb = d3.select(this);
         mat = cb.property("value")
 
@@ -295,7 +295,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     }
 
     // When a button change, I run the update function
-    d3.selectAll(".cbMaterial").on("change", updateMaterial);
+    d3.selectAll(".cb-material").on("change", updateMaterial);
 
     // And I initialize it at the beginning
     updateMaterial();
