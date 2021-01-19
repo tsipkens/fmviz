@@ -29,14 +29,15 @@ h1 {
   font-size: 53pt;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 300;
-  color: #F69E00;
+  padding:20px;
 }
 
 h2 {
   font-size: 27pt;
-  margin-bottom: 5px;
+  padding-bottom: 5px;
   font-family: Open Sans;
   font-weight: 200;
+  padding-top: 30px;
 }
 
 /* Accommodates for header bar to correct position jump-to links */
