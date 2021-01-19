@@ -40,17 +40,6 @@ h2 {
   padding-top: 30px;
 }
 
-/* Accommodates for header bar to correct position jump-to links */
-/* See https://css-tricks.com/hash-tag-links-padding/ */
-h2::before {
-  display: block;
-  content: " ";
-  margin-top: -100px;
-  height: 100px;
-  visibility: hidden;
-  pointer-events: none;
-}
-
 h3 {
   font-size: 14pt;
   margin-bottom: 9.5px;
@@ -84,6 +73,7 @@ hr {
 select {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 11pt;
+  border-radius: 22pt;
 }
 
 option {
@@ -109,6 +99,7 @@ header {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 80%; /* Full width */
+  height: 5%;
 }
 
 .nav-list {
@@ -125,10 +116,18 @@ header {
   color: #333;
   transition: all 0.3s ease 0s;
   font-weight: 400;
+  top: -500px;
 }
 
 .nav-link:hover {
   color: #F69E00;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -80px;
+  visibility: hidden;
 }
 
 div.footer {
