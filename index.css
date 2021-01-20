@@ -70,7 +70,7 @@ a {
 }
 
 a:hover {
-  color: #F69E00;
+  color: #E81F7B;
 }
 
 hr {
@@ -125,7 +125,7 @@ header {
 }
 
 .nav-link:hover {
-  color: #F69E00;
+  color: #E81F7B;
 }
 
 a.anchor {
@@ -326,7 +326,7 @@ iframe {
 }
 
 .collapsible:hover {
-  background-color: #FFBE66;
+  background-color: #F78D8F;
 }
 
 .collapsible-ol {
