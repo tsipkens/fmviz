@@ -19,7 +19,7 @@ html {
 body {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 300;
-  font-size: 11pt;
+  font-size: 12pt;
   min-height: 100%;
 }
 
@@ -82,13 +82,13 @@ hr {
 
 select {
   font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 11pt;
+  font-size: 12pt;
   border-radius: 22pt;
 }
 
 option {
   font-family: 'Open Sans',  Arial, sans-serif;
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 /*  For navigation */
@@ -229,7 +229,7 @@ div.tooltip {
 table {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 200;
-  font-size: 11pt;
+  font-size: 12pt;
   border-collapse: collapse;
   width: 100%;
 }
@@ -320,7 +320,7 @@ iframe {
   margin: 0px;
   margin-top: 10px;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 11pt;
+  font-size: 12pt;
   font-weight: 200;
   transition: all 0.3s ease 0s;
 }
