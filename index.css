@@ -36,14 +36,14 @@ b {
 
 h1 {
   text-align: center;
-  font-size: 53pt;
+  font-size: 58pt;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 300;
   padding:20px;
 }
 
 h2 {
-  font-size: 27pt;
+  font-size: 32pt;
   padding-bottom: 5px;
   font-family: Open Sans;
   font-weight: 200;
@@ -51,7 +51,7 @@ h2 {
 }
 
 h3 {
-  font-size: 14pt;
+  font-size: 16pt;
   margin-bottom: 9.5px;
   font-family: Open Sans;
   font-weight: 200;
@@ -82,13 +82,16 @@ hr {
 
 select {
   font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 12pt;
+  font-size: 11pt;
   border-radius: 22pt;
+  font-weight: 300;
+  padding-left: 4px;
 }
 
 option {
   font-family: 'Open Sans',  Arial, sans-serif;
-  font-size: 12pt;
+  font-size: 11pt;
+  font-weight: 300;
 }
 
 /*  For navigation */
