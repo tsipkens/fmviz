@@ -1,15 +1,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@300&display=swap');
 
+/* text highlighting */
+@keyframes yellowfade {
+  from { background: yellow; }
+  to { background: transparent; }
+}
+
 * {
   padding: 0;
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 300;
-  font-size: 11pt;
+  font-size: 12pt;
   min-height: 100%;
 }
 
@@ -26,14 +36,14 @@ b {
 
 h1 {
   text-align: center;
-  font-size: 53pt;
+  font-size: 58pt;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 300;
   padding:20px;
 }
 
 h2 {
-  font-size: 27pt;
+  font-size: 32pt;
   padding-bottom: 5px;
   font-family: Open Sans;
   font-weight: 200;
@@ -41,7 +51,7 @@ h2 {
 }
 
 h3 {
-  font-size: 14pt;
+  font-size: 16pt;
   margin-bottom: 9.5px;
   font-family: Open Sans;
   font-weight: 200;
@@ -60,7 +70,7 @@ a {
 }
 
 a:hover {
-  color: #F69E00;
+  color: #E81F7B;
 }
 
 hr {
@@ -74,11 +84,14 @@ select {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 11pt;
   border-radius: 22pt;
+  font-weight: 300;
+  padding-left: 4px;
 }
 
 option {
   font-family: 'Open Sans',  Arial, sans-serif;
   font-size: 11pt;
+  font-weight: 300;
 }
 
 /*  For navigation */
@@ -88,13 +101,13 @@ header {
   align-items: center;
   background-color: #FAFAFA;
   margin: 0px;
-  padding: 15px 10%;
+  padding: 0px;
   border-bottom: 1px solid #DDDDDD;
   font-size: 10pt;
   z-index: 20;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
-  width: 80%; /* Full width */
+  width: 100%;
 }
 
 .nav-list {
@@ -103,7 +116,7 @@ header {
 
 .nav-list li {
   display: inline-block;
-  padding: 5px 20px;
+  padding: 0.5% 10px;
 }
 
 .nav-link {
@@ -115,7 +128,7 @@ header {
 }
 
 .nav-link:hover {
-  color: #F69E00;
+  color: #E81F7B;
 }
 
 a.anchor {
@@ -219,7 +232,7 @@ div.tooltip {
 table {
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 200;
-  font-size: 11pt;
+  font-size: 12pt;
   border-collapse: collapse;
   width: 100%;
 }
@@ -310,13 +323,13 @@ iframe {
   margin: 0px;
   margin-top: 10px;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 11pt;
+  font-size: 12pt;
   font-weight: 200;
   transition: all 0.3s ease 0s;
 }
 
 .collapsible:hover {
-  background-color: #FFBE66;
+  background-color: #AFF2D1;
 }
 
 .collapsible-ol {

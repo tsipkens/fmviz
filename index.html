@@ -33,22 +33,23 @@
 
   <!-- Load styles -->
   <link href="index.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 
 
 
 <body>
-
     <header id="navbar">
-      <a href="" style="font-family: 'Open Sans' Arial, sans-serif; font-weight: 600; font-size: 15pt; text-decoration: none;">FMVIZ</a>
+      <a href="#h1" style="font-family:'Righteous',sans-serif;font-size:18pt;text-decoration:none;padding:15px 10px 15px 5%;">fmviz</a>
       <nav>
         <ul class="nav-list">
           <li><a href="#hfvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
           <li><a href="#hdiy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
         </ul>
       </nav>
-      <a href="#htable" class="nav-link">
-        <div style="display: flex; vertical-align: middle;">
+      <a href="#htable" class="nav-link" id="data-link-a" style="padding:15px 5% 15px 10px;" onclick="highlightDataLink()">
+        <div style="display:flex;vertical-align:middle;">
           <img src="https://tsipkens.github.io/fmviz/imgs/data.svg" style="height:14pt; padding-right:5px;"></img>
           <span>LINK TO DATA</span>
         </div>
@@ -59,6 +60,7 @@
   <div class="main">
 
     <!-- Accounts for fixed navbar -->
+    <a class="anchor" id="h1"></a>
     <div style="padding-top:60px;"></div>
 
     <h1 style="margin-bottom:0px;padding-bottom:0px;">FACE MASKS</h1>
@@ -79,7 +81,8 @@
     </p>
 
     <div style="text-align:center;">
-      <img src="imgs/01_schem.svg" style="max-width:800px;width:100%;padding-top:10px;"></img>
+      <img src="imgs/01_schem1.svg" style="max-width:400px;width:100%;padding:13px;padding-bottom:0px;"></img>
+      <img src="imgs/01_schem2.svg" style="max-width:400px;width:100%;padding:13px;padding-bottom:0px;"></img>
     </div>
 
     <p>
@@ -111,7 +114,7 @@
       Pressure drop denotes resistance. In this respect,
       a low pressure drop is preferable for two reasons. It (1) makes
       for a more breathable mask, which is less likely to irritate the wearer, and
-      (2) results in less leakage around the mask, improving
+      (2) results in less leakage, improving
       the overall utility of the mask.
     </p>
 
@@ -124,6 +127,50 @@
       are the best. N95 masks are located on the upper axis,
       effectively filtering 100% of particles at these sizes.
     </p>
+
+    <a class="anchor" id="leakage-note"></a>
+    <button type="button" class="collapsible" >+ What about <b>leakage</b> around the mask?</button>
+    <div class="text-indent">
+      <p>
+        We note that the focus of this data is on
+        the <b>materials</b> themselves. As such, these curves <b>do not</b> consider
+        leakage around the mask. This is another very important feature in
+        constructing an effective masks but requires different kinds of
+        tests that are wearer-specific. There are studies by other
+        aerosol researchers and health professionals considering this
+        aspect of mask construction.
+      </p>
+
+      <p>
+        <a href="https://pubs.acs.org/doi/10.1021/acsnano.0c03252">Konda et al. (2020)</a>,
+        for example, present the difference in filtration between candidate materials with and
+        without leakage. This research found a gap representing only 0.5-2% of the surface
+        area reduced the performance of an N95-compliant mask from 99% to less than 15% filtration.
+        It is worth noting that those meausurements correspond to where a majority of the
+        particles are near the lower end of the particle size range considered here.
+        The largest human-generated particles (that is, the particles you can see, which
+        are above the size range even considered here) will travel <b>ballistically</b>
+        (that is, more of less on straight trajectories), such that leakage should
+        trend downwards, even if some of the particles from the deflected spray
+        will still escape the masks in practice.
+      </p>
+
+      <p>
+        Regardless, the mask will function better if one reduces the impact of
+        gaps. We recommend maximizing the surface area
+        of air exchange to improve effective ventilation. A cup-shape or duck
+        bill design may be preferred. Other solutions to reduce gaps include
+        external braces, sponge nose pads, or reinforced nose wires.
+      </p>
+
+      <p>
+        Overall, any mask is still better than no mask as (1) the remaining filtration
+        efficiency (~15% for the N95-compliant masks in the
+        <a href="https://pubs.acs.org/doi/10.1021/acsnano.0c03252">Konda et al. (2020)</a>
+        study) will filter some of the smaller particles and (2) the mask should
+        significantly reduce the fraction of larger droplets released into the air.
+      </p>
+    </div>
 
     <button type="button" class="collapsible">+ Why are some of the materials identified by their physcial colour?</button>
     <div class="text-indent">
@@ -272,7 +319,7 @@
     <button type="button" class="collapsible">+ Do all of the curves have a similar trend?</button>
     <div class="text-indent">
       <p>
-        It is well-established that the filtration
+        In short, yes. It is well-established that the filtration
         efficiency consistently decreases as the particles get smaller (to the left)
         for this size range.
         The most penetrating particle size (MPPS), that is, the minimum
@@ -291,6 +338,18 @@
         We again refer the interested reader to
         <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a>
         for a more detailed discussion.
+      </p>
+
+      <p>
+        A pertinent example is gauze, which, when combined in multiple layers
+        (up to 48 layers if selected from the dropdowns, where each filtration
+        layer itself is composed of 16 layers of gauze),
+        yield face masks that are extremely bulky.
+      </p>
+
+      <p>
+        Another example is the dried baby wipes, which would work fine as an
+        insert but may be suboptimal in constructing the outer layers.
       </p>
     </div>
 
@@ -314,21 +373,6 @@
       </p>
     </div>
 
-    <button type="button" class="collapsible">+ What about leakage around the mask?</button>
-    <div class="text-indent">
-      <p>
-        We note that the focus of this data is on
-        the <b>materials</b> themselves. As such, these curves <b>do not</b> consider
-        leakage around the mask. This is another very important feature in
-        constructing an effective masks but requires different kinds of
-        tests that are wearer-specific. There are other studies by other
-        aerosol researchers and health professionals considering this
-        aspect of mask construction.
-      </p>
-    </div>
-
-    <p></p>
-
     <div class="iframe-container2">
       <iframe name="viz2" src="curves.html" frameborder="0" scrolling="auto">
       </iframe>
@@ -338,18 +382,28 @@
     <h2>SOURCE DATA</h2>
 
     <p>
-      Source data in CSV format is available in a supporting Github repository at
-      <a href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">https://github.com/tsipkens/fmviz/blob/main/data/fm.csv</a>.
-      Full details including the the quality and other properties for all of
-      the materials and treatments is available there.
+      Source data in CSV format is available online at:
+    </p>
+
+    <div style="display:flex;vertical-align:middle;">
+      <img src="https://tsipkens.github.io/fmviz/imgs/data.svg" style="height:14pt; padding-right:5px;"></img>
+      <a id="data-link" href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">https://github.com/tsipkens/fmviz/blob/main/data/fm.csv</a>
+    </div>
+
+
+    <p>
+      This includes full details including the the quality and other properties for all of
+      the materials and santization treatments.
       This package is released under an <a href="LICENSE">GNU GPLv3 license</a>.
+      Code supporting this web app is also openly available in the
+      associated <a href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv">GitHub repository</a>.
     </p>
 
   </div>
 
 
   <div class="footer" id="hfooter" stlye="bottom:0px;">
-    <div class="main" style="padding-top:0px;padding-bottom:0px;">
+    <div class="main" style="padding-top:20px;padding-bottom:20px;">
 
       <h3>CITATION AND ACKNOWLEDGEMENTS</h4>
 
@@ -357,6 +411,9 @@
         This graphic was created by Timothy Sipkens in cooperation with Rogak, Guan, Nikookar, Figueroa, and Wang
         from the Univeristy of British Columbia and is associated with
         <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">this paper</a>.
+        The authors can be contacted at
+        <a href="mailto:tsipkens@mail.ubc.ca">tsipkens@mail.ubc.ca</a> or
+        <a href="mailto:rogak@mech.ubc.ca">rogak@mech.ubc.ca</a>.
       </p>
 
       <p>
@@ -375,8 +432,10 @@
       </p>
 
       <p>
-        We would also like to acknowledge the <a href="http://www.freemaskprojectvancouver.com/">Free Mask Project</a> for their
-        involvement and Eric Cytrynbaum for constructive feedback.
+        We would also like to acknowledge the
+        <a href="http://www.freemaskprojectvancouver.com/">Free Mask Project</a> for their
+        involvement through this project and Eric Cytrynbaum and
+        Devon Ostrom for constructive feedback in regards to this web app.
       </p>
 
       <p style="padding-bottom:50px;">
@@ -403,6 +462,14 @@
         }
       });
     }
+
+    /* highlight data link on first click */
+    function highlightDataLink() {
+      document.getElementById("data-link").style.removeProperty("animationName");
+      document.getElementById("data-link").style.removeProperty("animationDuration");
+      document.getElementById("data-link").style.animationName = "yellowfade";
+      document.getElementById("data-link").style.animationDuration = "3.5s";
+    };
   </script>
 
 </body>
