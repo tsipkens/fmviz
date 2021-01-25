@@ -33,15 +33,13 @@
 
   <!-- Load styles -->
   <link href="index.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 
 
 
 <body>
     <header id="navbar">
-      <a href="#h1" style="font-family:'Righteous',sans-serif;font-size:18pt;text-decoration:none;padding:15px 10px 15px 5%;">fmviz</a>
+      <a href="#h1" style="font-family:'Pacifico',sans-serif;font-size:18pt;text-decoration:none;padding:15px 10px 15px 5%;">fmviz</a>
       <nav>
         <ul class="nav-list">
           <li><a href="#hfvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
@@ -278,6 +276,23 @@
 
     <div class="iframe-container1">
       <iframe name="graphic1" src="fvp.html" frameborder="0" scrolling="auto">
+      </iframe>
+    </div>
+
+    <p>
+      The aforementioned <b>quality</b> is a useful surrogate for determining
+      how well a material performs in optimizing both pressure drop and filtration.
+      The graphic below shows the range of quality observed for each
+      material structure, in the for of a box-whisker plot.
+      Here, the box corresponds to the 25th and 75th quantiles for a given material structure,
+      while the whiskers correspond to the 5th and 95th quantiles.
+      As noted above, quality balances pressure drop and filtration properties,
+      preferring lower pressure drop and higher filtration. In this plot, quality
+      is capped at 10<sup>4</sup> and corresponds to the filtration at 2.8 microns.
+    </p>
+
+    <div class="iframe-container1b">
+      <iframe name="graphic1b" src="whisker.html" frameborder="0" scrolling="auto">
       </iframe>
     </div>
 

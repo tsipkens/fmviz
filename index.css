@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Pacifico&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@300&display=swap');
 
 /* text highlighting */
 @keyframes yellowfade {
@@ -201,7 +201,17 @@ div.control {
 
 
 /* Associated with plot elements --> */
+.graphic { /* Center plots in containers */
+  text-align: center;
+}
+
 .axis {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 10pt;
+  font-weight: 200;
+}
+
+.axis2 {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 10pt;
   font-weight: 200;
@@ -209,13 +219,16 @@ div.control {
 
 div.tooltip {
   position: absolute;
-  text-align: center;
+  text-align: left;
   padding: .4rem;
-  background: #FFFFFF;
-  color: #313639;
-  border: 1px solid #313639;
-  border-radius: 4px;
+  background: #FDFDFD;
+  color: #444;
+  border: 0.5px solid #444;
+  border-radius: 2px;
   pointer-events: none;
+  max-width: 200px;
+  font-size: 12pt;
+  transition: all 0.1s ease 0s;
 }
 
 .labels {
@@ -284,6 +297,12 @@ iframe {
 .iframe-container1 {
   overflow: hidden;
   padding-top: 770px;
+  position: relative;
+}
+
+.iframe-container1b {
+  overflow: hidden;
+  padding-top: 450px;
   position: relative;
 }
 

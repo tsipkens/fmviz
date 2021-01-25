@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link href="index.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://d3js.org/d3.v4.js"></script>
+</head>
+
+<body>
+  <!-- Pattern fill for the multilayer circles -->
+  <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="diagonal-stripe-1" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="1" height="3" transform="translate(0,0)" fill="#CCCCCC"></rect>
+        <rect width="2" height="3" transform="translate(1,0)" fill="#FBFBFB"></rect>
+      </pattern>
+
+      <pattern id="diagonal-stripe-2" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="1" height="3" transform="translate(0,0)" fill="#900C3F"></rect>
+        <rect width="2" height="3" transform="translate(1,0)" fill="#581845"></rect>
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- Create a div where the graph will take place -->
+  <div id="whisker_viz" class="graphic"></div>
+
+  <script src="scripts/whisker.js"></script>
+</body>
