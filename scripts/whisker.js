@@ -14,7 +14,7 @@ var margin_w = {
   width_w = width_w_a - margin_w.left - margin_w.right,
   height_w = 400 - margin_w.top - margin_w.bottom;
 
-var x_domain = [0.1, 1e4]
+var x_domain = [0.5, 1e3]
 
 //Read the data
 // append the svg object to the body of the page
@@ -31,7 +31,7 @@ evalQuality = function(filt, press) {
   if (isNaN(Q)) {
     return null;
   } else if (!(isFinite(Q))) {
-    return 4;
+    return 3;
   } else if (Q < 1e-1) {
     return null;
   } else {
@@ -104,7 +104,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   svg.append("g")
     .attr("transform", "translate(0," + height_w + ")")
     .attr("class", "axis")
-    .call(d3.axisBottom(x).ticks(5))
+    .call(d3.axisBottom(x).ticks(3)
+      .tickFormat(d3.format(1, "f")))
 
   // Color scale
   var colorkeys = ["#DAF7A6", "#FFC300", "#FF5733", "#581845", "url(#diagonal-stripe-2)", "url(#diagonal-stripe-1)"],
@@ -120,6 +121,27 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .attr("x", width_w / 2)
     .attr("y", height_w + margin_w.top + 30)
     .text("Quality [kPa⁻¹]");
+
+  // Show the main vertical line
+  svg
+    .selectAll("horzLines")
+    .data(sumstat)
+    .enter()
+    .append("line")
+    .attr("x1", function(d) {
+      return (x(Math.pow(10, d.value.min)))
+    })
+    .attr("x2", function(d) {
+      return (x(Math.pow(10, d.value.max)))
+    })
+    .attr("y1", function(d) {
+      return (y(d.key) + y.bandwidth() / 2)
+    })
+    .attr("y2", function(d) {
+      return (y(d.key) + y.bandwidth() / 2)
+    })
+    .attr("stroke", "black")
+    .style("width", 40)
 
   // rectangle for the main box
   svg
@@ -141,27 +163,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .attr("stroke", "black")
     .style("fill", "#DDD")
     .style("opacity", 0.5)
-
-  // Show the main vertical line
-  svg
-    .selectAll("vertLines")
-    .data(sumstat)
-    .enter()
-    .append("line")
-    .attr("x1", function(d) {
-      return (x(Math.pow(10, d.value.min)))
-    })
-    .attr("x2", function(d) {
-      return (x(Math.pow(10, d.value.max)))
-    })
-    .attr("y1", function(d) {
-      return (y(d.key) + y.bandwidth() / 2)
-    })
-    .attr("y2", function(d) {
-      return (y(d.key) + y.bandwidth() / 2)
-    })
-    .attr("stroke", "black")
-    .style("width", 40)
 
   // Show the median
   svg
