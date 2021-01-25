@@ -227,7 +227,7 @@ div.tooltip {
   border-radius: 2px;
   pointer-events: none;
   max-width: 200px;
-  font-size: 12pt;
+  font-size: 11pt;
   transition: all 0.1s ease 0s;
 }
 
@@ -302,7 +302,7 @@ iframe {
 
 .iframe-container1b {
   overflow: hidden;
-  padding-top: 450px;
+  padding-top: 470px;
   position: relative;
 }
 

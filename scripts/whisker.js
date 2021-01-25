@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var max_width = 700;
+var max_width = 800;
 var $container = $('#whisker_viz'),
   width_w_a = 0.95 * Math.min($container.width(), max_width),
   height_w_a = $container.height()
@@ -7,9 +7,9 @@ var $container = $('#whisker_viz'),
 // set the dimensions and margins of the graph
 var margin_w = {
     top: 10,
-    right: 30,
+    right: 85,
     bottom: 50,
-    left: 70
+    left: 80
   },
   width_w = width_w_a - margin_w.left - margin_w.right,
   height_w = 400 - margin_w.top - margin_w.bottom;
