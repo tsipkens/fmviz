@@ -41,7 +41,6 @@ var svg_legend = d3.select("#my_legend")
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
   .append("svg")
-  .attr("id", "svg1")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")

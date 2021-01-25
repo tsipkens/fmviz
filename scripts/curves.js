@@ -18,6 +18,10 @@ var color_pc = function (keyCode) {
 }
 
 
+// set the dimensions and margins of the graph
+var $container = $('#pen_curve'),
+    width_pc_a = 0.95 * Math.min($container.width(), 870),
+    height_pc_a = $container.height()
 
 var margin_pc = {
   top: 30,
@@ -25,7 +29,7 @@ var margin_pc = {
   bottom: 50,
   left: 65
 }
-  width_pc = 720 - margin_pc.left - margin_pc.right,
+  width_pc = width_pc_a - margin_pc.left - margin_pc.right,
   height_pc = 410 - margin_pc.top - margin_pc.bottom;
 
 // append the svg object to the body of the page
