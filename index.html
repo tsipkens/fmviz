@@ -189,10 +189,11 @@
       </p>
     </div>
 
+    <a class="anchor" id="hqual"></a>
     <button type="button" class="collapsible">+ What do the dashed lines in the figure represent? The short answer: <b>quality</b>.</button>
     <div class="text-indent">
       <p>
-        In the plot below, dashed lines correspond to line of constant <b>quality</b>.
+        In the plot below, dashed lines correspond to lines of constant <b>quality</b>.
       </p>
 
       <p>
@@ -203,7 +204,18 @@
         the highest quality in this study include N95-compliant and surgical masks.
         N95-compliant masks in some cases essentially blocked 100% of particles
         (within the limits of the current measurement apparatus), such that the quality approached ∞.
-        Calculations use the natural number as a base and pressures in kPa.
+        Calculations of quality, <i>Q</i>, use the natural number as a base
+        (this varies in the literature and should be checked between studies);
+        pressures drop, Δ<i>p</i>, in kPa;
+        and the filtration efficiency, η, as a fraction;
+        in the following expression:
+      </p>
+
+      <p>
+        <i>Q</i> = −ln(1 − η)/Δ<i>p</i>
+      </p>
+
+      <p>
         For more details on how quality is defined and what it means, we refer the reader
         to <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a> and the references
         therein.
@@ -281,7 +293,9 @@
 
     <a class="anchor" id="hbw"></a>
     <p>
-      The aforementioned <b>quality</b> is a useful surrogate for determining
+      The aforementioned <b>quality</b> (see
+      <a href="#hqual">this note</a>)
+      is a useful surrogate for determining
       how well a material performs in optimizing both pressure drop and filtration.
       The graphic below shows the range of quality observed for each
       material structure, in the form of a box-whisker plot.
@@ -315,13 +329,11 @@
     </p>
 
     <p>
-      In addition, this graphic is used to estimate the filtration properties of
+      In addition, this graphic estimates the filtration properties of
       masks composed of multiple layers.
       In this regard, solid, coloured lines indicate individual filter layers, while
       the black, dashed line corresponds to an estimate combining all of the
       selected feature layers.
-      Estimates for multi-layered masks are only <b>approximate</b>, computed using
-      the product of the particle penetration for individual layers.
     </p>
 
     <p>
@@ -329,6 +341,15 @@
       removed, or changed using the dropdown boxes and
       can include up to <b>three layers</b>, the number recommended by the WHO.
     </p>
+
+    <button type="button" class="collapsible">+ How do we estimate the filtration efficiency of the combined layers?</button>
+    <div class="text-indent">
+      <p>
+        Estimates for multi-layered masks are only <b>approximate</b> and are computed
+        using the product of the particle penetration (one minus the filtration efficiency
+        as a fraction) for individual layers.
+      </p>
+    </div>
 
     <button type="button" class="collapsible">+ Do all of the curves have a similar trend?</button>
     <div class="text-indent">
@@ -431,11 +452,15 @@
       </p>
 
       <p>
-        Consider citing this repository directly, as well as the corresponding paper:
+        Please citing the corresponding paper:
         <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321"> S. N. Rogak, T. A. Sipkens, M. Guan,
           H. Nikookar, D. V. Figueroa, J. Wang.
           "Properties of materials considered for improvised masks."
           <i>Aerosol Science and Technology</i>. In press. doi: 10.1080/02786826.2020.1855321</a>.
+          One can also consider citing this web app directly:
+          <a href="https://tsipkens.github.io/fmviz/"> T. A. Sipkens, M. Guan,
+          H. Nikookar, D. V. Figueroa, J. Wang, S. N. Rogak.
+          "FMViz: Face mask visualization." https://tsipkens.github.io/fmviz/.</a>
       </p>
 
       <p>
