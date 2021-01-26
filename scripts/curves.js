@@ -306,6 +306,19 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
       document.getElementById("pweight").value = pweight;  // estimated weight (sum)
       document.getElementById("pdrop").value = pdrop;  // estimate pressure drop (sum)
+      
+      if (pdrop < 20) {
+        document.getElementById("pdrop_level").value = "Very low";
+      } else if (pdrop < 35) {
+        document.getElementById("pdrop_level").value = "Low";
+      } else if (pdrop < 50) {
+        document.getElementById("pdrop_level").value = "Moderate";
+      } else if (pdrop < 65) {
+        document.getElementById("pdrop_level").value = "High";
+      } else {
+        document.getElementById("pdrop_level").value = "Very high";
+      }
+
     }
 
     updateCurve(currentCodes)
