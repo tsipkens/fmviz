@@ -160,6 +160,7 @@ div.control {
   padding-bottom: 5px;
   display: flex;
   flex-wrap: wrap;
+  vertical-align: middle;
 }
 
 .cb-material {
@@ -182,13 +183,27 @@ div.control {
 }
 
 .control-label {
+  font-weight: 400;
+  flex: 0 0 auto;
+}
+
+.control-label2 {
+  font-size: 8pt;
+  padding-left: 5pt;
   font-weight: 600;
+  color: #444;
 }
 
 .p-control-column {
-  padding-top: 4px;
-  padding-bottom: 4px;
-  text-align:left
+  padding-top: 0px;
+  padding-bottom: 1px;
+  text-align:left;
+}
+
+.label-mask-structure {
+  position:absolute;
+  text-align:center;
+  font-weight: 400;
 }
 
 /* Clear floats after the columns */

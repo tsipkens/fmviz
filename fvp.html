@@ -35,13 +35,15 @@
 
     <!-- Add a slider -->
     <div class="control">
-      <span><span class="control-label">Diameter selector</span>: <span>
-      <div><input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
-      <i>d</i><sub>a</sub> = <output id="da">2.756</output> microns</div>
+      <span><span class="control-label">Aerodynamic diameter</span>:
+      <div style="display:inline-block;">
+        <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
+        d<sub>a</sub> = <output id="da">2.756</output> microns
+      </div>
     </div>
 
     <div class="control">
-      <span class="control-label" style="flex: 0 0 auto;">Material types</span>:
+      <span class="control-label">Material structure</span>:
       <div class="cb-wrapper" style="border:none;padding-left:0px"><input type="checkbox" class="cb-material" value="W" checked><label>Woven</label></div>
       <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="K" checked><label>Knit</label></div>
       <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="CP" checked><label>Cut pile</label></div>

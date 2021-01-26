@@ -53,11 +53,11 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .attr("transform", "translate(0," + height_pc + ")")
     .attr("class", "axis")
     .call(d3.axisBottom(x_pc)
-      .tickFormat(d3.format(".1f")));
+      .tickFormat(d3.format(1, "f")));
   svg_pc.append("g")
     .attr("class", "axis")
     .call(d3.axisTop(x_pc)
-      .tickFormat(d3.format(".1f")));
+      .tickFormat(d3.format(1, "f")));
 
   // Add Y axis
   var y_pc = d3.scaleLinear()
