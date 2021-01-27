@@ -38,20 +38,21 @@
         </p>
 
         <div style="display:flex;vertical-align:middle;padding-top:10px;padding-bottom:7px;font-size:11pt;">
-          <img src="https://tsipkens.github.io/fmviz/imgs/weight.svg" style="height:16pt;padding-right:3px;"></img>
+          <img src="https://tsipkens.github.io/fmviz/imgs/weight.svg" style="height:16pt;padding-right:3px;">
           <div style="padding-right:20px;">weight = <output id="pweight">-</output> g/m²</div>
-          <img src="https://tsipkens.github.io/fmviz/imgs/pressure.svg" style="height:16pt;padding-right:3px;"></img>
+          <img src="https://tsipkens.github.io/fmviz/imgs/pressure.svg" style="height:16pt;padding-right:3px;">
           <div>Δp = <output id="pdrop">-</output> Pa (<output id="pdrop_level">-</output>)</div>
         </div>
       </div>
 
-      <div class="column" style="position:relative;width:120px;">
-        <img src="imgs/mask_none.svg" id='img_l1' width="130px;" style="position:absolute;z-index:3;top:15px;left:0px;opacity:0.95;">
-        <img src="imgs/mask_none.svg" id='img_l2' width="130px;" style="position:absolute;z-index:2;top:55px;left:0px;opacity:0.95;">
-        <img src="imgs/mask_none.svg" id='img_l3' width="130px;" style="position:absolute;z-index:1;top:93px;left:0px;opacity:0.95;">
-        <div id='txt_l1' class="label-mask-structure" style="z-index:4;top:35px;width:130px;left:0px;">-</div>
-        <div id='txt_l2' class="label-mask-structure" style="z-index:4;top:80px;width:130px;left:0px;">-</div>
-        <div id='txt_l3' class="label-mask-structure" style="z-index:4;top:120px;width:130px;left:0px;">-</div>
+      <div class="column" style="position:relative;width:40%;">
+        <img src="imgs/mask_none.svg" id='img_l1' class="mask-img" style="z-index:3;left:0px;">
+        <img src="imgs/mask_none.svg" id='img_l2' class="mask-img" style="z-index:2;left:40px;">
+        <img src="imgs/mask_none.svg" id='img_l3' class="mask-img" style="z-index:1;left:78px;">
+        <img src="imgs/mask_straps.svg" class="mask-img" style="z-index:0;top:44px;left:135px;width:38px;">
+        <div id='txt_l1' class="label-mask-structure" style="z-index:4;left:20px;">-</div>
+        <div id='txt_l2' class="label-mask-structure" style="z-index:4;left:65px;">-</div>
+        <div id='txt_l3' class="label-mask-structure" style="z-index:4;left:100px;">-</div>
       </div>
     </div>
 
