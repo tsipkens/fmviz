@@ -35,7 +35,7 @@ evalQuality = function(filt, press) {
   } else if (Q < 1e-1) {
     return null;
   } else {
-    return Math.log10(Q);
+    return Math.log(Q) / Math.log(10); // used instead of log10 to work in IE
   }
 }
 
