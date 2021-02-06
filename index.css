@@ -38,22 +38,22 @@ h1 {
   text-align: center;
   font-size: 58pt;
   font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 600;
-  padding:30px;
+  font-weight: 300;
+  padding:20px;
 }
 
 h2 {
   font-size: 32pt;
   padding-bottom: 5px;
-  font-family: 'Montserrat';
-  font-weight: 800;
+  font-family: Open Sans;
+  font-weight: 200;
   padding-top: 30px;
 }
 
 h3 {
   font-size: 16pt;
   margin-bottom: 9.5px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open Sans;
   font-weight: 200;
 }
 
