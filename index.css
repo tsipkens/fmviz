@@ -24,10 +24,15 @@ body {
 }
 
 p {
-  text-align: justify;
+  text-align: left;
   padding-top: 8px;
   padding-bottom: 8px;
   margin: 0px;
+}
+@media screen and (min-width: 600px) {
+   p {
+      text-align: justify;
+   }
 }
 
 b {
@@ -303,11 +308,16 @@ iframe {
 
 /* Format indented text regions */
 .text-indent {
+  background-color: white;
   padding-top:15px;
   padding-bottom:15px;
-  padding-left:18px;
-  padding-right:18px;
+  padding-left:12px;
+  padding-right:12px;
   display: none;
+  font-size: 11pt;
+  color: #555;
+  border: none;
+  border-radius:0px 0px 4px 4px;
 }
 
 .text-indent p:first-child {
@@ -321,23 +331,35 @@ iframe {
 
 /* For hidden text notes */
 .collapsible {
-  background-color: #E9EEF0;
+  background-color: Transparent;
+  background-repeat: no-repeat;
   cursor: pointer;
   padding: 15px;
   width: 100%;
   border: none;
-  border-radius: 5px;
-  text-align: left;
   outline: none;
   margin: 0px;
-  margin-top: 10px;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 12pt;
   font-weight: 200;
-  transition: all 0.3s ease 0s;
+  text-align: left;
 }
 
 .collapsible:hover {
+}
+
+.text-outside {
+  background-color: #E9EEF0;
+  max-height: 100000px;
+  margin-top: 10px;
+  border: #E9EEF0 1px solid;
+  border-radius: 5px;
+  width: 100%;
+  transition: all 0.25s ease 0s;
+}
+
+.text-outside:hover {
+  border: #B8E3E7 1px solid;
   background-color: #B8E3E7;
 }
 
