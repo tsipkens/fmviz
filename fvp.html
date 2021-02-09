@@ -28,28 +28,32 @@
 
   <div>
 
-    <h4 style="margin-block-start: 0.4em; margin-block-end: 0.4em;">Legend</h4>
+    <h4 style="margin-block-start: 0.4em; margin-block-end: 0.4em;">Legend & controls</h4>
+
     <div id="my_legend"></div>
 
-    <h4 style="margin-block-start: 0.9em; margin-block-end: 0.4em;">Visualization controls</h4>
-
-    <!-- Add a slider -->
-    <div class="control">
-      <span><span class="control-label">Aerodynamic diameter</span>:
-      <div style="display:inline-block;">
-        <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8px;" onchange="displayDiam(this.value);">
-        d<sub>a</sub> = <output id="da">2.756</output> microns
+    <div class="row" style="padding-top:10px;">
+      <div class="column" style="width:20%;padding-top:0px;">
+        <p class="p-control-column">
+          <span class="control-label">Particle diameter</span><br>
+          <input type="range" name="mySlider" id="mySlider" min="1" max="13" value="9" style="height:8pt;width:85%;max-width:100pt;line-height:9pt;" onchange="displayDiam(this.value);"><br>
+          <span style="font-size:10pt;font-weight:300;">d = <output id="da">2.756</output> μm</span>
+        </p>
       </div>
-    </div>
 
-    <div class="control">
-      <span class="control-label">Material structure</span>:
-      <div class="cb-wrapper" style="border:none;padding-left:0px"><input type="checkbox" class="cb-material" value="W" checked><label>Woven</label></div>
-      <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="K" checked><label>Knit</label></div>
-      <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="CP" checked><label>Cut pile</label></div>
-      <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="nW" checked><label>Non-woven</label></div>
-      <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="nWH" checked><label>Non-woven, Halyard</label></div>
-      <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="ML" checked><label>Multi-layer</label></div>
+      <div class="column" style="width:70%;padding-top:0px;">
+        <p class="p-control-column">
+          <span class="control-label">Material structure</span><br>
+          <div class="control">
+            <div class="cb-wrapper" style="border:none;padding-left:0px"><input type="checkbox" class="cb-material" value="W" checked><label>Woven</label></div>
+            <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="K" checked><label>Knit</label></div>
+            <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="CP" checked><label>Cut pile</label></div>
+            <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="nW" checked><label>Non-woven</label></div>
+            <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="nWH" checked><label>Non-woven, Halyard</label></div>
+            <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="ML" checked><label>Multi-layer</label></div>
+          </div>
+        </p>
+      </div>
     </div>
 
     <!-- Create a div where the graph will take place -->

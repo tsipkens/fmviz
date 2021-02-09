@@ -35,7 +35,7 @@ var margin_legend = {
 var svg_legend = d3.select("#my_legend")
   .append("svg")
   .attr("width", width + margin_legend.left + margin_legend.right)
-  .attr("height", 100)
+  .attr("height", 125)
   .append("g");
 
 // append the svg object to the body of the page
@@ -315,10 +315,10 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .data(keys)
       .enter()
       .append("circle")
-      .attr("cx", 10)
+      .attr("cx", 5)
       .attr("cy", function(d, i) {
-        return 10 + i * 17
-      }) // 100 is where the first dot appears. 25 is the distance between dots
+        return 20 + 9 + i * 17
+      })
       .attr("r", 5)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
@@ -329,44 +329,49 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .data(keys)
       .enter()
       .append("text")
-      .attr("x", 20)
+      .attr("x", 15)
       .attr("y", function(d, i) {
-        return 10 + i * 17
-      }) // 100 is where the first dot appears. 25 is the distance between dots
+        return 20 + 10 + i * 17
+      })
       .text(function(d) {
         return d
       })
       .attr("text-anchor", "left")
       .style("alignment-baseline", "middle")
 
+    svg_legend.append("text")
+      .attr("x", 0).attr("y", 14)
+      .text("Material structure").attr("alignment-baseline", "left")
+      .attr('class', 'control-label')
+
     // legend for circles sizes
     svg_legend.append("text")
-      .attr("x", 188).attr("y", 14)
+      .attr("x", 195).attr("y", 14)
       .text("Material weight").attr("alignment-baseline", "left")
       .attr('class', 'control-label')
     svg_legend.append("circle") // 10 g/cm2
-      .attr("cx", 200).attr("cy", 32)
+      .attr("cx", 208).attr("cy", 32)
       .attr("r", 10 / 125 + 3.5).style("fill", "#333333")
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 32)
+      .attr("x", 223).attr("y", 32)
       .text("10 g/m²").attr("alignment-baseline", "middle")
     svg_legend.append("circle") // 300 g/cm2
-      .attr("cx", 200).attr("cy", 57)
+      .attr("cx", 208).attr("cy", 57)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 300 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 57)
+      .attr("x", 223).attr("y", 57)
       .text("300 g/m²").attr("alignment-baseline", "middle")
     svg_legend.append("circle") // 1000 g/cm2
-      .attr("cx", 200).attr("cy", 82)
+      .attr("cx", 208).attr("cy", 82)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 1000 / 125 + 3.5).style("fill", "#333333")
     svg_legend.append("text")
-      .attr("x", 215).attr("y", 82)
+      .attr("x", 223).attr("y", 82)
       .text("1,000 g/m²").attr("alignment-baseline", "middle")
     //------------------------------------------------------------------------//
 

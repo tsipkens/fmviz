@@ -58,7 +58,7 @@ h3 {
 }
 
 h4 {
-  font-size: 14pt;
+  font-size: 13pt;
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 600;
 }
@@ -83,9 +83,10 @@ hr {
 select {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 11pt;
-  border-radius: 22pt;
+  border-radius: 5pt;
   font-weight: 300;
   padding-left: 4px;
+  border: 1px solid #BBB;
 }
 
 option {
@@ -180,16 +181,20 @@ div.control {
 /*  */
 .column {
   float: left;
+  padding-right: 10px;
 }
 
 .control-label {
-  font-weight: 400;
+  font-weight: 600;
   flex: 0 0 auto;
+  font-size: 11pt;
+  line-height: 12pt;
+  display: inline-block;
 }
 
 .control-label2 {
   font-size: 8pt;
-  padding-left: 5pt;
+  padding-left: 3pt;
   font-weight: 600;
   color: #444;
 }
@@ -316,12 +321,12 @@ iframe {
 
 /* For hidden text notes */
 .collapsible {
-  background-color: #EEE;
+  background-color: #DFF2F4;
   cursor: pointer;
   padding: 15px;
   width: 100%;
   border: none;
-  border-radius: 30px;
+  border-radius: 5px;
   text-align: left;
   outline: none;
   margin: 0px;
@@ -333,7 +338,7 @@ iframe {
 }
 
 .collapsible:hover {
-  background-color: #AFF2D1;
+  background-color: #B8E3E7;
 }
 
 .collapsible-ol {
