@@ -110,7 +110,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   // Color scale
   var colorkeys = ["#DAF7A6", "#FFC300", "#FF5733", "#581845", "url(#diagonal-stripe-2)", "url(#diagonal-stripe-1)"],
     keycodes = ["W", "K", "CP", "nW", "nWH", "ML"],
-    keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
+    keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multilayer (ML)"]
   var color = d3.scaleOrdinal()
     .domain(keys)
     .range(colorkeys)
