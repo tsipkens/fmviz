@@ -26,7 +26,7 @@ var $container = $('#pen_curve'),
 var margin_pc = {
   top: 30,
   right: 55,
-  bottom: 50,
+  bottom: 40,
   left: 65
 }
   width_pc = width_pc_a - margin_pc.left - margin_pc.right,
@@ -306,7 +306,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
       document.getElementById("pweight").value = pweight;  // estimated weight (sum)
       document.getElementById("pdrop").value = pdrop;  // estimate pressure drop (sum)
-      
+
       if (pdrop < 20) {
         document.getElementById("pdrop_level").value = "Very low";
       } else if (pdrop < 35) {
