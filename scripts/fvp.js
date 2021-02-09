@@ -2,7 +2,7 @@ function displayDiam(val) {
 
   var channel = [0.498, 0.62, 0.796, 0.962, 1.191, 1.478, 1.909, 2.322, 2.756, 3.398, 4.221, 5.246, 6.491, 8.116]
 
-  document.getElementById('da').value = channel[val - 1];
+  document.getElementById('da').value = channel[val - 1].toFixed(2);
 }
 
 
