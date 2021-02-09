@@ -91,7 +91,14 @@ select {
   border-radius: 5pt;
   font-weight: 300;
   padding-left: 4px;
-  border: 1px solid #BBB;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border: 2px solid #E9EEF0;
+  background-color: white;
+}
+
+select:hover {
+  border: 2px solid #B8E3E7;
 }
 
 option {
