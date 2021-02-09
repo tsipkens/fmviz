@@ -366,7 +366,12 @@ iframe {
 .collapsible-ol {
   padding: 0px;
   margin: 0px;
-  text-align: justify;
+  text-align: left;
+}
+@media screen and (min-width: 600px) {
+  .collapsible-ol {
+    text-align: justify;
+  }
 }
 
 .collapsible-ol li {
