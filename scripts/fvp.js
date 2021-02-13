@@ -14,11 +14,11 @@ var $container = $('#my_dataviz'),
 var margin = {
     top: 30,
     right: 60,
-    bottom: 40,
+    bottom: 37,
     left: 70
   },
   width = width_a - margin.left - margin.right,
-  height = 445 - margin.top - margin.bottom;
+  height = 440 - margin.top - margin.bottom;
 
 // for tooltips
 var div_tool = d3.select("body").append("div")
