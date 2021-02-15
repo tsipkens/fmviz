@@ -43,9 +43,12 @@ b {
 h1 {
   text-align: center;
   font-size: 58pt;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 300;
-  padding:20px;
+  font-family: 'Pacifico', Arial, sans-serif;
+  font-weight: 100;
+  padding: 20px;
+  background: -webkit-linear-gradient(#E81F7B, #F78D8F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -168,6 +171,25 @@ div.footer {
   padding-bottom: 0px;
   border-top: 1px solid #DDDDDD;
 }
+
+#logo {
+  font-family:'Pacifico',sans-serif;
+  font-size:20pt;
+  text-decoration:none;
+  padding:8px 10px 12px 5%;
+  transition: all 4s;
+  background: -webkit-linear-gradient(#E81F7B, #F78D8F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#logo:hover {
+  background: -webkit-linear-gradient(#E81F7B, #E81F7B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 
 /* For main components */
 div.main {
