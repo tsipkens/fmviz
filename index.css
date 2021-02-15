@@ -28,6 +28,7 @@ p {
   padding-top: 8px;
   padding-bottom: 8px;
   margin: 0px;
+  font-color: #222;
 }
 @media screen and (min-width: 600px) {
    p {
@@ -113,10 +114,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FAFAFA;
+  background-color: #FFFFFF;
   margin: 0px;
   padding: 0px;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 0.6px solid #DDDDDD;
   font-size: 10pt;
   z-index: 20;
   position: fixed; /* Set the navbar to fixed position */
