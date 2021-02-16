@@ -89,29 +89,6 @@ hr {
   margin-bottom: 35px;
 }
 
-select {
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 11pt;
-  border-radius: 5pt;
-  font-weight: 300;
-  padding-left: 4px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  border: 2px solid #E9EEF0;
-  background-color: white;
-  transition: all 0.3s ease 0s;
-}
-
-select:hover {
-  border: 2px solid #ECB4B5;
-}
-
-option {
-  font-family: 'Open Sans',  Arial, sans-serif;
-  font-size: 11pt;
-  font-weight: 300;
-}
-
 /*  For navigation */
 header {
   display: flex;
@@ -205,6 +182,63 @@ div.control {
   display: flex;
   flex-wrap: wrap;
   vertical-align: middle;
+}
+
+
+
+select {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 11pt;
+  border-radius: 5pt;
+  font-weight: 300;
+  padding-left: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border: 2px solid #E9EEF0;
+  background-color: white;
+  transition: all 0.3s ease 0s;
+}
+
+select:hover {
+  border: 2px solid #ECB4B5;
+}
+
+option {
+  font-family: 'Open Sans',  Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: 300;
+}
+
+/* for blue slider */
+.slider {
+  line-height: 11pt;
+  -webkit-appearance: none;
+  width: 80%;
+  height: 5pt;
+  border-radius: 5px;
+  background: #E3E3E3;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: all .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 11pt;
+  height: 11pt;
+  border-radius: 50%;
+  border: 1pt solid white;
+  background: #E81F7B;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 11pt;
+  height: 11pt;
+  border-radius: 50%;
+  background: #E81F7B;
+  cursor: pointer
 }
 
 .cb-material {
