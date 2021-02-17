@@ -97,12 +97,13 @@ header {
   background-color: #FFFFFF;
   margin: 0px;
   padding: 0px;
-  border-bottom: 0.6px solid #DDDDDD;
   font-size: 10pt;
   z-index: 20;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%;
+  box-shadow: white;
+  transition: 0.3s;
 }
 
 nav {

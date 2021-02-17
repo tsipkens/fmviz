@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>FMVIZ | Face mask filtration</title>
-  
+
   <meta name="author" content="Timothy Sipkens" />
   <meta name="keywords" content="face mask, mask filtration, COVID-19, sipkens, tim, timothy, rogak, aerosol science, aerosols, experiment, viz, PPE" />
   <meta name="description" content="A web app to explore the filtration properties of potential face mask materials using data from Rogak, Sipkens, et al. (2021)." />
@@ -44,7 +44,7 @@
 
 
 <body>
-  <header id="navbar">
+  <header id="header">
     <a href="#h1" id="logo">fmviz</a>
     <nav>
       <ul class="nav-list">
@@ -565,6 +565,16 @@
       document.getElementById("data-link").style.animationName = "yellowfade";
       document.getElementById("data-link").style.animationDuration = "3.5s";
     };
+
+    // When the user scrolls down 50px from the top of the document, reformat header
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
+        document.getElementById("header").style.boxShadow = "0px 0px 4px #DDDDDD";
+      } else {
+        document.getElementById("header").style.boxShadow = "none";
+      }
+    }
   </script>
 
 </body>
