@@ -427,7 +427,7 @@ iframe {
   max-height: 100000px;
   margin-top: 10px;
   border: #E9EEF0 1px solid;
-  border-radius: 5px;
+  border-radius: 3px;
   width: 100%;
   transition: all 0.25s ease 0s;
 }
