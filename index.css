@@ -28,7 +28,7 @@ p {
   padding-top: 8px;
   padding-bottom: 8px;
   margin: 0px;
-  font-color: #222;
+  color: #222;
 }
 @media screen and (min-width: 600px) {
    p {
@@ -76,6 +76,7 @@ a {
   color: #222222;
   cursor: pointer;
   transition: all 0.3s ease 0s;
+  text-decoration-thickness: 0px;
 }
 
 a:hover {
@@ -146,8 +147,28 @@ div.footer {
   margin-top: 30px;
   padding-top: 30px;
   margin-bottom: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 20px;
   border-top: 1px solid #DDDDDD;
+}
+
+.ref {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0px;
+  padding-left: 10px;
+  color: #EEE;
+  border-left: solid #CCC 2px;
+  color: #777;
+}
+
+.ref:hover {
+  color: #E81F7B;
+  transition: ease 0.3s;
+  border-left: solid #E81F7B 2px;
+}
+
+.ref a {
+  text-decoration: none;
 }
 
 #logo {
@@ -380,18 +401,52 @@ iframe {
   position: relative;
 }
 
-/* Format indented text regions */
+
+/* For hidden text notes */
+.text-outside {
+  background-color: #FDFDFD;
+  max-height: 100000px;
+  margin-top: 10px;
+  border: 2px solid #E9EEF0;
+  border-radius: 5pt;
+  width: 100%;
+  max-height: 52px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.text-outside:hover {
+  border: 2px solid #E81F7B;
+}
+
+.collapsible {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px 0px 0px;
+  outline: none;
+  margin: 0px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 12pt;
+  font-weight: 200;
+  text-align: left;
+  transition: all 0.4s;
+}
+
+.collapsible:hover {
+  color: #E81F7B;
+}
+
 .text-indent {
-  background-color: white;
-  padding-top:15px;
-  padding-bottom:15px;
-  padding-left:12px;
-  padding-right:12px;
+  background-color: transparent;
+  padding: 10px 3% 10px 3%;
   display: none;
   font-size: 11pt;
   color: #555;
-  border: none;
-  border-radius:0px 0px 4px 4px;
+  border-top: 1px solid #E9EEF0;
 }
 
 .text-indent p:first-child {
@@ -400,41 +455,6 @@ iframe {
 
 .text-indent p:last-child {
   padding-bottom: 5px;
-}
-
-
-/* For hidden text notes */
-.collapsible {
-  background-color: Transparent;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  padding: 15px;
-  width: 100%;
-  border: none;
-  outline: none;
-  margin: 0px;
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 12pt;
-  font-weight: 200;
-  text-align: left;
-}
-
-.collapsible:hover {
-}
-
-.text-outside {
-  background-color: #E9E9E9;
-  max-height: 100000px;
-  margin-top: 10px;
-  border: #E9EEF0 1px solid;
-  border-radius: 3px;
-  width: 100%;
-  transition: all 0.25s ease 0s;
-}
-
-.text-outside:hover {
-  border: #ECB4B5 1px solid;
-  background-color: #ECB4B5;
 }
 
 .collapsible-ol {

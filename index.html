@@ -142,8 +142,12 @@
 
     <a class="anchor" id="leakage-note"></a>
     <div class="text-outside">
-      <button type="button" class="collapsible">+ What about <b>leakage</b> around the mask?</button>
+      <button type="button" class="collapsible"><b>+ What about leakage around the mask?</b></button>
       <div class="text-indent">
+        <p>
+          This is a key question.
+        </p>
+
         <p>
           We note that the focus of this data is on
           the <b>materials</b> themselves. As such, these curves <b>do not</b> consider
@@ -248,12 +252,13 @@
         <p>
           Simply put, these are codes we assign to each case, composed of characters
           identifying a material, its structure, number of layers used during measurement,
-          and treatment applied (e.g., laundered), if any. In most instances, the reader can
+          and treatment applied (e.g., laundered), if any. While we provide these codes
+          for reference back to the associated paper, in most instances the reader can
           ignore these codes.
         </p>
 
         <p>
-          For those more interested in these codes, we expand the various components:
+          For those more interested:
         </p>
 
         <ol class="collapsible-ol">
@@ -265,7 +270,7 @@
             have different codes (e.g., <b>ASTM</b> for surgical masks that adhere to the
             ASTM standard).
 
-            The different material structures can added or removed from the plot using the
+            The different material structures can be added or removed from the plot using the
             checkboxes in the controls above the first plot.
           </li>
 
@@ -369,7 +374,7 @@
       removed, or changed using the dropdown boxes and
       can include up to <b>three layers</b>, the number recommended by the WHO.
     </p>
-    
+
     <h3>Q&A</h3>
 
     <div class="text-outside">
@@ -512,17 +517,24 @@
           The authors can be contacted at
           <a href="mailto:tsipkens@mail.ubc.ca">tsipkens@mail.ubc.ca</a> or
           <a href="mailto:rogak@mech.ubc.ca">rogak@mech.ubc.ca</a>.
+          When using this data, please cite the corresponding paper:
+        </p>
+
+        <p class="ref">
+          <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">
+            S. N. Rogak, T. A. Sipkens, M. Guan,
+            H. Nikookar, D. V. Figueroa, J. Wang.
+            "Properties of materials considered for improvised masks."
+            <i>Aerosol Science and Technology</i>. In press. doi: 10.1080/02786826.2020.1855321
+          </a>.
         </p>
 
         <p>
-          When using this data, please cite the corresponding paper:
-          <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321"> S. N. Rogak, T. A. Sipkens, M. Guan,
-            H. Nikookar, D. V. Figueroa, J. Wang.
-            "Properties of materials considered for improvised masks."
-            <i>Aerosol Science and Technology</i>. In press. doi: 10.1080/02786826.2020.1855321</a>.
           One can also consider citing this web app directly:
-          <a href="https://tsipkens.github.io/fmviz/"> T. A. Sipkens, M. Guan,
-            H. Nikookar, D. V. Figueroa, J. Wang, S. N. Rogak.
+        </p>
+
+        <p class="ref">
+          <a href="https://tsipkens.github.io/fmviz/"> T. A. Sipkens, S. N. Rogak.
             "FMViz: Face mask visualization." https://tsipkens.github.io/fmviz/.</a>
         </p>
 
@@ -537,27 +549,28 @@
           Devon Ostrom for constructive feedback in regards to this web app.
         </p>
 
-        <p style="padding-bottom:50px;">
-          This page has been tested with the latest releases of Edge, Chrome, and Firefox,
-          as of December 2020.
-        </p>
-
 
     </div>
   </div>
 
   <script>
-    var coll = document.getElementsByClassName("collapsible");
+    var coll = document.getElementsByClassName("text-outside");
     var i;
 
     for (i = 0; i < coll.length; i++) {
       coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
-        var content = this.nextElementSibling;
+        var content = this.childNodes;
+        content = content[3]
+
         if (content.style.display === "block") {
-          content.style.display = "none";
+          this.style.maxHeight = "52px";
+          setTimeout(() => { content.style.display = "none" }, 1000);
         } else {
+          this.style.transition = ""
           content.style.display = "block";
+          this.style.transition = "all 0.5s";
+          this.style.maxHeight = this.scrollHeight + "px";
         }
       });
     }
