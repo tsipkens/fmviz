@@ -562,16 +562,19 @@
       coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var content = this.childNodes;
+        button = content[1]
         content = content[3]
 
         if (content.style.display === "block") {
-          this.style.maxHeight = "52px";
-          setTimeout(() => { content.style.display = "none" }, 1000);
+          this.style.maxHeight = button.scrollHeight + "px";
+          setTimeout(() => { content.style.display = "none" }, 500);
         } else {
-          this.style.transition = ""
-          content.style.display = "block";
-          this.style.transition = "all 0.5s";
-          this.style.maxHeight = this.scrollHeight + "px";
+          this.style.maxHeight = button.scrollHeight + "px"; /* need for first time */
+          setTimeout(() => {  /* delay to make sure above has been applied */
+            content.style.display = "block";
+            this.style.transition = "max-height 0.5s";
+            this.style.maxHeight = this.scrollHeight + "px";
+          }, 40);
         }
       });
     }
