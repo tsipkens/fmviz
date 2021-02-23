@@ -46,7 +46,7 @@ h1 {
   font-family: 'Pacifico', Arial, sans-serif;
   font-weight: 100;
   padding: 20px;
-  background: -webkit-linear-gradient(#E81F7B, #F78D8F);
+  background: -webkit-linear-gradient(#FCCE42, #FD80A8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -54,7 +54,7 @@ h1 {
 h2 {
   font-size: 32pt;
   padding-bottom: 5px;
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-weight: 200;
   padding-top: 30px;
 }
@@ -62,7 +62,7 @@ h2 {
 h3 {
   font-size: 16pt;
   margin-bottom: 9.5px;
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-weight: 200;
 }
 
@@ -80,7 +80,7 @@ a {
 }
 
 a:hover {
-  color: #E81F7B;
+  color: #FD80A8;
 }
 
 hr {
@@ -132,7 +132,7 @@ nav {
 }
 
 .nav-link:hover {
-  color: #E81F7B;
+  color: #FD80A8;
 }
 
 a.anchor {
@@ -177,7 +177,7 @@ div.footer {
   text-decoration:none;
   padding:8px 10px 12px 5%;
   transition: all 4s;
-  background: linear-gradient(#F78D8F, #E81F7B 50%, #F78D8F);
+  background: linear-gradient(#FD80A8, #FCCE42 50%, #FD80A8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background-position 0.4s ease;
@@ -223,7 +223,7 @@ select {
 }
 
 select:hover {
-  border: 2px solid #ECB4B5;
+  border: 2px solid #FD80A8;
 }
 
 option {
@@ -417,10 +417,11 @@ iframe {
 }
 
 .text-outside:hover {
-  border: 2px solid #E81F7B;
+  border: 2px solid #FD80A8;
 }
 
 .collapsible {
+  color: #666;
   background-color: transparent;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -438,7 +439,7 @@ iframe {
 }
 
 .collapsible:hover {
-  color: #E81F7B;
+  color: #000000;
 }
 
 .text-indent {
