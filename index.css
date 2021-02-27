@@ -9,6 +9,18 @@
 
 /* Define color scheme */
 :root {
+  --a0: #1C676C; /* main accent */
+  --a1: #BFF102; /* secondary accent */
+  --c1: #29044A; /* dark purple */
+  --c2: #0B2E58; /* light purple, non-woven */
+  --c3: #FBFBFB; /* while offset */
+  --c4: #CCCCCC; /* light grey, stripe for multilayer */
+  --c5: #1C676C; /* cut-pile */
+  --c6: #88C426; /* knit */
+  --c7: #BFF102; /* woven */
+}
+
+:root {
   --a0: #FD80A8; /* light pink, main accent */
   --a1: #FCCE42; /* yellow, secondary accent */
   --c1: #900C3F; /* dark purple */
@@ -19,6 +31,8 @@
   --c6: #FFC300; /* yellow, knit */
   --c7: #DAF7A6; /* light green, woven */
 }
+
+
 
 * {
   padding: 0;
@@ -59,7 +73,7 @@ h1 {
   font-family: 'Pacifico', Arial, sans-serif;
   font-weight: 100;
   padding: 20px;
-  background: -webkit-linear-gradient(#FCCE42, #FD80A8);
+  background: -webkit-linear-gradient(var(--a1), var(--a0));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
