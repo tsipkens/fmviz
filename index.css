@@ -7,6 +7,19 @@
   to { background: transparent; }
 }
 
+/* Define color scheme */
+:root {
+  --a0: #FD80A8; /* light pink, main accent */
+  --a1: #FCCE42; /* yellow, secondary accent */
+  --c1: #900C3F; /* dark purple */
+  --c2: #581845; /* light purple, non-woven */
+  --c3: #FBFBFB; /* while offset */
+  --c4: #CCCCCC; /* light grey, stripe for multilayer */
+  --c5: #FF5733; /* orange, cut-pile */
+  --c6: #FFC300; /* yellow, knit */
+  --c7: #DAF7A6; /* light green, woven */
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -80,7 +93,7 @@ a {
 }
 
 a:hover {
-  color: #FD80A8;
+  color: var(--a0);
 }
 
 hr {
@@ -132,7 +145,7 @@ nav {
 }
 
 .nav-link:hover {
-  color: #FD80A8;
+  color: var(--a0);
 }
 
 a.anchor {
@@ -177,7 +190,7 @@ div.footer {
   text-decoration:none;
   padding:8px 10px 12px 5%;
   transition: all 4s;
-  background: linear-gradient(#FD80A8, #FCCE42 50%, #FD80A8);
+  background: linear-gradient(var(--a0), var(--a1) 50%, var(--a0));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background-position 0.4s ease;
@@ -223,7 +236,7 @@ select {
 }
 
 select:hover {
-  border: 2px solid #FD80A8;
+  border: 2px solid var(--a0);
 }
 
 option {
@@ -252,7 +265,7 @@ option {
   height: 11pt;
   border-radius: 50%;
   border: 1pt solid white;
-  background: #E81F7B;
+  background: var(--a0);
   cursor: pointer;
 }
 
@@ -260,7 +273,7 @@ option {
   width: 11pt;
   height: 11pt;
   border-radius: 50%;
-  background: #E81F7B;
+  background: var(--a0);
   cursor: pointer
 }
 
@@ -317,7 +330,6 @@ option {
 .mask-img {
   position: absolute;
   top: 17px;
-  opacity: 0.95;
   width: 60px;
 }
 
@@ -417,7 +429,7 @@ iframe {
 }
 
 .text-outside:hover {
-  border: 2px solid #FD80A8;
+  border: 2px solid var(--a0);
 }
 
 .collapsible {

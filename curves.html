@@ -11,6 +11,24 @@
 </head>
 
 <body>
+  <!-- Pattern fill for the multilayer circles -->
+  <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="diagonal-stripe-1" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="1" height="3" transform="translate(0,0)" fill="var(--c4)"></rect>
+        <rect width="2" height="3" transform="translate(1,0)" fill="var(--c3)"></rect>
+      </pattern>
+
+      <pattern id="diagonal-stripe-2" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="1" height="3" transform="translate(0,0)" fill="var(--c1)"></rect>
+        <rect width="2" height="3" transform="translate(1,0)" fill="var(--c2)"></rect>
+      </pattern>
+
+      <g id="mask_gen" transform="translate(-2435 -644)">
+        <path stroke="#000" stroke-width="2" fill="currentColor" d="M2519.91 645C2522.91 645 2525.34 647.457 2525.34 650.487L2527.54 700.322 2527.7 700.322 2528.03 703.689C2528.56 706.299 2529.38 709.071 2530.5 711.878 2532.17 716.09 2534.26 719.782 2536.48 722.651L2537.69 724.041 2537.69 724.423 2538.38 725.233C2538.99 726.356 2539.32 727.59 2539.32 728.885 2539.32 729.532 2539.24 730.165 2539.08 730.775L2538.52 732.192 2536.99 734.988C2535.59 737.245 2534.29 739.821 2533.17 742.629 2532.06 745.437 2531.24 748.209 2530.71 750.818L2530.05 757.407 2530.5 767.615 2530.71 769.685C2531.24 772.294 2532.06 775.066 2533.17 777.874 2534.84 782.085 2536.94 785.778 2539.16 788.646L2540.36 790.036 2540.36 790.419 2541.06 791.229C2541.67 792.351 2542 793.585 2542 794.88 2542 795.528 2541.92 796.16 2541.76 796.771L2541.2 798.187 2539.67 800.984C2538.27 803.24 2536.96 805.817 2535.85 808.624 2534.74 811.432 2533.92 814.204 2533.39 816.814L2532.89 821.788 2534.92 867.889 2534.13 869.518C2533.13 871.034 2531.61 872 2529.91 872 2528.41 872 2527.04 871.237 2526.05 870.002L2522.91 866.997C2520.65 865.092 2518.12 863.452 2515.36 862.115L2506.47 859.512C2471.68 852.155 2444.13 822.669 2440.57 785.021L2437.38 751.356C2434.65 722.396 2446.75 695.46 2467.4 678.25L2475.77 670.85C2484.52 663.266 2495.25 656.26 2507.53 650.136L2517.12 645.774 2517.21 645.832 2517.8 645.431C2518.45 645.154 2519.16 645 2519.91 645Z"/>
+      </g>
+    </defs>
+  </svg>
 
   <div>
 
@@ -38,17 +56,45 @@
         </p>
 
         <div style="display:flex;vertical-align:middle;padding-top:10px;padding-bottom:7px;font-size:11pt;">
-          <img src="https://tsipkens.github.io/fmviz/imgs/weight.svg" style="height:16pt;padding-right:3px;">
-          <div style="padding-right:20px;">weight = <output id="pweight">-</output> g/m²</div>
-          <img src="https://tsipkens.github.io/fmviz/imgs/pressure.svg" style="height:16pt;padding-right:3px;">
-          <div>Δp = <output id="pdrop">-</output> Pa (<output id="pdrop_level">-</output>)</div>
+          <div style="width:22px;padding-right:5px;">
+            <svg width="100%" height="100%" viewBox="0 0 70 69" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden">
+              <g clip-path="url(#clip0)" transform="translate(-1968 -286)">
+                <path fill="#FFFFFF" d="M1993.83 307 2013.17 307C2015.84 307 2018 309.164 2018 311.833L2018 346 1989 346 1989 311.833C1989 309.164 1991.16 307 1993.83 307Z"/>
+                <path fill="var(--a0)" d="M2003 310.14C2001.56 310.14 2000.39 311.307 2000.39 312.746L2000.5 313.018C2000.46 317.031 2000.42 321.045 2000.37 325.059L1993.63 325.059 2003 342.633 2012.37 325.059 2005.63 325.059 2005.63 313.018C2005.62 312.927 2005.61 312.837 2005.61 312.746 2005.61 311.307 2004.44 310.14 2003 310.14ZM2003 289.982C2000.73 289.982 1998.89 291.82 1998.89 294.088 1998.89 296.356 2000.73 298.194 2003 298.194 2005.27 298.194 2007.11 296.356 2007.11 294.088 2007.11 291.82 2005.27 289.982 2003 289.982ZM2003 286C2007.47 286 2011.1 289.621 2011.1 294.088 2011.1 295.205 2010.87 296.269 2010.46 297.236L2009.27 299.008 2030.93 299.008 2037 354 1969 354 1975.07 299.008 1996.73 299.008 1995.54 297.236C1995.13 296.269 1994.9 295.205 1994.9 294.088 1994.9 289.621 1998.53 286 2003 286Z" />
+              </g>
+            </svg>
+          </div>
+          <div style="padding-right:23px;padding-top:4px;">weight = <output id="pweight">-</output> g/m²</div>
+
+          <div style="width:22px;padding-right:5px;">
+            <svg width="100%" height="100%" viewBox="0 0 81 82" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden">
+              <g transform="translate(-2050 -275)">
+                <path fill="#FFFFFF" d="M2054 316C2054 295.565 2070.34 279 2090.5 279 2110.66 279 2127 295.565 2127 316 2127 336.435 2110.66 353 2090.5 353 2070.34 353 2054 336.435 2054 316Z"/>
+                <path fill="var(--a0)" d="M2050 316C2050 293.909 2068.13 276 2090.5 276 2112.87 276 2131 293.909 2131 316 2131 338.091 2112.87 356 2090.5 356 2068.13 356 2050 338.091 2050 316ZM2058.24 316C2058.24 333.543 2072.68 347.765 2090.5 347.765 2108.32 347.765 2122.76 333.543 2122.76 316 2122.76 298.457 2108.32 284.235 2090.5 284.235 2072.68 284.235 2058.24 298.457 2058.24 316Z"/>
+                <path fill="var(--a0)" d="M2085.39 321.399C2084.19 320.194 2084.19 318.242 2085.39 317.038L2085.71 316.905C2089.03 313.511 2092.36 310.116 2095.68 306.722L2090.05 301.089 2112.58 294.212 2105.7 316.743 2100.07 311.11 2089.99 321.186 2089.75 321.399C2088.55 322.603 2086.6 322.603 2085.39 321.399Z"/>\
+              </g>
+            </svg>
+          </div>
+          <div style="padding-top:4px;">Δp = <output id="pdrop">-</output> Pa (<output id="pdrop_level">-</output>)</div>
         </div>
       </div>
 
       <div class="column" style="position:relative;width:40%;">
-        <img src="imgs/mask_none.svg" id='img_l1' class="mask-img" style="z-index:3;left:0px;">
-        <img src="imgs/mask_none.svg" id='img_l2' class="mask-img" style="z-index:2;left:40px;">
-        <img src="imgs/mask_none.svg" id='img_l3' class="mask-img" style="z-index:1;left:78px;">
+        <div id='img_l1' class="mask-img" style="z-index:3;left:0px;color:#FFF;opacity: 0.95;">
+          <svg width="60" height="126" viewBox="0 0 109 229">
+            <use xlink:href="#mask_gen"/>
+          </svg>
+        </div>
+        <div id='img_l2' class="mask-img" style="z-index:2;left:40px;color:#FFF;opacity: 0.95;">
+          <svg width="60" height="126" viewBox="0 0 109 229">
+            <use xlink:href="#mask_gen"/>
+          </svg>
+        </div>
+        <div id='img_l3' class="mask-img" style="z-index:1;left:78px;color:#FFF;opacity: 0.95;">
+          <svg width="60" height="126" viewBox="0 0 109 229">
+            <use xlink:href="#mask_gen"/>
+          </svg>
+        </div>
         <img src="imgs/mask_straps.svg" class="mask-img" style="z-index:0;top:44px;left:135px;width:38px;">
         <div id='txt_l1' class="label-mask-structure" style="z-index:4;left:20px;">-</div>
         <div id='txt_l2' class="label-mask-structure" style="z-index:4;left:65px;">-</div>

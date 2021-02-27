@@ -7,7 +7,7 @@ var currentCodes = ["W5","nW5","K7"];  // starting materials
 
 
 // assign colors and material types to variables
-var colorkeys = ["#DAF7A6", "#FFC300", "#FF5733", "#581845", "#581845", "#777777"],
+var colorkeys = ["var(--c7)", "var(--c6)", "var(--c5)", "var(--c2)", "url(#diagonal-stripe-2)", "url(#diagonal-stripe-1)"],
   keyCodes = ["W", "K", "CP", "nW", "nWH", "ML"],
   keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
 
@@ -326,17 +326,24 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     var updateMaskColor = function (code, no) {
       if (code=="None") {
         letter = "none"
-      } else if ((code[0]=="K") || (code[0]=="W")) {
-        letter = code[0]
-      } else if ((code.slice(0, 3)=="nW2") || ((code.slice(0, 3)=="nW3")) || ((code.slice(0, 3)=="nW4"))) {
-        letter = "nWH"
-      } else if ((code.slice(0, 2)=="CP") || ((code.slice(0, 2)=="nW"))) {
-        letter = code.slice(0, 2)
+        document.getElementById("img_l" + (no + 1)).style.opacity = "0";  // select image to display
       } else {
-        letter = "other"
+        document.getElementById("img_l" + (no + 1)).style.opacity = "0.95";  // select image to display
+        if (code[0]=="K") {
+          letter = "var(--c6)"
+        } else if (code[0]=="W") {
+          letter = "var(--c7)"
+        } else if ((code.slice(0, 2)=="nW2") || (code.slice(0, 3)=="nW3") || (code.slice(0, 3)=="nW4")) {
+          letter = "url(#diagonal-stripe-2)"
+        } else if (code.slice(0, 2)=="CP") {
+          letter = "var(--c5)"
+        } else if (code.slice(0, 2)=="nW") {
+          letter = "var(--c2)"
+        } else {
+          letter = "var(--c3)"
+        }
+        document.getElementById("img_l" + (no + 1)).style.color = letter;  // select image to display
       }
-      document.getElementById("img_l" + (no + 1)).src =
-        "imgs/mask_" + letter + ".svg";  // select image to display
 
       // label image with text that displays code
       if (code!="None") {
