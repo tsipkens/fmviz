@@ -7,7 +7,7 @@ var currentCodes = ["W5","nW5","K7"];  // starting materials
 
 
 // assign colors and material types to variables
-var colorkeys = ["var(--c7)", "var(--c6)", "var(--c5)", "var(--c2)", "url(#diagonal-stripe-2)", "url(#diagonal-stripe-1)"],
+var colorkeys = ["var(--c7)", "var(--c6)", "var(--c5)", "var(--c2)", "var(--c2)", "var(--c4)"],
   keyCodes = ["W", "K", "CP", "nW", "nWH", "ML"],
   keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
 
@@ -338,7 +338,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           letter = "var(--c2)"
         } else {
           letter = "var(--c3)"
-        } 
+        }
         document.getElementById("img_l" + (no + 1)).style.color = letter;  // select image to display
       }
 
