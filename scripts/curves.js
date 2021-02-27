@@ -333,8 +333,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           letter = "var(--c6)"
         } else if (code[0]=="W") {
           letter = "var(--c7)"
-        } else if ((code.slice(0, 2)=="nW2") || (code.slice(0, 3)=="nW3") || (code.slice(0, 3)=="nW4")) {
-          letter = "url(#diagonal-stripe-2)"
         } else if (code.slice(0, 2)=="CP") {
           letter = "var(--c5)"
         } else if (code.slice(0, 2)=="nW") {
