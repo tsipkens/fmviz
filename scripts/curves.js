@@ -338,7 +338,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           letter = "var(--c2)"
         } else {
           letter = "var(--c3)"
-        } console.log(letter)
+        } 
         document.getElementById("img_l" + (no + 1)).style.color = letter;  // select image to display
       }
 
