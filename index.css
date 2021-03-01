@@ -403,13 +403,15 @@ option {
   font-weight: 200;
 }
 
-div.tooltip {
+.tooltip {
+  fill: white;
   position: absolute;
   text-align: left;
   padding: .4rem;
   background: #FDFDFD;
   color: #444;
   border: 0.5px solid #444;
+  stroke: #444;
   border-radius: 2px;
   pointer-events: none;
   max-width: 200px;
@@ -425,6 +427,11 @@ div.tooltip {
 .Qlabel {
   color: #CCCCCC;
   font-size: 8pt;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
 }
 
 

@@ -1,8 +1,4 @@
-
-
-
-
-var currentCodes = ["W5","nW5","K7"];  // starting materials
+var currentCodes = ["W5", "nW5", "K7"]; // starting materials
 
 
 
@@ -11,17 +7,19 @@ var colorkeys = ["var(--c7)", "var(--c6)", "var(--c5)", "var(--c2)", "var(--c1)"
   keyCodes = ["W", "K", "CP", "nW", "nWH", "ML"],
   keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
 
-var color_pc = function (keyCode) {
+var color_pc = function(keyCode) {
   for (cc in keyCodes) {
-    if (keyCode==keyCodes[cc]) { return colorkeys[cc]; }
+    if (keyCode == keyCodes[cc]) {
+      return colorkeys[cc];
+    }
   }
 }
 
 
 // set the dimensions and margins of the graph
 var $container = $('#pen_curve'),
-    width_pc_a = 0.95 * Math.min($container.width(), 870),
-    height_pc_a = $container.height()
+  width_pc_a = 0.95 * Math.min($container.width(), 870),
+  height_pc_a = $container.height()
 
 var margin_pc = {
   top: 30,
@@ -29,7 +27,7 @@ var margin_pc = {
   bottom: 40,
   left: 65
 }
-  width_pc = width_pc_a - margin_pc.left - margin_pc.right,
+width_pc = width_pc_a - margin_pc.left - margin_pc.right,
   height_pc = 390 - margin_pc.top - margin_pc.bottom;
 
 // append the svg object to the body of the page
@@ -97,10 +95,11 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
 
   // get all material codes
-  var all_codes = [], all_mats = [];
+  var all_codes = [],
+    all_mats = [];
   var treatmentText = function(d) {
     if (d.Treatment != 'None') {
-      if (typeof(d.Treatment)=='undefined') {
+      if (typeof(d.Treatment) == 'undefined') {
         return '';
       } else if (d.Treatment == 'IPA') {
         return ', ' + d.Treatment + '';
@@ -118,20 +117,24 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     all_mats[aa] = data[aa].SimpleName + treatmentText(data[aa]) + " (" + data[aa].CaseCode + ")";
   }
 
-  all_codes = all_codes.filter(function(item, i, ar) { return ar.indexOf(item) === i }); // get only unique entries
-  all_mats = all_mats.filter(function(item, i, ar) { return ar.indexOf(item) === i }); // get only unique entries
+  all_codes = all_codes.filter(function(item, i, ar) {
+    return ar.indexOf(item) === i
+  }); // get only unique entries
+  all_mats = all_mats.filter(function(item, i, ar) {
+    return ar.indexOf(item) === i
+  }); // get only unique entries
 
 
   console.log(all_codes)
   console.log(all_mats)
 
-  var populateDropDown = function (dropDown) {
-    for(ii in all_codes) {
-        var el = document.createElement("option");
-        el.textContent = all_mats[ii];
-        el.value = all_codes[ii];
-        dropDown.appendChild(el);
-      }
+  var populateDropDown = function(dropDown) {
+    for (ii in all_codes) {
+      var el = document.createElement("option");
+      el.textContent = all_mats[ii];
+      el.value = all_codes[ii];
+      dropDown.appendChild(el);
+    }
   }
 
   populateDropDown(document.getElementById("select-code"));
@@ -142,15 +145,18 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   document.getElementById("select-code2").value = currentCodes[1];
   document.getElementById("select-code3").value = currentCodes[2];
 
-  var getDataFromCode = function (codeVal) {
+  var getDataFromCode = function(codeVal) {
     var slicedData = []
     for (cc in codeVal) {
-      if (codeVal[cc]=="None") {
+      if (codeVal[cc] == "None") {
         slicedData[cc] = null;
       } else {
         sliceNo = 0;
         for (aa in data) {
-          if (data[aa].CaseCode==codeVal[cc]) { sliceNo = aa; break; }
+          if (data[aa].CaseCode == codeVal[cc]) {
+            sliceNo = aa;
+            break;
+          }
         }
         slicedData[cc] = (data[sliceNo]);
       }
@@ -162,17 +168,21 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   var slicedData = getDataFromCode(currentCodes);
 
 
-  var formatSlicedData = function (slicedData) {
+  var formatSlicedData = function(slicedData) {
     var data2 = [];
     var filt_no = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     var channel = [0.498, 0.62, 0.796, 0.962, 1.191, 1.478, 1.909, 2.322, 2.756, 3.398, 4.221, 5.246, 6.491, 8.116]
     for (bb in filt_no) {
-      data2[bb] = {'x': channel[filt_no[bb] - 1], 'ya': 1}
+      data2[bb] = {
+        'x': channel[filt_no[bb] - 1],
+        'ya': 1
+      }
       dataAll = 1;
       for (aa in slicedData) {
-        if (slicedData[aa]!=null) {
+        if (slicedData[aa] != null) {
           data2[bb]['y' + aa] = slicedData[aa]['Filt' + filt_no[bb]];
           dataAll = dataAll * slicedData[aa]['Filt' + filt_no[bb]];
+          data2[bb]['name_' + aa] = slicedData[aa]['Filt' + filt_no[bb]];
         }
       }
       data2[bb]['yall'] = dataAll; // add product of all materials
@@ -198,20 +208,20 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .y(function(d) {
         return y_pc(1 - d['ya'])
       }));
-    svg_pc.append("path")
-      .datum(data2)
-      .attr("id", "lones")
-      .attr("fill", "none")
-      .attr("stroke", "#AAAAAA")
-      .attr("stroke-width", 0.5)
-      .style("stroke-dasharray", ("4, 2"))
-      .attr("d", d3.line()
-        .x(function(d) {
-          return x_pc(d.x)
-        })
-        .y(function(d) {
-          return y_pc(d['ya'])
-        }));
+  svg_pc.append("path")
+    .datum(data2)
+    .attr("id", "lones")
+    .attr("fill", "none")
+    .attr("stroke", "#AAAAAA")
+    .attr("stroke-width", 0.5)
+    .style("stroke-dasharray", ("4, 2"))
+    .attr("d", d3.line()
+      .x(function(d) {
+        return x_pc(d.x)
+      })
+      .y(function(d) {
+        return y_pc(d['ya'])
+      }));
 
 
 
@@ -231,34 +241,81 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           return y_pc(1 - d['ya'])
         })
       )
-    }
+  }
 
-    // add combined curve
-    svg_pc.append("path")
-      .datum(data2)
-      .attr("id", "pall")
-      .attr("fill", "none")
-      .attr("stroke", "#000000")
-      .attr("stroke-width", 1.5)
-      .style("stroke-dasharray", ("4, 2"))
-      .attr("d", d3.line()
-        .x(function(d) {
-          return x_pc(d.x)
-        })
-        .y(function(d) {
-          return y_pc(1 - d['ya'])
-        }));
+  // add combined curve
+  svg_pc.append("path")
+    .datum(data2)
+    .attr("id", "pall")
+    .attr("fill", "none")
+    .attr("stroke", "#000000")
+    .attr("stroke-width", 1.5)
+    .style("stroke-dasharray", ("4, 2"))
+    .attr("d", d3.line()
+      .x(function(d) {
+        return x_pc(d.x)
+      })
+      .y(function(d) {
+        return y_pc(1 - d['ya'])
+      }));
+
+  var focus = svg_pc.append("g");
+
+  focus.append("text")
+    .attr("text-anchor", "end")
+    .attr("font-size", "10pt")
+    .attr("id", "tooltip-0")
+    .attr("x", x_pc(data2[6].x) - 3)
+    .attr("y", y_pc(0) + 12)
+    .text(slicedData[0].SimpleName + treatmentText(slicedData[0]) + ' (' + slicedData[0].CaseCode + ')');
+  focus.append("circle")
+    .attr("id", "circ-0")
+    .attr("cx", x_pc(data2[6].x))
+    .attr("cy", y_pc(0))
+    .attr("r", 3)
+    .attr("fill", color_pc(slicedData[0].StructureCode))
+    .attr("stroke", "#444")
+    .attr("stroke-width", 0.4);
+
+  focus.append("text")
+    .attr("font-size", "10pt")
+    .attr("id", "tooltip-1")
+    .attr("x", x_pc(data2[7].x) + 3)
+    .attr("y", y_pc(0) + 12)
+    .text(slicedData[1].SimpleName + treatmentText(slicedData[1]) + ' (' + slicedData[1].CaseCode + ')');
+  focus.append("circle")
+    .attr("id", "circ-1")
+    .attr("cx", x_pc(data2[7].x))
+    .attr("cy", y_pc(0))
+    .attr("r", 3)
+    .attr("fill", color_pc(slicedData[1].StructureCode))
+    .attr("stroke", "#444")
+    .attr("stroke-width", 0.4);
+
+  focus.append("text")
+    .attr("font-size", "10pt")
+    .attr("id", "tooltip-2")
+    .attr("x", x_pc(data2[8].x) + 3)
+    .attr("y", y_pc(0) + 12)
+    .text(slicedData[2].SimpleName + treatmentText(slicedData[2]) + ' (' + slicedData[2].CaseCode + ')');
+  focus.append("circle")
+    .attr("id", "circ-2")
+    .attr("cx", x_pc(data2[8].x))
+    .attr("cy", y_pc(0))
+    .attr("r", 3)
+    .attr("fill", color_pc(slicedData[2].StructureCode))
+    .attr("stroke", "#444")
+    .attr("stroke-width", 0.4);
 
 
-
-  var updateCurve = function (val) {
+  var updateCurve = function(val) {
     slicedData = getDataFromCode(val);
     data2 = formatSlicedData(slicedData);
 
     var pweight = 0,
-        pdrop = 0;
+      pdrop = 0;
     for (aa in slicedData) {
-      if (slicedData[aa]==null) {
+      if (slicedData[aa] == null) {
         svg_pc.select("#p" + aa)
           .datum(data2)
           .transition()
@@ -271,6 +328,13 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
               return y_pc(1 - d['ya'])
             })
           )
+
+        svg_pc.select("#circ-" + aa)
+          .transition()
+          .attr("display", "none")
+        svg_pc.select("#tooltip-" + aa)
+          .transition()
+          .attr("display", "none")
       } else {
         pweight = pweight + Number(slicedData[aa].Weight);
         pdrop = pdrop + Number(slicedData[aa].PressureDrop);
@@ -289,78 +353,93 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
               return y_pc(1 - d['y' + aa])
             })
           )
-        }
+
+        svg_pc.select("#circ-" + aa)
+          .transition()
+          .attr("display", "visible")
+          .attr("cx", x_pc(data2[parseInt(aa) + 6]['x']))
+          .attr("cy", y_pc(1 - data2[parseInt(aa) + 6]['y' + aa]))
+          .attr("r", 3)
+          .attr("fill", color_pc(slicedData[aa].StructureCode));
+
+        svg_pc.select("#tooltip-" + aa)
+          .transition()
+          .attr("display", "visible")
+          .attr("x", x_pc(data2[parseInt(aa) + 6]['x']) - (parseInt(aa) == 0) * 8 + 4)
+          .attr("y", y_pc(1 - data2[parseInt(aa) + 6]['y' + aa]) + (2 - parseInt(aa))  * 7 + 4 - (parseInt(aa) == 0)  * 4)
+          .text(slicedData[aa].SimpleName + treatmentText(slicedData[aa]) + ' (' + slicedData[aa].CaseCode + ')');
       }
-
-      svg_pc.select("#pall")
-        .datum(data2)
-        .transition()
-        .attr("d", d3.line()
-          .x(function(d) {
-            return x_pc(d.x)
-          })
-          .y(function(d) {
-            return y_pc(1 - d['yall'])
-          })
-        )
-
-      document.getElementById("pweight").value = pweight;  // estimated weight (sum)
-      document.getElementById("pdrop").value = pdrop;  // estimate pressure drop (sum)
-
-      if (pdrop < 20) {
-        document.getElementById("pdrop_level").value = "Very low";
-      } else if (pdrop < 35) {
-        document.getElementById("pdrop_level").value = "Low";
-      } else if (pdrop < 50) {
-        document.getElementById("pdrop_level").value = "Moderate";
-      } else if (pdrop < 65) {
-        document.getElementById("pdrop_level").value = "High";
-      } else {
-        document.getElementById("pdrop_level").value = "Very high";
-      }
-
     }
 
-    updateCurve(currentCodes)
+    svg_pc.select("#pall")
+      .datum(data2)
+      .transition()
+      .attr("d", d3.line()
+        .x(function(d) {
+          return x_pc(d.x)
+        })
+        .y(function(d) {
+          return y_pc(1 - d['yall'])
+        })
+      )
 
-    var updateMaskColor = function (code, no) {
-      if (code=="None") {
-        document.getElementById("img_l" + (no + 1)).style.opacity = "0";  // select image to display
-      } else {
-        document.getElementById("img_l" + (no + 1)).style.opacity = "0.95";  // select image to display
-        if (code[0]=="K") {
-          letter = "var(--c6)"
-        } else if (code[0]=="W") {
-          letter = "var(--c7)"
-        } else if (code.slice(0, 2)=="CP") {
-          letter = "var(--c5)"
-        } else if ((code.slice(0, 3)=="nW2") || (code.slice(0, 3)=="nW3") || (code.slice(0, 3)=="nW4")) {
-          letter = "var(--c1)"
-        } else if (code.slice(0, 2)=="nW") {
-          letter = "var(--c2)"
-        } else {
-          letter = "var(--c3)"
-        }
-        document.getElementById("img_l" + (no + 1)).style.color = letter;  // select image to display
-      }
+    document.getElementById("pweight").value = pweight; // estimated weight (sum)
+    document.getElementById("pdrop").value = pdrop; // estimate pressure drop (sum)
 
-      // label image with text that displays code
-      if (code!="None") {
-        document.getElementById("txt_l" + (no + 1)).innerHTML = code;
-      } else {
-        document.getElementById("txt_l" + (no + 1)).innerHTML = "&nbsp";
-      }
-
-      if ((code.slice(0, 2)=="CP") || ((code.slice(0, 2)=="nW"))) {
-        document.getElementById("txt_l" + (no + 1)).style.color = "#FFFFFF"
-      } else {
-        document.getElementById("txt_l" + (no + 1)).style.color = "#000000"
-      }
-
+    if (pdrop < 20) {
+      document.getElementById("pdrop_level").value = "Very low";
+    } else if (pdrop < 35) {
+      document.getElementById("pdrop_level").value = "Low";
+    } else if (pdrop < 50) {
+      document.getElementById("pdrop_level").value = "Moderate";
+    } else if (pdrop < 65) {
+      document.getElementById("pdrop_level").value = "High";
+    } else {
+      document.getElementById("pdrop_level").value = "Very high";
     }
-    updateMaskColor(currentCodes[0], 0)  // update colours of masks show to user
-    updateMaskColor(currentCodes[1], 1)
-    updateMaskColor(currentCodes[2], 2)
+
+  }
+
+  updateCurve(currentCodes)
+
+  var updateMaskColor = function(code, no) {
+    if (code == "None") {
+      document.getElementById("img_l" + (no + 1)).style.opacity = "0"; // select image to display
+    } else {
+      document.getElementById("img_l" + (no + 1)).style.opacity = "0.95"; // select image to display
+      if (code[0] == "K") {
+        letter = "var(--c6)"
+      } else if (code[0] == "W") {
+        letter = "var(--c7)"
+      } else if (code.slice(0, 2) == "CP") {
+        letter = "var(--c5)"
+      } else if ((code.slice(0, 3) == "nW2") || (code.slice(0, 3) == "nW3") || (code.slice(0, 3) == "nW4")) {
+        letter = "var(--c1)"
+      } else if (code.slice(0, 2) == "nW") {
+        letter = "var(--c2)"
+      } else {
+        letter = "var(--c3)"
+      }
+      document.getElementById("img_l" + (no + 1)).style.color = letter; // select image to display
+    }
+
+    // label image with text that displays code
+    if (code != "None") {
+      document.getElementById("txt_l" + (no + 1)).innerHTML = code;
+    } else {
+      document.getElementById("txt_l" + (no + 1)).innerHTML = "&nbsp";
+    }
+
+    if ((code.slice(0, 2) == "CP") || ((code.slice(0, 2) == "nW"))) {
+      document.getElementById("txt_l" + (no + 1)).style.color = "#FFFFFF"
+    } else {
+      document.getElementById("txt_l" + (no + 1)).style.color = "#000000"
+    }
+
+  }
+  updateMaskColor(currentCodes[0], 0) // update colours of masks show to user
+  updateMaskColor(currentCodes[1], 1)
+  updateMaskColor(currentCodes[2], 2)
 
   // dropdown menus picking different layer materials
   d3.select("#select-code").on("change", function() {
