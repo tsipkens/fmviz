@@ -32,19 +32,6 @@
   --c7: #DAF7A6; /* light green, woven */
 }
 
-/* viridis */
-:root {
-  --a0: #22A884; /* main accent */
-  --a1: #7AD151; /* secondary accent */
-  --c1: #440154; /* dark */
-  --c2: #414487; /* non-woven */
-  --c3: #FBFBFB; /* while offset */
-  --c4: #CCCCCC; /* light grey, stripe for multilayer */
-  --c5: #22A884; /* cut-pile */
-  --c6: #7AD151; /* knit */
-  --c7: #FDE725; /* woven */
-}
-
 /* matter */
 :root {
   --a0: #E26253; /* main accent */
@@ -56,6 +43,19 @@
   --c5: #E26253; /* cut-pile */
   --c6: #F5A773; /* knit */
   --c7: #FEEDB0; /* woven */
+}
+
+/* viridis */
+:root {
+  --a0: #22A884; /* main accent */
+  --a1: #7AD151; /* secondary accent */
+  --c1: #440154; /* dark */
+  --c2: #414487; /* non-woven */
+  --c3: #FBFBFB; /* while offset */
+  --c4: #CCCCCC; /* light grey, stripe for multilayer */
+  --c5: #22A884; /* cut-pile */
+  --c6: #7AD151; /* knit */
+  --c7: #FDE725; /* woven */
 }
 
 
