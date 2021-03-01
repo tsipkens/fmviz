@@ -8,29 +8,6 @@
 }
 
 /* Define color scheme */
-:root {
-  --a0: #1C676C; /* main accent */
-  --a1: #BFF102; /* secondary accent */
-  --c1: #29044A; /* dark purple */
-  --c2: #0B2E58; /* light purple, non-woven */
-  --c3: #FBFBFB; /* while offset */
-  --c4: #CCCCCC; /* light grey, stripe for multilayer */
-  --c5: #1C676C; /* cut-pile */
-  --c6: #88C426; /* knit */
-  --c7: #BFF102; /* woven */
-}
-
-:root {
-  --a0: #FD80A8; /* light pink, main accent */
-  --a1: #FCCE42; /* yellow, secondary accent */
-  --c1: #900C3F; /* dark purple */
-  --c2: #581845; /* light purple, non-woven */
-  --c3: #FBFBFB; /* while offset */
-  --c4: #CCCCCC; /* light grey, stripe for multilayer */
-  --c5: #FF5733; /* orange, cut-pile */
-  --c6: #FFC300; /* yellow, knit */
-  --c7: #DAF7A6; /* light green, woven */
-}
 
 /* matter */
 :root {
@@ -58,6 +35,31 @@
   --c7: #FDE725; /* woven */
 }
 
+/* green-blue */
+:root {
+  --a0: #1C676C; /* main accent */
+  --a1: #BFF102; /* secondary accent */
+  --c1: #29044A; /* dark purple */
+  --c2: #0B2E58; /* light purple, non-woven */
+  --c3: #FBFBFB; /* while offset */
+  --c4: #CCCCCC; /* light grey, stripe for multilayer */
+  --c5: #1C676C; /* cut-pile */
+  --c6: #88C426; /* knit */
+  --c7: #BFF102; /* woven */
+}
+
+/* original */
+:root {
+  --a0: #FF5733; /* orange, main accent */
+  --a1: #FFC300; /* yellow, secondary accent */
+  --c1: #900C3F; /* dark purple */
+  --c2: #581845; /* light purple, non-woven */
+  --c3: #FBFBFB; /* while offset */
+  --c4: #CCCCCC; /* light grey, stripe for multilayer */
+  --c5: #FF5733; /* orange, cut-pile */
+  --c6: #FFC300; /* yellow, knit */
+  --c7: #DAF7A6; /* light green, woven */
+}
 
 
 
@@ -100,7 +102,7 @@ h1 {
   font-family: 'Pacifico', Arial, sans-serif;
   font-weight: 100;
   padding: 20px;
-  background: -webkit-linear-gradient(var(--a1), var(--a0));
+  background: -webkit-linear-gradient(var(--a0), var(--a1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -236,7 +238,7 @@ div.footer {
   text-decoration:none;
   padding:8px 10px 12px 5%;
   transition: all 4s;
-  background: linear-gradient(var(--a0), var(--a1) 50%, var(--a0));
+  background: linear-gradient(var(--a1), var(--a0) 50%, var(--a1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background-position 0.4s ease;
@@ -245,7 +247,7 @@ div.footer {
 }
 
 #logo:hover {
-  background-position: 100% 0;
+  background-position: 100% 30%;
 }
 
 
