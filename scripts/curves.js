@@ -7,7 +7,7 @@ var currentCodes = ["W5","nW5","K7"];  // starting materials
 
 
 // assign colors and material types to variables
-var colorkeys = ["var(--c7)", "var(--c6)", "var(--c5)", "var(--c2)", "var(--c2)", "var(--c4)"],
+var colorkeys = ["var(--c7)", "var(--c6)", "var(--c5)", "var(--c2)", "var(--c1)", "var(--c4)"],
   keyCodes = ["W", "K", "CP", "nW", "nWH", "ML"],
   keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
 
@@ -334,6 +334,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           letter = "var(--c7)"
         } else if (code.slice(0, 2)=="CP") {
           letter = "var(--c5)"
+        } else if ((code.slice(0, 3)=="nW2") || (code.slice(0, 3)=="nW3") || (code.slice(0, 3)=="nW4")) {
+          letter = "var(--c1)"
         } else if (code.slice(0, 2)=="nW") {
           letter = "var(--c2)"
         } else {
