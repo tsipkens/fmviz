@@ -366,7 +366,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           .transition()
           .attr("display", "visible")
           .attr("x", x_pc(data2[parseInt(aa) + 6]['x']) - (parseInt(aa) == 0) * 8 + 4)
-          .attr("y", y_pc(1 - data2[parseInt(aa) + 6]['y' + aa]) + (2 - parseInt(aa))  * 7 + 4 - (parseInt(aa) == 0)  * 4)
+          .attr("y", y_pc(1 - data2[parseInt(aa) + 6]['y' + aa]) + (2 - parseInt(aa)) * 7 + 4 - (parseInt(aa) == 0) * 4)
           .text(slicedData[aa].SimpleName + treatmentText(slicedData[aa]) + ' (' + slicedData[aa].CaseCode + ')');
       }
     }
