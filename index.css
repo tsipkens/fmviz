@@ -164,7 +164,12 @@ header {
 nav {
   padding: 10px 5% 10px 0px;
   text-align: right;
-  width: 60%;
+  width: 80%;
+}
+@media screen and (max-width: 850px) {
+   nav {
+      width: 50%;
+   }
 }
 
 .nav-list {
