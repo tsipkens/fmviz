@@ -85,6 +85,7 @@ p {
   padding-bottom: 8px;
   margin: 0px;
   color: #444;
+  font-size: 13pt;
 }
 @media screen and (min-width: 600px) {
    p {
@@ -99,7 +100,7 @@ b {
 
 h1 {
   text-align: center;
-  font-size: 58pt;
+  font-size: 65pt;
   font-family: 'Pacifico', Arial, sans-serif;
   font-weight: 100;
   padding: 20px;
@@ -109,7 +110,7 @@ h1 {
 }
 
 h2 {
-  font-size: 35pt;
+  font-size: 37pt;
   padding-bottom: 5px;
   font-family: 'Open Sans';
   font-weight: 200;
@@ -118,7 +119,7 @@ h2 {
 }
 
 h3 {
-  font-size: 16pt;
+  font-size: 18pt;
   margin-bottom: 9.5px;
   font-family: 'Open Sans';
   font-weight: 200;
@@ -490,6 +491,10 @@ iframe {
   border: 2px solid var(--a0);
 }
 
+.text-outside p {
+  font-size: 12pt;
+}
+
 .collapsible {
   color: #666;
   background-color: transparent;
@@ -502,10 +507,10 @@ iframe {
   outline: none;
   margin: 0px;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 12pt;
   font-weight: 200;
   text-align: left;
   transition: all 0.4s;
+  font-size: 12pt;
 }
 
 .collapsible:hover {
@@ -516,7 +521,6 @@ iframe {
   background-color: transparent;
   padding: 10px 3% 10px 3%;
   display: none;
-  font-size: 11pt;
   color: #555;
   border-top: 1px solid #E9EEF0;
 }
@@ -527,19 +531,4 @@ iframe {
 
 .text-indent p:last-child {
   padding-bottom: 5px;
-}
-
-.collapsible-ol {
-  padding: 0px;
-  margin: 0px;
-  text-align: left;
-}
-@media screen and (min-width: 600px) {
-  .collapsible-ol {
-    text-align: justify;
-  }
-}
-
-.collapsible-ol li {
-  margin: 5px 0px 0px 20px;
 }
