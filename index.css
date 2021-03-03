@@ -50,7 +50,7 @@
 
 /* original */
 :root {
-  --a0: #FF5733; /* orange, main accent */
+  --a0: #F2A700; /* main accent */
   --a1: #FFC300; /* yellow, secondary accent */
   --c1: #900C3F; /* dark purple */
   --c2: #581845; /* light purple, non-woven */
@@ -113,6 +113,7 @@ h2 {
   font-family: 'Open Sans';
   font-weight: 200;
   padding-top: 30px;
+  color: var(--a0);
 }
 
 h3 {
