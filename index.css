@@ -50,7 +50,7 @@
 
 /* original */
 :root {
-  --a0: #F2A700; /* main accent */
+  --a0: #E68900; /* main accent */
   --a1: #FFC300; /* yellow, secondary accent */
   --c1: #900C3F; /* dark purple */
   --c2: #581845; /* light purple, non-woven */
@@ -84,7 +84,7 @@ p {
   padding-top: 8px;
   padding-bottom: 8px;
   margin: 0px;
-  color: #222;
+  color: #444;
 }
 @media screen and (min-width: 600px) {
    p {
@@ -94,6 +94,7 @@ p {
 
 b {
   font-weight: 600;
+  color: #000;
 }
 
 h1 {
@@ -108,12 +109,12 @@ h1 {
 }
 
 h2 {
-  font-size: 32pt;
+  font-size: 35pt;
   padding-bottom: 5px;
   font-family: 'Open Sans';
   font-weight: 200;
   padding-top: 30px;
-  color: var(--a0);
+  color: black;
 }
 
 h3 {
