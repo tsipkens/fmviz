@@ -52,17 +52,17 @@
         <li><a href="#hfvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
         <li><a href="#hdiy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
         <li><a href="#htable" class="nav-link" id="data-link-a" style="padding:15px 5% 15px 10px;" onclick="highlightDataLink()">
-          <div style="display:flex;vertical-align:middle;">
-            <img src="https://tsipkens.github.io/fmviz/imgs/data.svg" style="height:15pt;padding-right:5px;"></img>
-            <span>LINK TO DATA</span>
-          </div>
-        </a></li>
+            <div style="display:flex;vertical-align:middle;">
+              <img src="https://tsipkens.github.io/fmviz/imgs/data.svg" style="height:15pt;padding-right:5px;"></img>
+              <span>LINK TO DATA</span>
+            </div>
+          </a></li>
         <li><a href="https://github.com/tsipkens" class="nav-link">
-          <div style="display:flex;vertical-align:middle;">
-            <img src="imgs/GitHub-Mark-64px.png" alt="GitHub" style="height:15pt; padding-right:5px;">
-            <span>@tsipkens</span>
-          </div>
-        </a></li>
+            <div style="display:flex;vertical-align:middle;">
+              <img src="imgs/GitHub-Mark-64px.png" alt="GitHub" style="height:15pt; padding-right:5px;">
+              <span>@tsipkens</span>
+            </div>
+          </a></li>
       </ul>
     </nav>
   </header>
@@ -511,51 +511,51 @@
 
       <h3>CITATION AND ACKNOWLEDGEMENTS</h3>
 
-        <p>
-          This graphic was created by Timothy Sipkens in cooperation with
-          other members of the
-          <a href="http://www.aerosol.mech.ubc.ca/">Energy and Aerosol Laboratory</a>
-          at the Univeristy of British Columbia and is associated with
-          <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">this paper</a>.
-          The authors can be contacted at
-          <a href="mailto:tsipkens@mail.ubc.ca">tsipkens@mail.ubc.ca</a> or
-          <a href="mailto:rogak@mech.ubc.ca">rogak@mech.ubc.ca</a>.
-          When using this data, please cite the corresponding paper:
-        </p>
+      <p>
+        This graphic was created by Timothy Sipkens in cooperation with
+        other members of the
+        <a href="http://www.aerosol.mech.ubc.ca/">Energy and Aerosol Laboratory</a>
+        at the Univeristy of British Columbia and is associated with
+        <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">this paper</a>.
+        The authors can be contacted at
+        <a href="mailto:tsipkens@mail.ubc.ca">tsipkens@mail.ubc.ca</a> or
+        <a href="mailto:rogak@mech.ubc.ca">rogak@mech.ubc.ca</a>.
+        When using this data, please cite the corresponding paper:
+      </p>
 
-        <p class="ref">
-          <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">
-            S. N. Rogak, T. A. Sipkens, M. Guan,
-            H. Nikookar, D. V. Figueroa, J. Wang.
-            "Properties of materials considered for improvised masks."
-            <i>Aerosol Science and Technology</i>. In press. doi: 10.1080/02786826.2020.1855321
-          </a>.
-        </p>
+      <p class="ref">
+        <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">
+          S. N. Rogak, T. A. Sipkens, M. Guan,
+          H. Nikookar, D. V. Figueroa, J. Wang.
+          "Properties of materials considered for improvised masks."
+          <i>Aerosol Science and Technology</i>. In press. doi: 10.1080/02786826.2020.1855321
+        </a>.
+      </p>
 
-        <p>
-          One can also consider citing this web app directly:
-        </p>
+      <p>
+        One can also consider citing this web app directly:
+      </p>
 
-        <p class="ref">
-          <a href="https://tsipkens.github.io/fmviz/"> T. A. Sipkens, S. N. Rogak.
-            "FMViz: Face mask visualization." https://tsipkens.github.io/fmviz/.</a>
-        </p>
+      <p class="ref">
+        <a href="https://tsipkens.github.io/fmviz/"> T. A. Sipkens, S. N. Rogak.
+          "FMViz: Face mask visualization." https://tsipkens.github.io/fmviz/.</a>
+      </p>
 
-        <p>
-          This work compliments active efforts by many other aerosol scientists and
-          health professionals aimed at improving our understanding of
-          improvised mask materials and construction. We refer to many of these
-          studies in the associated paper.
-          We would also like to acknowledge the
-          <a href="http://www.freemaskprojectvancouver.com/">Free Mask Project</a> for their
-          involvement through this project and Eric Cytrynbaum and
-          Devon Ostrom for constructive feedback in regards to this web app.
-        </p>
+      <p>
+        This work compliments active efforts by many other aerosol scientists and
+        health professionals aimed at improving our understanding of
+        improvised mask materials and construction. We refer to many of these
+        studies in the associated paper.
+        We would also like to acknowledge the
+        <a href="http://www.freemaskprojectvancouver.com/">Free Mask Project</a> for their
+        involvement through this project and Eric Cytrynbaum and
+        Devon Ostrom for constructive feedback in regards to this web app.
+      </p>
 
-        <p>
-          This app has known issues with Internet Explorer, and other browsers
-          are recommended.
-        </p>
+      <p>
+        This app has known issues with Internet Explorer, and other browsers
+        are recommended.
+      </p>
 
 
     </div>
@@ -575,11 +575,13 @@
 
         if (content.style.display === "block") {
           this.style.maxHeight = button.scrollHeight + "px";
-          setTimeout(function (){ content.style.display = "none"; }, 500);
+          setTimeout(function() {
+            content.style.display = "none";
+          }, 500);
           button.children[0].style = "transform:rotate(0deg);color:black;";
         } else {
           this.style.maxHeight = button.scrollHeight + "px"; /* need for first time */
-          setTimeout(function () {
+          setTimeout(function() {
             content.style.display = "block";
             this.style.transition = "max-height 0.5s";
             this.style.maxHeight = this.scrollHeight + "px";
@@ -598,7 +600,10 @@
     };
 
     // When the user scrolls down 50px from the top of the document, reformat header
-    window.onscroll = function() {scrollFunction()};
+    window.onscroll = function() {
+      scrollFunction()
+    };
+
     function scrollFunction() {
       if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
         document.getElementById("header").style.boxShadow = "0px 0px 4px #AAA";

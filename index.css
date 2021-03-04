@@ -1,67 +1,104 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Pacifico&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300&display=swap');
 
 /* text highlighting */
 @keyframes yellowfade {
-  from { background: yellow; }
-  to { background: transparent; }
+  from {
+    background: yellow;
+  }
+
+  to {
+    background: transparent;
+  }
 }
 
 /* Define color scheme */
-
 /* matter */
 :root {
-  --a0: #E26253; /* main accent */
-  --a1: #F5A773; /* secondary accent */
-  --c1: #2F0F3E; /* dark */
-  --c2: #B32E5F; /* non-woven */
-  --c3: #FBFBFB; /* while offset */
-  --c4: #CCCCCC; /* light grey, stripe for multilayer */
-  --c5: #E26253; /* cut-pile */
-  --c6: #F5A773; /* knit */
-  --c7: #FEEDB0; /* woven */
+  --a0: #E26253;
+  /* main accent */
+  --a1: #F5A773;
+  /* secondary accent */
+  --c1: #2F0F3E;
+  /* dark */
+  --c2: #B32E5F;
+  /* non-woven */
+  --c3: #FBFBFB;
+  /* while offset */
+  --c4: #CCCCCC;
+  /* light grey, stripe for multilayer */
+  --c5: #E26253;
+  /* cut-pile */
+  --c6: #F5A773;
+  /* knit */
+  --c7: #FEEDB0;
+  /* woven */
 }
 
 /* viridis */
 :root {
-  --a0: #22A884; /* main accent */
-  --a1: #7AD151; /* secondary accent */
-  --c1: #440154; /* dark */
-  --c2: #414487; /* non-woven */
-  --c3: #FBFBFB; /* while offset */
-  --c4: #CCCCCC; /* light grey, stripe for multilayer */
-  --c5: #22A884; /* cut-pile */
-  --c6: #7AD151; /* knit */
-  --c7: #FDE725; /* woven */
+  --a0: #22A884;
+  /* main accent */
+  --a1: #7AD151;
+  /* secondary accent */
+  --c1: #440154;
+  /* dark */
+  --c2: #414487;
+  /* non-woven */
+  --c3: #FBFBFB;
+  /* while offset */
+  --c4: #CCCCCC;
+  /* light grey, stripe for multilayer */
+  --c5: #22A884;
+  /* cut-pile */
+  --c6: #7AD151;
+  /* knit */
+  --c7: #FDE725;
+  /* woven */
 }
 
 /* green-blue */
 :root {
-  --a0: #1C676C; /* main accent */
-  --a1: #BFF102; /* secondary accent */
-  --c1: #29044A; /* dark purple */
-  --c2: #0B2E58; /* light purple, non-woven */
-  --c3: #FBFBFB; /* while offset */
-  --c4: #CCCCCC; /* light grey, stripe for multilayer */
-  --c5: #1C676C; /* cut-pile */
-  --c6: #88C426; /* knit */
-  --c7: #BFF102; /* woven */
+  --a0: #1C676C;
+  /* main accent */
+  --a1: #BFF102;
+  /* secondary accent */
+  --c1: #29044A;
+  /* dark purple */
+  --c2: #0B2E58;
+  /* light purple, non-woven */
+  --c3: #FBFBFB;
+  /* while offset */
+  --c4: #CCCCCC;
+  /* light grey, stripe for multilayer */
+  --c5: #1C676C;
+  /* cut-pile */
+  --c6: #88C426;
+  /* knit */
+  --c7: #BFF102;
+  /* woven */
 }
 
 /* original */
 :root {
-  --a0: #E68900; /* main accent */
-  --a1: #FFC300; /* yellow, secondary accent */
-  --c1: #900C3F; /* dark purple */
-  --c2: #581845; /* light purple, non-woven */
-  --c3: #FBFBFB; /* while offset */
-  --c4: #CCCCCC; /* light grey, stripe for multilayer */
-  --c5: #FF5733; /* orange, cut-pile */
-  --c6: #FFC300; /* yellow, knit */
-  --c7: #DAF7A6; /* light green, woven */
+  --a0: #E68900;
+  /* main accent */
+  --a1: #FFC300;
+  /* yellow, secondary accent */
+  --c1: #900C3F;
+  /* dark purple */
+  --c2: #581845;
+  /* light purple, non-woven */
+  --c3: #FBFBFB;
+  /* while offset */
+  --c4: #CCCCCC;
+  /* light grey, stripe for multilayer */
+  --c5: #FF5733;
+  /* orange, cut-pile */
+  --c6: #FFC300;
+  /* yellow, knit */
+  --c7: #DAF7A6;
+  /* light green, woven */
 }
-
-
 
 * {
   padding: 0;
@@ -87,10 +124,11 @@ p {
   color: #444;
   font-size: 13pt;
 }
+
 @media screen and (min-width: 600px) {
-   p {
-      text-align: justify;
-   }
+  p {
+    text-align: justify;
+  }
 }
 
 b {
@@ -159,8 +197,10 @@ header {
   padding: 0px;
   font-size: 10pt;
   z-index: 20;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
   width: 100%;
   box-shadow: white;
   transition: 0.3s;
@@ -171,10 +211,11 @@ nav {
   text-align: right;
   width: 80%;
 }
+
 @media screen and (max-width: 850px) {
-   nav {
-      width: 65%;
-   }
+  nav {
+    width: 65%;
+  }
 }
 
 .nav-list {
@@ -241,10 +282,10 @@ a.anchor {
 }
 
 #logo {
-  font-family:'Pacifico',sans-serif;
-  font-size:20pt;
-  text-decoration:none;
-  padding:8px 10px 12px 5%;
+  font-family: 'Pacifico', sans-serif;
+  font-size: 20pt;
+  text-decoration: none;
+  padding: 8px 10px 12px 5%;
   transition: all 4s;
   background: linear-gradient(var(--a1), var(--a0) 50%, var(--a1));
   -webkit-background-clip: text;
@@ -257,8 +298,6 @@ a.anchor {
 #logo:hover {
   background-position: 100% 30%;
 }
-
-
 
 /* For main components */
 div.main {
@@ -275,8 +314,6 @@ div.control {
   flex-wrap: wrap;
   vertical-align: middle;
 }
-
-
 
 select {
   font-family: 'Open Sans', Arial, sans-serif;
@@ -296,7 +333,7 @@ select:hover {
 }
 
 option {
-  font-family: 'Open Sans',  Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 11pt;
   font-weight: 300;
 }
@@ -372,7 +409,7 @@ option {
 .p-control-column {
   padding-top: 0px;
   padding-bottom: 1px;
-  text-align:left;
+  text-align: left;
 }
 
 .label-mask-structure {
@@ -398,10 +435,7 @@ option {
   clear: both;
 }
 
-
-
 /* Associated with plot elements --> */
-
 .axis {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 10pt;
@@ -445,9 +479,6 @@ option {
   pointer-events: all;
 }
 
-
-
-
 /* Format iframes */
 iframe {
   border: 0;
@@ -478,7 +509,6 @@ iframe {
   position: relative;
 }
 
-
 /* For hidden text notes */
 .text-outside {
   background-color: #FDFDFD;
@@ -487,7 +517,8 @@ iframe {
   border: 2px solid #E9EEF0;
   border-radius: 5pt;
   width: 100%;
-  max-height: auto;  /* required for smooth transition */
+  max-height: auto;
+  /* required for smooth transition */
   overflow: hidden;
   transition: color 0.4s;
   transition: border 0.4s;
