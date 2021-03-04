@@ -113,17 +113,17 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   var old_ie = ua.indexOf('MSIE ');
   var new_ie = ua.indexOf('Trident/');
   if ((old_ie > -1) || (new_ie > -1)) {
-      isIE = true;
+    isIE = true;
   }
 
   // Color scale
-  var getCSSVar = function (varname) {
+  var getCSSVar = function(varname) {
     if (isIE) { // internet explorer styling (no support for CSS vars.)
       lc = varname.slice(varname.length - 1);
       if (lc == ")") {
         colorcode = "#444";
       } else {
-        colorcode =  ("#FF" + Math.round(1.8*lc).toString(16) + "F" + (8-lc).toString(16) + "F")
+        colorcode = ("#FF" + Math.round(1.8 * lc).toString(16) + "F" + (8 - lc).toString(16) + "F")
       }
     } else {
       colorcode = getComputedStyle(document.documentElement).getPropertyValue(varname)
