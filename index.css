@@ -381,9 +381,8 @@ option {
   height: 130px;
   text-align: center;
   writing-mode: vertical-rl;
-  -ms-writing-mode: vertical-rl;
   text-orientation: sideways-right;
-  -ms-text-orientation: sideways-right;
+  -ms-writing-mode: tb-rl;
 }
 
 .mask-img {

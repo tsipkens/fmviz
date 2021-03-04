@@ -1,12 +1,33 @@
 var currentCodes = ["W5", "nW5", "K7"]; // starting materials
 
 
+// Check if internet explorer.
+var isIE = false;
+var ua = window.navigator.userAgent;
+var old_ie = ua.indexOf('MSIE ');
+var new_ie = ua.indexOf('Trident/');
+if ((old_ie > -1) || (new_ie > -1)) {
+    isIE = true;
+}
 
-// assign colors and material types to variables
-var colorkeys = ["var(--c7)", "var(--c6)", "var(--c5)", "var(--c2)", "var(--c1)", "var(--c4)"],
+// Color scale
+var getCSSVar = function (varname) {
+  if (isIE) { // internet explorer styling (no support for CSS vars.)
+    lc = varname.slice(varname.length - 1);
+    if (lc == ")") {
+      colorcode = "#444";
+    } else {
+      colorcode =  ("#FF" + Math.round(1.8*lc).toString(16) + "F" + (8-lc).toString(16) + "F")
+    }
+  } else {
+    colorcode = getComputedStyle(document.documentElement).getPropertyValue(varname)
+  }
+  return colorcode;
+}
+var colorkeys = [getCSSVar('--c7'), getCSSVar('--c6'), getCSSVar('--c5'), getCSSVar('--c2'), getCSSVar('--c1'), getCSSVar('--c4')],
   keyCodes = ["W", "K", "CP", "nW", "nWH", "ML"],
   keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
-
+console.log(keyCodes)
 var color_pc = function(keyCode) {
   for (cc in keyCodes) {
     if (keyCode == keyCodes[cc]) {
@@ -231,7 +252,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .datum(data2)
       .attr("id", "p" + aa)
       .attr("fill", "none")
-      .attr("stroke", "#2525C6")
+      .attr("stroke", "#FF8888")
       .attr("stroke-width", 0)
       .attr("d", d3.line()
         .x(function(d) {
@@ -383,19 +404,19 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         })
       )
 
-    document.getElementById("pweight").value = pweight; // estimated weight (sum)
-    document.getElementById("pdrop").value = pdrop; // estimate pressure drop (sum)
+    document.getElementById("pweight").innerHTML = pweight; // estimated weight (sum)
+    document.getElementById("pdrop").innerHTML = pdrop; // estimate pressure drop (sum)
 
     if (pdrop < 20) {
-      document.getElementById("pdrop_level").value = "Very low";
+      document.getElementById("pdrop_level").innerHTML = "Very low";
     } else if (pdrop < 35) {
-      document.getElementById("pdrop_level").value = "Low";
+      document.getElementById("pdrop_level").innerHTML = "Low";
     } else if (pdrop < 50) {
-      document.getElementById("pdrop_level").value = "Moderate";
+      document.getElementById("pdrop_level").innerHTML = "Moderate";
     } else if (pdrop < 65) {
-      document.getElementById("pdrop_level").value = "High";
+      document.getElementById("pdrop_level").innerHTML = "High";
     } else {
-      document.getElementById("pdrop_level").value = "Very high";
+      document.getElementById("pdrop_level").innerHTML = "Very high";
     }
 
   }
@@ -408,17 +429,17 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     } else {
       document.getElementById("img_l" + (no + 1)).style.opacity = "0.95"; // select image to display
       if (code[0] == "K") {
-        letter = "var(--c6)"
+        letter = getCSSVar("--c6");
       } else if (code[0] == "W") {
-        letter = "var(--c7)"
+        letter = getCSSVar("--c7");
       } else if (code.slice(0, 2) == "CP") {
-        letter = "var(--c5)"
+        letter = getCSSVar("--c5");
       } else if ((code.slice(0, 3) == "nW2") || (code.slice(0, 3) == "nW3") || (code.slice(0, 3) == "nW4")) {
-        letter = "var(--c1)"
+        letter = getCSSVar("--c1");
       } else if (code.slice(0, 2) == "nW") {
-        letter = "var(--c2)"
+        letter = getCSSVar("--c2");
       } else {
-        letter = "var(--c3)"
+        letter = getCSSVar("--c3");
       }
       document.getElementById("img_l" + (no + 1)).style.color = letter; // select image to display
     }

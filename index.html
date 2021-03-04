@@ -53,7 +53,7 @@
         <li><a href="#hdiy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
         <li><a href="#htable" class="nav-link" id="data-link-a" style="padding:15px 5% 15px 10px;" onclick="highlightDataLink()">
           <div style="display:flex;vertical-align:middle;">
-            <img src="https://tsipkens.github.io/fmviz/imgs/data.svg" style="height:15pt; padding-right:5px;"></img>
+            <img src="https://tsipkens.github.io/fmviz/imgs/data.svg" style="height:15pt;padding-right:5px;"></img>
             <span>LINK TO DATA</span>
           </div>
         </a></li>
@@ -323,7 +323,7 @@
     </div>
 
     <div class="iframe-container1">
-      <iframe name="graphic1" src="fvp.html" frameborder="0" scrolling="auto">
+      <iframe name="graphic1" src="fvp.html" frameborder="0" scrolling="no">
       </iframe>
     </div>
 
@@ -341,7 +341,7 @@
     </p>
 
     <div class="iframe-container1b">
-      <iframe name="graphic1b" src="whisker.html" frameborder="0" scrolling="auto">
+      <iframe name="graphic1b" src="whisker.html" frameborder="0" scrolling="no">
       </iframe>
     </div>
 
@@ -478,7 +478,7 @@
     </div>
 
     <div class="iframe-container2">
-      <iframe name="viz2" src="curves.html" frameborder="0" scrolling="auto">
+      <iframe name="viz2" src="curves.html" frameborder="0" scrolling="no">
       </iframe>
     </div>
 
@@ -579,12 +579,12 @@
           button.children[0].style = "transform:rotate(0deg);color:black;";
         } else {
           this.style.maxHeight = button.scrollHeight + "px"; /* need for first time */
-          setTimeout(() => {
+          setTimeout(function () {
             content.style.display = "block";
             this.style.transition = "max-height 0.5s";
             this.style.maxHeight = this.scrollHeight + "px";
             button.children[0].style = "transform:rotate(90deg);color:var(--a0);";
-          }, 40);
+          }.bind(this), 40);
         }
       });
     }
