@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
 
+  <script src="https://kit.fontawesome.com/58cf1bb60d.js" crossorigin="anonymous"></script>
+
+  <link href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -27,7 +30,6 @@
   </svg>
 
   <div>
-
     <h4 style="margin-block-start: 0.4em; margin-block-end: 0.4em;">Legend & controls</h4>
 
     <div id="my_legend"></div>
@@ -45,12 +47,32 @@
         <p class="p-control-column">
           <span class="control-label">Material structure</span><br>
           <div class="control">
-            <div class="cb-wrapper" style="border:none;padding-left:0px"><input type="checkbox" class="cb-material" value="W" checked><label>Woven</label></div>
-            <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="K" checked><label>Knit</label></div>
-            <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="CP" checked><label>Cut pile</label></div>
-            <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="nW" checked><label>Non-woven</label></div>
-            <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="nWH" checked><label>Non-woven, Halyard</label></div>
-            <div class="cb-wrapper"><input type="checkbox" class="cb-material" value="ML" checked><label>Multilayer</label></div>
+            <div class="cb-wrapper" style="border:none;padding-left:0px">
+              <label for="cbW">
+                <input id="cbW" type="checkbox" class="cb-material" value="W" checked>
+                <span>Woven</span>
+              </label>
+              <label for="cbK">
+                <input id="cbK" type="checkbox" class="cb-material" value="K" checked>
+                <span>Knit</span>
+              </label>
+              <label for="cbCP">
+                <input id="cbCP" type="checkbox" class="cb-material" value="CP" checked>
+                <span>Cut pile</span>
+              </label>
+              <label for="cbnW">
+                <input id="cbnW" type="checkbox" class="cb-material" value="nW" checked>
+                <span>Non-woven</span>
+              </label>
+              <label for="cbnWH">
+                <input id="cbnWH" type="checkbox" class="cb-material" value="nWH" checked>
+                <span>Non-woven, Halyard</span>
+              </label>
+              <label for="cbML">
+                <input id="cbML" type="checkbox" class="cb-material" value="ML" checked>
+                <span>Multilayer</span>
+              </label>
+            </div>
           </div>
         </p>
       </div>
