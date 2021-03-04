@@ -95,7 +95,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     // Y axis label:
     svg.append("text")
       .attr("text-anchor", "middle")
-      .attr('transform', 'translate(-42,' + height / 2 + ')rotate(-90)')
+      .attr('transform', 'translate(-42,' + height / 2 + ')rotate(270)')
       .text("Filtration efficiency")
     svg.append("text")
       .attr("text-anchor", "middle")

@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Pacifico&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Pacifico&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300&display=swap');
 
 /* text highlighting */
 @keyframes yellowfade {
@@ -376,7 +376,9 @@ option {
   height: 130px;
   text-align: center;
   writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
   text-orientation: sideways-right;
+  -ms-text-orientation: sideways-right;
 }
 
 .mask-img {
@@ -517,9 +519,18 @@ iframe {
   color: #000000;
 }
 
+.plus {
+  display: inline-block;
+  transform: rotate(0deg);
+  font-weight: 700;
+  color: #000;
+  transition: all 0.5s;
+  font-size: 14pt;
+}
+
 .text-indent {
   background-color: transparent;
-  padding: 10px 3% 10px 3%;
+  padding: 16px 3% 16px 3%;
   display: none;
   color: #555;
   border-top: 1px solid #E9EEF0;
