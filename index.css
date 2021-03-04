@@ -206,13 +206,18 @@ a.anchor {
   visibility: hidden;
 }
 
-div.footer {
+.footer {
   background-color: #FAFAFA;
   margin-top: 30px;
   padding-top: 30px;
   margin-bottom: 0px;
   padding-bottom: 20px;
   border-top: 1px solid #DDDDDD;
+  font-size: 11pt;
+}
+
+.footer p {
+  font-size: 11pt;
 }
 
 .ref {

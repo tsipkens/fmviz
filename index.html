@@ -568,18 +568,18 @@
     for (i = 0; i < coll.length; i++) {
       coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
-        var content = this.childNodes;
-        button = content[1]
-        content = content[3]
-        console.log(button.children[0])
+        var content = this.childNodes,
+          button = content[1],
+          content = content[3],
+          outside = this;
 
         if (content.style.display === "block") {
           this.style.maxHeight = button.scrollHeight + "px";
-          setTimeout(() => { content.style.display = "none" }, 500);
+          setTimeout(function (){ content.style.display = "none"; }, 500);
           button.children[0].style = "transform:rotate(0deg);color:black;";
         } else {
           this.style.maxHeight = button.scrollHeight + "px"; /* need for first time */
-          setTimeout(() => {  /* delay to make sure above has been applied */
+          setTimeout(() => {
             content.style.display = "block";
             this.style.transition = "max-height 0.5s";
             this.style.maxHeight = this.scrollHeight + "px";
