@@ -348,6 +348,7 @@ option {
   outline: none;
   -webkit-transition: .2s;
   transition: all .2s;
+  cursor: pointer;
 }
 
 .slider::-webkit-slider-thumb {
@@ -380,6 +381,7 @@ option {
   margin-right: 12px;
   display: inline-flex;
   align-items: baseline;
+  cursor: pointer;
 }
 
 input[type="checkbox"]{
