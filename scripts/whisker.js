@@ -239,7 +239,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .attr("cy", function(d) {
       return (y(d.StructureCode) + (y.bandwidth() / 2) - jitterWidth / 2 + Math.random() * jitterWidth)
     })
-    .attr("r", 4)
+    .attr("r", 5.3)
     .style("fill", function(d) {
       return (color(d.StructureCode))
     })
