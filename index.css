@@ -173,11 +173,13 @@ a {
   color: #222222;
   cursor: pointer;
   transition: all 0.3s ease 0s;
-  text-decoration-thickness: 0px;
+  text-decoration-color: #777;
 }
 
 a:hover {
   color: var(--a0);
+  text-decoration-style: solid;
+  text-decoration-color: var(--a0);
 }
 
 hr {
@@ -272,13 +274,17 @@ a.anchor {
 }
 
 .ref:hover {
-  color: #E81F7B;
+  color: var(--a0);
   transition: ease 0.3s;
   border-left: solid var(--a0) 2px;
 }
 
 .ref a {
-  text-decoration: none;
+  text-decoration-color: #777;
+}
+
+.ref a:hover {
+  text-decoration-color: var(--a0);
 }
 
 #logo {
