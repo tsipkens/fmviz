@@ -157,16 +157,16 @@ h2 {
 }
 
 h3 {
-  font-size: 18pt;
+  font-size: 21pt;
   margin-bottom: 9.5px;
   font-family: 'Open Sans';
   font-weight: 200;
 }
 
 h4 {
-  font-size: 13pt;
+  font-size: 14pt;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 a {
@@ -340,7 +340,6 @@ option {
 
 /* for colored slider */
 .slider {
-  line-height: 11pt;
   -webkit-appearance: none;
   width: 80%;
   height: 5pt;
@@ -419,10 +418,10 @@ input[type="checkbox"]:checked:after {
 }
 
 .control-label {
-  font-weight: 600;
+  font-weight: 400;
   flex: 0 0 auto;
-  font-size: 11pt;
-  line-height: 12pt;
+  font-size: 12pt;
+  line-height: 13pt;
   display: inline-block;
 }
 
@@ -538,10 +537,10 @@ iframe {
 
 /* For hidden text notes */
 .text-outside {
-  background-color: #FDFDFD;
+  background-color: #F8F8F8;
   max-height: 100000px;
   margin-top: 10px;
-  border: 2px solid #E9EEF0;
+  border: 2px solid white;
   border-radius: 5pt;
   width: 100%;
   max-height: auto;
