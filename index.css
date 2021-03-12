@@ -548,7 +548,7 @@ iframe {
   background-color: #F8F8F8;
   max-height: 100000px;
   margin-top: 10px;
-  border: 2px solid white;
+  border: 2px solid #F8F8F8;
   border-radius: 5pt;
   width: 100%;
   max-height: auto;
@@ -556,6 +556,7 @@ iframe {
   overflow: hidden;
   transition: color 0.4s;
   transition: border 0.4s;
+  box-shadow: 0.4px 0.4px 3px #CCC;
 }
 
 .text-outside:hover {
@@ -598,7 +599,7 @@ iframe {
 }
 
 .text-indent {
-  background-color: transparent;
+  background-color: white;
   padding: 16px 3% 16px 3%;
   display: none;
   color: #555;
