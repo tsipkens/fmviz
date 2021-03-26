@@ -143,8 +143,7 @@ h1 {
   font-weight: 100;
   padding: 20px;
   padding-top: 0px;
-  background: linear-gradient(to bottom right, var(--a0), var(--a0) 25%, var(--a1));
-  transition: background-position 0.4s ease;
+  background: linear-gradient(to bottom right, var(--a0), var(--a0) 30%, var(--a1));
   background-size: 100% 100%;
   background-position: 0 100%;
   -webkit-background-clip: text;
@@ -297,7 +296,7 @@ a.anchor {
   text-decoration: none;
   padding: 8px 10px 12px 5%;
   transition: all 4s;
-  background: linear-gradient(to bottom right, var(--a1), var(--a0) 50%, var(--a1));
+  background: linear-gradient(to bottom right, var(--a1), var(--a0) 40%, var(--a1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background-position 0.4s ease;
@@ -306,7 +305,7 @@ a.anchor {
 }
 
 #logo:hover {
-  background-position: 100% 30%;
+  background-position: 100% 100%;
 }
 
 /* For main components */
