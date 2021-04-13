@@ -12,13 +12,13 @@ var $container = $('#my_dataviz'),
     height_a = $container.height()
 
 var margin = {
-    top: 30,
+    top: 38,
     right: 60,
     bottom: 45,
     left: 70
   },
   width = width_a - margin.left - margin.right,
-  height = 430 - margin.top - margin.bottom;
+  height = 415 - margin.top - margin.bottom;
 
 // for tooltips
 var div_tool = d3.select("body").append("div")
@@ -63,9 +63,13 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("transform", "translate(0," + height + ")")
       .attr("class", "axis")
       .call(d3.axisBottom(x));
+
+    var x2 = d3.scaleLinear()
+      .domain([0, 85 * 0.1019716])  // converts to mm H20
+      .range([0, width]);
     var xAxis2 = svg.append("g")
       .attr("class", "axis")
-      .call(d3.axisTop(x));
+      .call(d3.axisTop(x2));
 
     // Add Y axis
     var y = d3.scaleLinear()
@@ -91,6 +95,11 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr('x', width / 2)
       .attr('y', height + 35)
       .text("Pressure drop, Δp [Pa]");
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('x', width / 2)
+      .attr('y', -25)
+      .text("Pressure drop, Δp [mm H2O]");
 
     // Y axis label:
     svg.append("text")
