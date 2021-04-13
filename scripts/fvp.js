@@ -99,7 +99,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("text-anchor", "middle")
       .attr('x', width / 2)
       .attr('y', -25)
-      .text("Pressure drop, Δp [mm H2O]");
+      .text("Pressure drop, Δp [mm H₂O]");
 
     // Y axis label:
     svg.append("text")

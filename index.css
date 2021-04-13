@@ -153,7 +153,7 @@ h1 {
 h2 {
   font-size: 37pt;
   padding-bottom: 5px;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 200;
   padding-top: 5px;
   color: black;
@@ -162,7 +162,7 @@ h2 {
 h3 {
   font-size: 21pt;
   margin-bottom: 9.5px;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 200;
   padding-top: 10px;
 }
@@ -325,15 +325,24 @@ div.control {
   vertical-align: middle;
 }
 
+/* A general style that looks like the select control below */
+.control-like {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border: 2px solid #E9EEF0;
+  border-radius: 5pt;
+  transition: all 0.3s ease 0s;
+  min-width: 10px;
+}
+
 select {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 11pt;
-  border-radius: 5pt;
   font-weight: 300;
-  padding-left: 4px;
-  padding-top: 4px;
-  padding-bottom: 4px;
   border: 2px solid #E9EEF0;
+  border-radius: 5pt;
   background-color: white;
   transition: all 0.3s ease 0s;
 }
