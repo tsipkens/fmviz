@@ -209,9 +209,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         })
       )
     svg.append('text')
-      .html("ASTM Δp")
+      .html("Surgical Δp")
       .attr("text-anchor", "middle")
-      .attr('transform', 'translate(' + (x(dataASTM[0].x) + 2.5) + ',' + height * 0.9 + ')rotate(90)')
+      .attr('transform', 'translate(' + (x(dataASTM[0].x) + 2.5) + ',' + height * 0.87 + ')rotate(90)')
       .attr("class", "axis")
 
 
