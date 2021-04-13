@@ -86,7 +86,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("transform", "translate(" + width + ",0)")
       .attr("class", "axis")
       .call(d3.axisRight(yrv)
-        .tickFormat(d3.format(".0%")))
+      .tickFormat(d3.format(".0%")))
 
     //-- Add axis labels --//
     // Add X axis label:
@@ -171,6 +171,48 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         .attr("x", x(-9.8 * idx + 82.5))
         .attr("y", y(1 - Math.exp(-(-9.8 * idx + 82.5) / 1000 * qualno)))
     })
+
+    dataN95 = [{x: 41, y: -0.05}, {x: 41, y: 1.05}];
+    svg.append("path")
+      .datum(dataN95)
+      .attr("fill", "none")
+      .attr("stroke", "#111111")
+      .attr("stroke-width", 0.75)
+      .attr('stroke-dasharray', (4, 2))
+      .attr("d", d3.line()
+        .x(function(d) {
+          return x(d.x)
+        })
+        .y(function(d) {
+          return y(d.y)
+        })
+      )
+    svg.append('text')
+      .html("N95 Δp")
+      .attr("text-anchor", "middle")
+      .attr('transform', 'translate(' + (x(dataN95[0].x) + 2.5) + ',' + height * 0.9 + ')rotate(90)')
+      .attr("class", "axis")
+
+    dataASTM = [{x: 20, y: -0.05}, {x: 20, y: 1.05}];
+    svg.append("path")
+      .datum(dataASTM)
+      .attr("fill", "none")
+      .attr("stroke", "#111111")
+      .attr("stroke-width", 0.75)
+      .attr('stroke-dasharray', (4, 2))
+      .attr("d", d3.line()
+        .x(function(d) {
+          return x(d.x)
+        })
+        .y(function(d) {
+          return y(d.y)
+        })
+      )
+    svg.append('text')
+      .html("ASTM Δp")
+      .attr("text-anchor", "middle")
+      .attr('transform', 'translate(' + (x(dataASTM[0].x) + 2.5) + ',' + height * 0.9 + ')rotate(90)')
+      .attr("class", "axis")
 
 
     // Add dots with labels for name/treatment
