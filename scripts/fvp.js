@@ -135,9 +135,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         }
         return colorcode;
       }
-      var colorkeys = [getCSSVar('--c7'), getCSSVar('--c6'), getCSSVar('--c5'), getCSSVar('--c2'), "url(#diagonal-stripe-2)", "url(#diagonal-stripe-1)"],
+    var colorkeys = [getCSSVar('--c7'), getCSSVar('--c6'), getCSSVar('--c5'), getCSSVar('--c2'), "url(#diagonal-stripe-2)", "url(#diagonal-stripe-1)"],
       keycodes = ["W", "K", "CP", "nW", "nWH", "ML"],
-      keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"]
+      keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"];
     var color = d3.scaleOrdinal()
       .domain(keys)
       .range(colorkeys)
