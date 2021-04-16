@@ -509,6 +509,19 @@ input[type="checkbox"]:checked:after {
   max-width: 200px;
   font-size: 11pt;
   transition: all 0.1s ease 0s;
+  font-weight: 600;
+}
+
+.tooltip-s2 {
+  font-weight: 200;
+  display: inline-block;
+}
+
+.tooltip-s3 {
+  color: #BBB;
+  font-weight: 200;
+  font-size: 8pt;
+  display: inline-block;
 }
 
 .labels {

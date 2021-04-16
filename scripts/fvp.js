@@ -1,15 +1,14 @@
+
 function displayDiam(val) {
-
   var channel = [0.498, 0.62, 0.796, 0.962, 1.191, 1.478, 1.909, 2.322, 2.756, 3.398, 4.221, 5.246, 6.491, 8.116]
-
   document.getElementById('da').value = channel[val - 1].toFixed(2);
 }
 
 
 // set the dimensions and margins of the graph
-var $container = $('#my_dataviz'),
-    width_a = 0.95 * Math.min($container.width(), 870),
-    height_a = $container.height()
+var $container = $('#my-dataviz'),
+    widthA = 0.95 * Math.min($container.width(), 870),
+    heightA = $container.height()
 
 var margin = {
     top: 38,
@@ -17,29 +16,34 @@ var margin = {
     bottom: 45,
     left: 70
   },
-  width = width_a - margin.left - margin.right,
+  width = widthA - margin.left - margin.right,
   height = 448 - margin.top - margin.bottom;
 
-// for tooltips
-var div_tool = d3.select("body").append("div")
+// For tooltips.
+var divToolTip = d3.select("body").append("div")
   .attr("class", "tooltip")
   .style("opacity", 0);
 
+// For formating parts of tooltip text.
+var divToolTipS1 = divToolTip.append("span").attr("class", "tooltip-s1");  // name
+var divToolTipS2 = divToolTip.append("span").attr("class", "tooltip-s2");  // treatment
+var divToolTipS3 = divToolTip.append("span").attr("class", "tooltip-s3");  // code
+
 // for legend
-var margin_legend = {
+var marginLegend = {
   top: 0,
   right: 50,
   bottom: 0,
   left: 60
 }
-var svg_legend = d3.select("#my_legend")
+var svgLegend = d3.select("#my-legend")
   .append("svg")
-  .attr("width", width + margin_legend.left + margin_legend.right)
+  .attr("width", width + marginLegend.left + marginLegend.right)
   .attr("height", 125)
   .append("g");
 
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
+var svg = d3.select("#my-dataviz")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
@@ -115,9 +119,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       // Check if internet explorer.
       var isIE = false;
       var ua = window.navigator.userAgent;
-      var old_ie = ua.indexOf('MSIE ');
-      var new_ie = ua.indexOf('Trident/');
-      if ((old_ie > -1) || (new_ie > -1)) {
+      var oldIE = ua.indexOf('MSIE ');
+      var newIE = ua.indexOf('Trident/');
+      if ((oldIE > -1) || (newIE > -1)) {
           isIE = true;
       }
 
@@ -136,7 +140,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         return colorcode;
       }
     var colorkeys = [getCSSVar('--c7'), getCSSVar('--c6'), getCSSVar('--c5'), getCSSVar('--c2'), "url(#diagonal-stripe-2)", "url(#diagonal-stripe-1)"],
-      keycodes = ["W", "K", "CP", "nW", "nWH", "ML"],
+      keyCodes = ["W", "K", "CP", "nW", "nWH", "ML"],
       keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"];
     var color = d3.scaleOrdinal()
       .domain(keys)
@@ -269,9 +273,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         if (typeof(d.Treatment)=='undefined') {
           return '';
         } else if (d.Treatment == 'IPA') {
-          return ', ' + d.Treatment + '';
+          return ' + ' + d.Treatment + '';
         } else {
-          return ', ' + d.Treatment.toLowerCase() + '';
+          return ' + ' + d.Treatment.toLowerCase() + '';
         }
       } else {
         return ''
@@ -304,18 +308,20 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         d3.select(this).transition()
           .duration(50)
           .attr('opacity', .85);
-        div_tool.transition()
+        divToolTip.transition()
           .duration(50)
           .style("opacity", 1);
-        div_tool.html(d.SimpleName + treatmentText(d) + ' (' + d.CaseCode + ')')
-          .style("left", d3.event.pageX + "px")
+        divToolTip.style("left", d3.event.pageX + "px")
           .style("top", d3.event.pageY + "px");
+        divToolTipS1.html(d.SimpleName);
+        divToolTipS2.html(treatmentText(d));
+        divToolTipS3.html('&nbsp;(' + d.CaseCode + ')');
       })
       .on('mouseout', function(d) {
         d3.select(this).transition()
           .duration(50)
           .attr('opacity', 1);
-        div_tool.transition()
+        divToolTip.transition()
           .duration(50)
           .style("opacity", 0);
       });
@@ -431,7 +437,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     //------------------------------------------------------------------------//
     // legend above the plot generated above
     // add one dot in the legend for each material type
-    svg_legend.selectAll("mydots")
+    svgLegend.selectAll("mydots")
       .data(keys)
       .enter()
       .append("circle")
@@ -445,7 +451,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .style("fill", function(d) {
         return color(d)
       })
-    svg_legend.selectAll("legendLabels")
+    svgLegend.selectAll("legendLabels")
       .data(keys)
       .enter()
       .append("text")
@@ -459,38 +465,38 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("text-anchor", "left")
       .style("alignment-baseline", "middle")
 
-    svg_legend.append("text")
+    svgLegend.append("text")
       .attr("x", 0).attr("y", 14)
       .text("Material structure").attr("alignment-baseline", "left")
       .attr('class', 'control-label')
 
     // legend for circles sizes
-    svg_legend.append("text")
+    svgLegend.append("text")
       .attr("x", 195).attr("y", 14)
       .text("Material weight").attr("alignment-baseline", "left")
       .attr('class', 'control-label')
-    svg_legend.append("circle") // 10 g/cm2
+    svgLegend.append("circle") // 10 g/cm2
       .attr("cx", 208).attr("cy", 32)
       .attr("r", 10 / 125 + 3.5).style("fill", "#333333")
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
-    svg_legend.append("text")
+    svgLegend.append("text")
       .attr("x", 223).attr("y", 34)
       .text("10 g/m²").attr("alignment-baseline", "middle")
-    svg_legend.append("circle") // 300 g/cm2
+    svgLegend.append("circle") // 300 g/cm2
       .attr("cx", 208).attr("cy", 57)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 300 / 125 + 3.5).style("fill", "#333333")
-    svg_legend.append("text")
+    svgLegend.append("text")
       .attr("x", 223).attr("y", 59)
       .text("300 g/m²").attr("alignment-baseline", "middle")
-    svg_legend.append("circle") // 1000 g/cm2
+    svgLegend.append("circle") // 1000 g/cm2
       .attr("cx", 208).attr("cy", 82)
       .attr("stroke", "black")
       .attr("stroke-width", 0.3)
       .attr("r", 1000 / 125 + 3.5).style("fill", "#333333")
-    svg_legend.append("text")
+    svgLegend.append("text")
       .attr("x", 223).attr("y", 84)
       .text("1,000 g/m²").attr("alignment-baseline", "middle")
     //------------------------------------------------------------------------//

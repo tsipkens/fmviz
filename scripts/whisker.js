@@ -1,30 +1,30 @@
 // set the dimensions and margins of the graph
-var max_width = 800;
-var $container = $('#whisker_viz'),
-  width_w_a = 0.95 * Math.min($container.width(), max_width),
-  height_w_a = $container.height()
+var maxWidth = 800;
+var $container = $('#whisker-viz'),
+  widthWA = 0.95 * Math.min($container.width(), maxWidth),
+  heightWA = $container.height()
 
 // set the dimensions and margins of the graph
-var margin_w = {
+var marginW = {
     top: 10,
     right: 85,
     bottom: 50,
     left: 80
   },
-  width_w = width_w_a - margin_w.left - margin_w.right,
-  height_w = 400 - margin_w.top - margin_w.bottom;
+  widthW = widthWA - marginW.left - marginW.right,
+  heightW = 400 - marginW.top - marginW.bottom;
 
-var x_domain = [0.5, 1e3]
+var xDomain = [0.5, 1e3]
 
 //Read the data
 // append the svg object to the body of the page
-var svg = d3.select("#whisker_viz")
+var svg = d3.select("#whisker-viz")
   .append("svg")
-  .attr("width", width_w + margin_w.left + margin_w.right)
-  .attr("height", height_w + margin_w.top + margin_w.bottom)
+  .attr("width", widthW + marginW.left + marginW.right)
+  .attr("height", heightW + marginW.top + marginW.bottom)
   .append("g")
   .attr("transform",
-    "translate(" + margin_w.left + "," + margin_w.top + ")");
+    "translate(" + marginW.left + "," + marginW.top + ")");
 
 evalQuality = function(filt, press) {
   Q = -1000 * Math.log(filt) / press;
@@ -77,7 +77,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
   // Show the Y scale
   var y = d3.scaleBand()
-    .range([height_w, 0])
+    .range([heightW, 0])
     .domain(["ML", "nWH", "nW", "CP", "K", "W"])
     .padding(.4);
   svg.append("g")
@@ -99,10 +99,10 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
   // Show the X scale
   var x = d3.scaleLog()
-    .domain(x_domain)
-    .range([0, width_w])
+    .domain(xDomain)
+    .range([0, widthW])
   svg.append("g")
-    .attr("transform", "translate(0," + height_w + ")")
+    .attr("transform", "translate(0," + heightW + ")")
     .attr("class", "axis")
     .call(d3.axisBottom(x).ticks(3)
       .tickFormat(d3.format(1, "f")))
@@ -110,9 +110,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   // Check if internet explorer.
   var isIE = false;
   var ua = window.navigator.userAgent;
-  var old_ie = ua.indexOf('MSIE ');
-  var new_ie = ua.indexOf('Trident/');
-  if ((old_ie > -1) || (new_ie > -1)) {
+  var oldIE = ua.indexOf('MSIE ');
+  var newIE = ua.indexOf('Trident/');
+  if ((oldIE > -1) || (newIE > -1)) {
     isIE = true;
   }
 
@@ -140,8 +140,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   // Add X axis label:
   svg.append("text")
     .attr("text-anchor", "middle")
-    .attr("x", width_w / 2)
-    .attr("y", height_w + margin_w.top + 30)
+    .attr("x", widthW / 2)
+    .attr("y", heightW + marginW.top + 30)
     .text("Quality [kPa⁻¹]");
 
   // Show the main vertical line
@@ -207,18 +207,24 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .attr("stroke", "black")
     .style("width", 80)
 
-  // create a tooltip
-  var div_tool = d3.select("body").append("div")
+  // For tooltips.
+  var divToolTip = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
+
+  // For formating parts of tooltip text.
+  var divToolTipS1 = divToolTip.append("span").attr("class", "tooltip-s1");  // name
+  var divToolTipS2 = divToolTip.append("span").attr("class", "tooltip-s2");  // treatment
+  var divToolTipS3 = divToolTip.append("span").attr("class", "tooltip-s3");  // code
+
   var treatmentText = function(d) {
     if (d.Treatment != 'None') {
-      if (typeof(d.Treatment) == 'undefined') {
+      if (typeof(d.Treatment)=='undefined') {
         return '';
       } else if (d.Treatment == 'IPA') {
-        return ', ' + d.Treatment + '';
+        return '&nbsp;+ ' + d.Treatment + '';
       } else {
-        return ', ' + d.Treatment.toLowerCase() + '';
+        return '&nbsp;+ ' + d.Treatment.toLowerCase() + '';
       }
     } else {
       return ''
@@ -248,18 +254,20 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       d3.select(this).transition()
         .duration(50)
         .attr('opacity', .85);
-      div_tool.transition()
+      divToolTip.transition()
         .duration(50)
         .style("opacity", 1);
-      div_tool.html(d.SimpleName + treatmentText(d) + ' (' + d.CaseCode + ')')
-        .style("left", d3.event.pageX + "px")
+      divToolTip.style("left", d3.event.pageX + "px")
         .style("top", d3.event.pageY + "px");
+      divToolTipS1.html(d.SimpleName);
+      divToolTipS2.html(treatmentText(d));
+      divToolTipS3.html('&nbsp;(' + d.CaseCode + ')');
     })
     .on('mouseout', function(d) {
       d3.select(this).transition()
         .duration(50)
         .attr('opacity', 1);
-      div_tool.transition()
+      divToolTip.transition()
         .duration(50)
         .style("opacity", 0);
     });
