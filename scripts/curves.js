@@ -418,12 +418,12 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     } else {
       document.getElementById("pdrop_level").innerHTML = "Very high";
     }
-    
-    if ((pdrop <= 5 / 0.1019716)) {  // for overall ASTM compliance add: && ((1 - data2[0].yall) > 0.5)
+
+    if ((pdrop <= (5 / 0.1019716 / 10 * 4.9))) {  // for overall ASTM compliance add: && ((1 - data2[0].yall) > 0.5)
       document.getElementById("ASTMlevel").innerHTML = "Level 2";
       document.getElementById("ASTMcont").style.borderColor = "rgba(1, 216, 149, 1)";  // green
       document.getElementById("ASTMcont").style.backgroundColor = "rgba(1, 216, 149, 0.01)";
-    } else if ((pdrop <= 15 / 0.1019716)) {  // for overall ASTM compliance add: && ((1 - data2[0].yall) > 0.2)
+    } else if ((pdrop <= (15 / 0.1019716 / 10 * 4.9))) {  // for overall ASTM compliance add: && ((1 - data2[0].yall) > 0.2)
       document.getElementById("ASTMlevel").innerHTML = "Level 1";
       document.getElementById("ASTMcont").style.borderColor = "rgba(247, 201, 28, 1)";  // yellow
       document.getElementById("ASTMcont").style.backgroundColor = "rgba(247, 201, 28, 0.021)";

@@ -172,6 +172,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         .attr("y", y(1 - Math.exp(-(-9.8 * idx + 82.5) / 1000 * qualno)))
     })
 
+    // Add N95 line.
     dataN95 = [{x: 41, y: -0.05}, {x: 41, y: 1.05}];
     svg.append("path")
       .datum(dataN95)
@@ -193,6 +194,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr('transform', 'translate(' + (x(dataN95[0].x) + 2.5) + ',' + height * 0.9 + ')rotate(90)')
       .attr("class", "axis")
 
+    // Add surgical mask line.
     dataASTM = [{x: 20, y: -0.05}, {x: 20, y: 1.05}];
     svg.append("path")
       .datum(dataASTM)
@@ -212,6 +214,52 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .html("Surgical Δp")
       .attr("text-anchor", "middle")
       .attr('transform', 'translate(' + (x(dataASTM[0].x) + 2.5) + ',' + height * 0.87 + ')rotate(90)')
+      .attr("class", "axis")
+
+    // Add ASTM Level 1 line.
+    pL1 = 15 / 0.1019716 / 10 * 4.9;
+    dataL1 = [{x: pL1, y: -0.05}, {x: pL1, y: 1.05}];
+    svg.append("path")
+      .datum(dataL1)
+      .attr("fill", "none")
+      .attr("stroke", "rgba(247, 201, 28, 1)")
+      .attr("stroke-width", 1)
+      .attr('stroke-dasharray', (4, 2))
+      .attr("d", d3.line()
+        .x(function(d) {
+          return x(d.x)
+        })
+        .y(function(d) {
+          return y(d.y)
+        })
+      )
+    svg.append('text')
+      .html("ASTM Level 1")
+      .attr("text-anchor", "middle")
+      .attr('transform', 'translate(' + (x(dataL1[0].x) + 2.5) + ',' + height * 0.25 + ')rotate(90)')
+      .attr("class", "axis")
+
+    // Add ASTM Level 2 line.
+    pL2 = 5 / 0.1019716 / 10 * 4.9;
+    dataL2 = [{x: pL2, y: -0.05}, {x: pL2, y: 1.05}];
+    svg.append("path")
+      .datum(dataL2)
+      .attr("fill", "none")
+      .attr("stroke", "rgba(1, 216, 149, 1)")
+      .attr("stroke-width", 1)
+      .attr('stroke-dasharray', (4, 2))
+      .attr("d", d3.line()
+        .x(function(d) {
+          return x(d.x)
+        })
+        .y(function(d) {
+          return y(d.y)
+        })
+      )
+    svg.append('text')
+      .html("ASTM Level 2")
+      .attr("text-anchor", "middle")
+      .attr('transform', 'translate(' + (x(dataL2[0].x) + 2.5) + ',' + height * 0.87 + ')rotate(90)')
       .attr("class", "axis")
 
 
