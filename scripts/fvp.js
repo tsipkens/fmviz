@@ -273,9 +273,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         if (typeof(d.Treatment)=='undefined') {
           return '';
         } else if (d.Treatment == 'IPA') {
-          return ' + ' + d.Treatment + '';
+          return '&nbsp;+ ' + d.Treatment + '';
         } else {
-          return ' + ' + d.Treatment.toLowerCase() + '';
+          return '&nbsp;+ ' + d.Treatment.toLowerCase() + '';
         }
       } else {
         return ''
