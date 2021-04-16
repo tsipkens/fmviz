@@ -513,7 +513,7 @@ input[type="checkbox"]:checked:after {
 }
 
 .tooltip-s2 {
-  font-weight: 200;
+  color: var(--a0);
   display: inline-block;
 }
 

@@ -230,6 +230,17 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       return ''
     }
   }
+  var treatmentLine = function(d) {
+    if (d.Treatment != 'None') {
+      if (typeof(d.Treatment)=='undefined') {
+        return 0.3;
+      } else {
+        return 1;  // thicker line for treatment cases
+      }
+    } else {
+      return 0.3
+    }
+  }
 
 
   // Add individual points with jitter
@@ -250,6 +261,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       return (color(d.StructureCode))
     })
     .attr("stroke", "black")
+    .attr("stroke-width", function(d) {
+      return treatmentLine(d);
+    })
     .on('mouseover', function(d) {
       d3.select(this).transition()
         .duration(50)

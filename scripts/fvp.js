@@ -267,7 +267,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr("class", "axis")
 
 
-    // Add dots with labels for name/treatment
+    // Function to return printable text/line style for treatment.
     var treatmentText = function(d) {
       if (d.Treatment != 'None') {
         if (typeof(d.Treatment)=='undefined') {
@@ -281,7 +281,20 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         return ''
       }
     }
+    var treatmentLine = function(d) {
+      if (d.Treatment != 'None') {
+        if (typeof(d.Treatment)=='undefined') {
+          return 0.3;
+        } else {
+          return 1;  // thicker line for treatment cases
+        }
+      } else {
+        return 0.3
+      }
+    }
 
+
+    // Add dots with labels for name/treatment.
     svg.append('g')
       .selectAll("dot")
       .data(data)
@@ -297,7 +310,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         return d.Weight / 125 + 3.5;
       })
       .attr("stroke", "black")
-      .attr("stroke-width", 0.3)
+      .attr("stroke-width", function(d) {
+        return treatmentLine(d);
+      })
       .attr("class", function(d) {
         return d.StructureCode;
       })
