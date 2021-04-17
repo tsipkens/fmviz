@@ -198,28 +198,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       .attr('transform', 'translate(' + (x(dataN95[0].x) + 2.5) + ',' + height * 0.9 + ')rotate(90)')
       .attr("class", "axis")
 
-    // Add surgical mask line.
-    dataASTM = [{x: 20, y: -0.05}, {x: 20, y: 1.05}];
-    svg.append("path")
-      .datum(dataASTM)
-      .attr("fill", "none")
-      .attr("stroke", "#111111")
-      .attr("stroke-width", 0.75)
-      .attr('stroke-dasharray', (4, 2))
-      .attr("d", d3.line()
-        .x(function(d) {
-          return x(d.x)
-        })
-        .y(function(d) {
-          return y(d.y)
-        })
-      )
-    svg.append('text')
-      .html("Surgical Δp")
-      .attr("text-anchor", "middle")
-      .attr('transform', 'translate(' + (x(dataASTM[0].x) + 2.5) + ',' + height * 0.87 + ')rotate(90)')
-      .attr("class", "axis")
-
     // Add ASTM Level 1 line.
     pL1 = 15 / 0.1019716 / 10 * 4.9;
     dataL1 = [{x: pL1, y: -0.05}, {x: pL1, y: 1.05}];
