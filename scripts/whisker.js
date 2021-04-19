@@ -30,7 +30,8 @@ var svg = d3.select("#whisker-viz")
 svg.append("rect")
   .attr("width", widthW).attr("class", "plot-fill")
   .attr("height", heightW)
-  .attr("stroke", "#DDD");
+  .attr("stroke", "#DDD")
+  .attr("stroke-width", 0.5);
 
 evalQuality = function(filt, press) {
   Q = -1000 * Math.log(filt) / press;
