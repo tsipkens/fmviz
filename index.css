@@ -107,6 +107,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #FCFCFC;
 }
 
 body {
@@ -198,7 +199,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: #FCFCFC;
   margin: 0px;
   padding: 0px;
   font-size: 10pt;
@@ -441,8 +442,8 @@ input[type="checkbox"]:checked:after {
 .control-label {
   font-weight: 400;
   flex: 0 0 auto;
-  font-size: 12pt;
-  line-height: 13pt;
+  font-size: 11pt;
+  line-height: 12pt;
   display: inline-block;
 }
 
@@ -450,7 +451,7 @@ input[type="checkbox"]:checked:after {
   font-size: 8pt;
   padding-left: 3pt;
   font-weight: 600;
-  color: #444;
+  color: var(--a0);
 }
 
 .p-control-column {
@@ -493,6 +494,11 @@ input[type="checkbox"]:checked:after {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 10pt;
   font-weight: 200;
+}
+
+/* Plot background color */
+.plot-fill {
+  fill: white;
 }
 
 .tooltip {
@@ -571,22 +577,21 @@ iframe {
 
 /* For hidden text notes */
 .text-outside {
-  background-color: #F8F8F8;
+  background-color: rgba(150, 150, 150, 0.05);
   max-height: 100000px;
-  margin-top: 10px;
-  border: 2px solid #F8F8F8;
-  border-radius: 5pt;
+  margin-top: 7px;
+  border: 1.5px solid #E9E9E9;
+  border-radius: 4pt;
   width: 100%;
   max-height: auto;
   /* required for smooth transition */
   overflow: hidden;
   transition: color 0.4s;
   transition: border 0.4s;
-  box-shadow: 0px 0px 2px #CCC;
 }
 
 .text-outside:hover {
-  border: 2px solid var(--a0);
+  border: 1.5px solid var(--a0);
 }
 
 .text-outside p {
@@ -598,7 +603,7 @@ iframe {
   background-color: transparent;
   background-repeat: no-repeat;
   cursor: pointer;
-  padding: 15px;
+  padding: 8px;
   width: 100%;
   border: none;
   border-radius: 3px 3px 0px 0px;
