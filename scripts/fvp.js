@@ -50,6 +50,11 @@ var svg = d3.select("#my-dataviz")
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+//-- Add background rectangle --//
+svg.append("rect")
+  .attr("width", width).attr("class", "plot-fill")
+  .attr("height", height);
+
 //Read the data
 d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", function(data) {
   d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/quality.csv", function(data2) {

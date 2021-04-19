@@ -26,6 +26,12 @@ var svg = d3.select("#whisker-viz")
   .attr("transform",
     "translate(" + marginW.left + "," + marginW.top + ")");
 
+//-- Add background rectangle --//
+svg.append("rect")
+  .attr("width", widthW).attr("class", "plot-fill")
+  .attr("height", heightW)
+  .attr("stroke", "#DDD");
+
 evalQuality = function(filt, press) {
   Q = -1000 * Math.log(filt) / press;
   if (isNaN(Q)) {

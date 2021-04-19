@@ -59,6 +59,11 @@ var svgPen = d3.select("#pen_curve")
   .append("g")
   .attr("transform", "translate(" + marginPen.left + "," + marginPen.top + ")");
 
+//-- Add background rectangle --//
+svgPen.append("rect")
+  .attr("width", widthPen).attr("class", "plot-fill")
+  .attr("height", heightPen);
+
 
 
 //Read the data
