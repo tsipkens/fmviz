@@ -347,7 +347,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           return d.Weight / 125 + 3.5;
         })
         .attr("stroke", "black")
-        .attr("stroke-width", 0.3)
+        .attr("stroke-width", function(d) {
+          return treatmentLine(d);
+        })
         .style("fill", function(d) {
           return color(d.StructureCode);
         });
@@ -377,7 +379,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           SimpleName: d.SimpleName,
           BasicCode: d.BasicCode,
           SampleCode: d.SampleCode,
-          CaseCode: d.CaseCode
+          CaseCode: d.CaseCode,
+          Treatment: d.Treatment
         }
       })
 
