@@ -198,9 +198,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         })
       )
     svg.append('text')
-      .html("N95 Δp")
+      .html("Measured N95 Δp")
       .attr("text-anchor", "middle")
-      .attr('transform', 'translate(' + (x(dataN95[0].x) + 2.5) + ',' + height * 0.9 + ')rotate(90)')
+      .attr('transform', 'translate(' + (x(dataN95[0].x) + 2.5) + ',' + height * 0.83 + ')rotate(90)')
       .attr("class", "axis")
 
     // Add ASTM Level 1 line.
