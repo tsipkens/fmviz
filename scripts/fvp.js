@@ -465,13 +465,13 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
     svgLegend.append("text")
       .attr("x", 0).attr("y", 14)
-      .text("Material structure").attr("alignment-baseline", "left")
+      .text("MATERIAL STRUCTURE").attr("alignment-baseline", "left")
       .attr('class', 'control-label')
 
     // legend for circles sizes
     svgLegend.append("text")
       .attr("x", 195).attr("y", 14)
-      .text("Material weight").attr("alignment-baseline", "left")
+      .text("MATERIAL WEIGHT").attr("alignment-baseline", "left")
       .attr('class', 'control-label')
     svgLegend.append("circle") // 10 g/cm2
       .attr("cx", 208).attr("cy", 32)

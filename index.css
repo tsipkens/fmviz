@@ -443,13 +443,13 @@ input[type="checkbox"]:checked:after {
 .control-label {
   font-weight: 400;
   flex: 0 0 auto;
-  font-size: 11pt;
-  line-height: 12pt;
+  font-size: 9pt;
+  font-weight: 600;
   display: inline-block;
 }
 
 .control-label2 {
-  font-size: 8pt;
+  font-size: 9pt;
   padding-left: 3pt;
   font-weight: 600;
   color: var(--a0);
