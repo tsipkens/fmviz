@@ -350,6 +350,7 @@ select {
 
 select:hover {
   border: 2px solid var(--a0);
+  box-shadow: 0px 0px 3px #BBB;
 }
 
 option {
@@ -592,6 +593,7 @@ iframe {
 
 .text-outside:hover {
   border: 1.5px solid var(--a0);
+  box-shadow: 0px 0px 3px #BBB;
 }
 
 .text-outside p {
