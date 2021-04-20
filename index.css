@@ -416,9 +416,10 @@ input[type="checkbox"]{
   background: white;
   position: relative;
   transition: all 0.3s;
+  cursor: pointer;
 }
-input[type="checkbox"]:checked {
-
+input[type="checkbox"]:hover {
+  box-shadow: 0px 0px 3px #BBB;
 }
 input[type="checkbox"]:checked:after {
   font-family: "Font Awesome 5 Free";
