@@ -112,7 +112,7 @@ h2 {
 }
 
 h3 {
-  font-size: 21pt;
+  font-size: 14pt;
   margin-bottom: 9.5px;
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 200;
@@ -200,14 +200,16 @@ nav {
 .sidebar {
   font-size: 10pt;
   position: -webkit-sticky;
-  position: sticky;
-  top: 104px;
+  position: fixed;
+  top: 0px;
+  padding-top: 104px;
   padding-left: 5%;
   transition: visibility 0.5s, opacity 0.5s linear;
   visibility: visible;
   opacity: 1;
   float: left;
   width: 140px;
+  height: 100vh;
 }
 /* Swap sidebar / nav-list. */
 @media screen and (max-width: 1250px) {
@@ -230,16 +232,16 @@ a.anchor {
 }
 
 .footer {
-  background-color: #F9F9F9;
   margin-top: 30px;
   padding-top: 30px;
   margin-bottom: 0px;
   padding-bottom: 20px;
-  font-size: 11pt;
 }
 
 .footer p {
-  font-size: 11pt;
+  font-size: 9.5pt;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .ref {
@@ -264,6 +266,13 @@ a.anchor {
 
 .ref a:hover {
   text-decoration-color: var(--a0);
+}
+
+.footer .ref {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #logo {
