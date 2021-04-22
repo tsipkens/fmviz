@@ -214,11 +214,10 @@ header {
 }
 
 nav {
-  padding: 10px 5% 10px 0px;
+  padding: 5px 5% 5px 0px;
   text-align: right;
   width: 80%;
 }
-
 @media screen and (max-width: 850px) {
   nav {
     width: 65%;
@@ -227,14 +226,15 @@ nav {
 
 .nav-list {
   list-style: none;
+  transition: visibility 0.5s, opacity 0.5s linear;
+  visibility: hidden;  /* overwritten for narrow displays below */
+  opacity: 0;
 }
-
 .nav-list li {
   display: inline-block;
-  padding: 0px 10px;
+  padding: 5px 10px;
   vertical-align: middle;
 }
-
 .nav-link {
   text-decoration: none;
   color: #333;
@@ -242,9 +242,33 @@ nav {
   font-weight: 400;
   top: -500px;
 }
-
 .nav-link:hover {
   color: var(--a0);
+}
+
+.sidebar {
+  font-size: 10pt;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 104px;
+  padding-left: 5%;
+  transition: visibility 0.5s, opacity 0.5s linear;
+  visibility: visible;
+  opacity: 1;
+  float: left;
+  width: 13%;
+}
+/* Swap sidebar / nav-list. */
+@media screen and (max-width: 1250px) {
+  .sidebar { visibility: hidden; opacity: 0; }
+  .nav-list { visibility: visible; opacity: 1; }
+}
+.side-list {
+  list-style: none;
+}
+.side-list li {
+  padding: 10px 0px;
+  vertical-align: middle;
 }
 
 a.anchor {
@@ -255,12 +279,11 @@ a.anchor {
 }
 
 .footer {
-  background-color: #FAFAFA;
+  background-color: #F9F9F9;
   margin-top: 30px;
   padding-top: 30px;
   margin-bottom: 0px;
   padding-bottom: 20px;
-  border-top: 0.5px solid #E4E4E4;
   font-size: 11pt;
 }
 
@@ -316,7 +339,12 @@ div.main {
   max-width: 900px;
   width: 90%;
   padding-bottom: 50px;
-  margin-top: 90px;
+  margin-top: 70px;
+  padding-left: 15%;
+}
+/* Only show add padding-left for large screens when sidenav visible. */
+@media screen and (max-width: 1250px) {
+  div.main { padding-left: 0px; }
 }
 
 div.control {

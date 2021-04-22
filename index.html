@@ -40,6 +40,9 @@
   <!-- Load d3.js -->
   <script src="https://d3js.org/d3.v4.js"></script>
 
+  <!-- Load jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <!-- Load styles -->
   <link href="index.css" rel="stylesheet">
 </head>
@@ -50,7 +53,7 @@
   <header id="header">
     <a href="#h1" id="logo">fmviz</a>
     <nav>
-      <ul class="nav-list">
+      <ul class="nav-list" id="nav-list-a">
         <li><a href="#hfvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
         <li><a href="#hdiy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
         <li><a href="#htable" class="nav-link" id="data-link-a" onclick="highlightDataLink()">
@@ -69,7 +72,28 @@
   </header>
 
 
-  <div class="main">
+  <div class="sidebar" id="sidebar">
+    <ul class="side-list">
+      <li><a href="#h1" class="nav-link" id="side-intro">INTRO</a></li>
+      <li><a href="#hfvp" class="nav-link" id="side-fvp">FILTRATION & <br>PRESSURE DROP</a></li>
+      <li><a href="#hdiy" class="nav-link" id="side-diy">DESIGN YOUR<br>OWN MASK</a></li>
+      <li><a href="#htable" class="nav-link" id="side-data" onclick="highlightDataLink()">
+        <div style="display:flex;vertical-align:middle;">
+          <span><i class="fas fa-database" style="font-size:13pt"></i></span> <span style="padding-left:4px;">LINK TO DATA</span>
+        </div>
+      </a></li>
+      <li><a href="#hcite" class="nav-link" id="side-cite">CITATION &<br>CREDITS</a></li>
+      <li><a href="https://github.com/tsipkens" class="nav-link">
+        <div style="display:flex;vertical-align:middle;">
+          <img src="imgs/GitHub-Mark-64px.png" alt="GitHub" style="height:15pt; padding-right:5px;">
+          <span>@tsipkens</span>
+        </div>
+      </a></li>
+    </ul>
+  </div>
+
+
+  <div class="main" id="main-intro">
 
     <!-- Accounts for fixed navbar -->
     <a class="anchor" id="h1"></a>
@@ -108,7 +132,7 @@
 
   </div>
 
-  <div class="main">
+  <div class="main" id="main-fvp">
 
     <a class="anchor" id="hfvp"></a>
     <h2>FILTRATION & PRESSURE DROP</h2>
@@ -387,7 +411,7 @@
 
   </div>
 
-  <div class="main">
+  <div class="main" id="main-diy">
 
     <a class="anchor" id="hdiy"></a>
     <h2>DESIGN YOUR OWN MASK</h2>
@@ -541,9 +565,11 @@
       <iframe name="viz2" src="curves.html" frameborder="0" scrolling="no">
       </iframe>
     </div>
+  </div>
 
+  <div class="main" id="main-data">
     <a class="anchor" id="htable"></a>
-    <h2 style="padding-top:100px;">SOURCE DATA</h2>
+    <h2>SOURCE DATA</h2>
 
     <p>
       Source data in CSV format is available online at:
@@ -567,8 +593,9 @@
 
 
   <div class="footer" id="hfooter" stlye="bottom:0px;">
-    <div class="main" style="margin-top:20px;padding-bottom:20px;font-size:10pt;">
+    <div class="main" id="main-footer" style="margin-top:20px;padding-bottom:20px;font-size:10pt;">
 
+      <a class="anchor" id="hcite"></a>
       <h3>CITATION AND ACKNOWLEDGEMENTS</h3>
 
       <p>
@@ -666,12 +693,59 @@
     };
 
     function scrollFunction() {
+      f_width = $(window).width() > 1300  // flags if sidebar is present
       if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
         document.getElementById("header").style.boxShadow = "0px 0px 4px #AAA";
       } else {
         document.getElementById("header").style.boxShadow = "none";
       }
+      
+      // Color sidebar based on position.
+      colorcode = getComputedStyle(document.documentElement).getPropertyValue("--a0")
+      if (isInViewport(document.querySelector('#main-footer'))) {
+        document.getElementById("side-data").style.color = "#333";
+        document.getElementById("side-cite").style.color = colorcode;
+      } else if (isInViewport(document.querySelector('#main-data'))) {
+        document.getElementById("side-diy").style.color = "#333";
+        document.getElementById("side-data").style.color = colorcode;
+        document.getElementById("side-cite").style.color = "#333";
+      } else if (isInViewport(document.querySelector('#main-diy'))) {
+        document.getElementById("side-fvp").style.color = "#333";
+        document.getElementById("side-diy").style.color = colorcode;
+        document.getElementById("side-data").style.color = "#333";
+      } else if (isInViewport(document.querySelector('#main-fvp'))) {
+        document.getElementById("side-intro").style.color = "#333";
+        document.getElementById("side-fvp").style.color = colorcode;
+        document.getElementById("side-diy").style.color = "#333";
+      } else if (isInViewport(document.querySelector('#main-intro'))) {
+        document.getElementById("side-intro").style.color = colorcode;
+        document.getElementById("side-fvp").style.color = "#333";
+      }
     }
+
+    scrollFunction()
+    window.onresize = scrollFunction;
+    
+    // Check if a given element is in the viewport.
+    function isInViewport(el) {
+      var top = el.offsetTop;
+      var left = el.offsetLeft;
+      var width = el.offsetWidth;
+      var height = el.offsetHeight;
+      while(el.offsetParent) {
+        el = el.offsetParent;
+        top += el.offsetTop;
+        left += el.offsetLeft;
+      }
+      return (
+        top < (window.pageYOffset + window.innerHeight / 2) &&
+        left < (window.pageXOffset + window.innerWidth) &&
+        (top + height) > window.pageYOffset &&
+        (left + width) > window.pageXOffset
+      );
+    }
+
+
   </script>
 
 </body>
