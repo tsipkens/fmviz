@@ -58,7 +58,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #FCFCFC;
+  background-color: rgba(252, 252, 252, 1);
 }
 
 body {
@@ -150,7 +150,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FCFCFC;
+  background-color: rgba(252, 252, 252, 1);
   margin: 0px;
   padding: 0px;
   font-size: 10pt;
@@ -207,7 +207,7 @@ nav {
   visibility: visible;
   opacity: 1;
   float: left;
-  width: 13%;
+  width: 140px;
 }
 /* Swap sidebar / nav-list. */
 @media screen and (max-width: 1250px) {
@@ -291,7 +291,7 @@ div.main {
   width: 90%;
   padding-bottom: 50px;
   margin-top: 70px;
-  padding-left: 15%;
+  padding-left: 140px;
 }
 /* Only show add padding-left for large screens when sidenav visible. */
 @media screen and (max-width: 1250px) {

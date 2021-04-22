@@ -693,11 +693,17 @@
     };
 
     function scrollFunction() {
-      f_width = $(window).width() > 1300  // flags if sidebar is present
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
-        document.getElementById("header").style.boxShadow = "0px 0px 4px #AAA";
-      } else {
+      f_width = $(window).width() > 1250  // flags if sidebar is present
+      if (f_width) {
+        document.getElementById("header").style.background = "rgba(252, 252, 252, 0)";
         document.getElementById("header").style.boxShadow = "none";
+      } else {
+        document.getElementById("header").style.background = "rgba(252, 252, 252, 1)";
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
+          document.getElementById("header").style.boxShadow = "0px 0px 4px #AAA";  
+        } else {
+          document.getElementById("header").style.boxShadow = "none";
+        }
       }
       
       // Color sidebar based on position.
