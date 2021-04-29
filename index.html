@@ -387,7 +387,7 @@
     </div>
 
     <div class="iframe-container1">
-      <iframe name="graphic1" src="fvp.html" frameborder="0" scrolling="no">
+      <iframe name="graphic1" src="fvp.html" frameborder="0" scrolling="no" style="visibility:hidden;" onload="this.style.visibility = 'visible';">
       </iframe>
     </div>
 
@@ -405,7 +405,7 @@
     </p>
 
     <div class="iframe-container1b">
-      <iframe name="graphic1b" src="whisker.html" frameborder="0" scrolling="no">
+      <iframe name="graphic1b" src="whisker.html" frameborder="0" scrolling="no" style="visibility:hidden;" onload="this.style.visibility = 'visible';">
       </iframe>
     </div>
 
@@ -562,7 +562,7 @@
     </div>
 
     <div class="iframe-container2">
-      <iframe name="viz2" src="curves.html" frameborder="0" scrolling="no">
+      <iframe name="viz2" src="curves.html" frameborder="0" scrolling="no" style="visibility:hidden;" onload="this.style.visibility = 'visible';">
       </iframe>
     </div>
   </div>
@@ -596,7 +596,7 @@
     <div class="main" id="main-footer" style="margin-top:20px;padding-bottom:20px;font-size:10pt;">
 
       <a class="anchor" id="hcite"></a>
-      <h3>CITATION AND CREDIT</h3>
+      <h5>CITATION AND CREDIT</h5>
 
       <p>
         <sup class="footer-sup">1</sup> This graphic was created by Timothy Sipkens in cooperation with
@@ -656,17 +656,24 @@
   </div>
 
   <script>
+    /* To expand text Q&As */
     var coll = document.getElementsByClassName("text-outside");
     var i;
 
     for (i = 0; i < coll.length; i++) {
+
+      var content = coll[i].childNodes,
+          button = content[1];
+
+      coll[i].style.maxHeight = (button.scrollHeight + 4) + "px";  // for first time, initialize maxHeight
+
       coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var content = this.childNodes,
           button = content[1],
           content = content[3],
           outside = this;
-
+        
         if (content.style.display === "block") {
           this.style.maxHeight = button.scrollHeight + "px";
           setTimeout(function() {
@@ -674,10 +681,8 @@
           }, 500);
           button.children[0].style = "transform:rotate(0deg);color:black;";
         } else {
-          this.style.maxHeight = button.scrollHeight + "px"; /* need for first time */
           setTimeout(function() {
             content.style.display = "block";
-            this.style.transition = "max-height 0.5s";
             this.style.maxHeight = this.scrollHeight + "px";
             button.children[0].style = "transform:rotate(90deg);color:var(--a0);";
           }.bind(this), 40);
@@ -703,7 +708,9 @@
       if (f_width) {
         document.getElementById("header").style.background = "rgba(252, 252, 252, 0)";
         document.getElementById("header").style.boxShadow = "none";
+        document.getElementById("header").style.zIndex = "-1";   // move to back
       } else {
+        document.getElementById("header").style.zIndex = "20";  // move to front
         document.getElementById("header").style.background = "rgba(252, 252, 252, 1)";
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
           document.getElementById("header").style.boxShadow = "0px 0px 4px #AAA";  

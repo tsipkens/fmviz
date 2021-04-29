@@ -25,9 +25,9 @@ var divToolTip = d3.select("body").append("div")
   .style("opacity", 0);
 
 // For formating parts of tooltip text.
-var divToolTipS1 = divToolTip.append("span").attr("class", "tooltip-s1");  // name
-var divToolTipS2 = divToolTip.append("span").attr("class", "tooltip-s2");  // treatment
-var divToolTipS3 = divToolTip.append("span").attr("class", "tooltip-s3");  // code
+var divToolTipS1 = divToolTip.append("div").attr("class", "tooltip-s1");  // name
+var divToolTipS2 = divToolTip.append("div").attr("class", "tooltip-s2");  // treatment
+var divToolTipS3 = divToolTip.append("div").attr("class", "tooltip-s3");  // code
 
 // for legend
 var marginLegend = {
@@ -256,9 +256,13 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         if (typeof(d.Treatment)=='undefined') {
           return '';
         } else if (d.Treatment == 'IPA') {
-          return '&nbsp;+ ' + d.Treatment + '';
+          return 'Treated with ' + d.Treatment + ' <i class="fas fa-flask" style="font-size:7pt;color:var(--a0)"></i>';
+        } else if (d.Treatment.substring(0,4) == 'Heat') {
+          return d.Treatment + ' <i class="fas fa-fire" style="font-size:8pt;color:#FF5733"></i>';
+        } else if ((d.Treatment.substring(0,5) == 'Laund') || (d.Treatment.substring(0,4) == 'Wash')) {
+          return d.Treatment + ' <i class="fas fa-tint" style="font-size:8pt;color:#414487"></i>'
         } else {
-          return '&nbsp;+ ' + d.Treatment.toLowerCase() + '';
+          return d.Treatment + '';
         }
       } else {
         return ''
@@ -312,8 +316,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         divToolTip.style("left", d3.event.pageX + "px")
           .style("top", d3.event.pageY + "px");
         divToolTipS1.html(d.SimpleName);
-        divToolTipS2.html(treatmentText(d));
-        divToolTipS3.html('&nbsp;(' + d.CaseCode + ')');
+        divToolTipS2.html("(" + d.CaseCode +")");
+        divToolTipS3.html(treatmentText(d));
       })
       .on('mouseout', function(d) {
         d3.select(this).transition()
