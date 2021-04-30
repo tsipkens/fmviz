@@ -40,8 +40,9 @@
 
 /* original */
 :root {
-  --a0: #F1435A;  /* main accent (#FD80A8) */
+  --a0: #F1435A;  /* main accent (previously: #FD80A8) */
   --a1: #FFC300;  /* yellow, secondary accent */
+  --a2: #CB3F51;  /* darker main accent */
   --c1: #900C3F;  /* dark purple */
   --c2: #581845;  /* light purple, non-woven */
   --c3: #FBFBFB;  /* while offset */
@@ -612,4 +613,26 @@ iframe {
 
 .text-indent p:last-child {
   padding-bottom: 5px;
+}
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #E9E9E9;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--a0);
+  transition: all 0.5s;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--a2);
 }
