@@ -17,7 +17,7 @@ var margin = {
     left: 70
   },
   width = widthA - margin.left - margin.right,
-  height = 448 - margin.top - margin.bottom;
+  height = 430 - margin.top - margin.bottom;
 
 // For tooltips.
 var divToolTip = d3.select("body").append("div")
