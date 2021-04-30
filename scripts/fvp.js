@@ -330,7 +330,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         divToolTip.style("left", d3.event.pageX + "px")
           .style("top", d3.event.pageY + "px");
         divToolTipS1.html(d.SimpleName);
-        divToolTipS2.html("(" + d.CaseCode +")");
+        divToolTipS2.html("Code <span style='color:#AAA;'>" + d.CaseCode +"</span>");
         divToolTipS3.html(treatmentText(d));
         divToolTipS4.html("Quality <span style='color:#AAA;'>" + qualityText(d) + "</span>");
       })
