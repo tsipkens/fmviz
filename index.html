@@ -54,8 +54,8 @@
     <a href="#h1" id="logo">fmviz</a>
     <nav>
       <ul class="nav-list" id="nav-list-a">
-        <li><a href="#hfvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
-        <li><a href="#hdiy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
+        <li><a href="#hfvp" id="nav-fvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
+        <li><a href="#hdiy" id="nav-diy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
         <li><a href="#htable" class="nav-link" id="data-link-a" onclick="highlightDataLink()">
           <div style="display:flex;vertical-align:middle;">
             <span><i class="fas fa-database" style="font-size:13pt"></i></span> <span style="padding-left:4px;">LINK TO DATA</span>
@@ -71,7 +71,7 @@
     </nav>
   </header>
 
-
+  <!--
   <div class="sidebar" id="sidebar">
     <ul class="side-list">
       <li><a href="#h1" class="nav-link" id="side-intro">INTRO</a></li>
@@ -82,7 +82,7 @@
           <span><i class="fas fa-database" style="font-size:13pt"></i></span> <span style="padding-left:4px;">LINK TO DATA</span>
         </div>
       </a></li>
-      <li><a href="#hcite" class="nav-link" id="side-cite">CITATION &<br>CREDITS</a></li>
+      
       <li><a href="https://github.com/tsipkens" class="nav-link">
         <div style="display:flex;vertical-align:middle;">
           <img src="imgs/GitHub-Mark-64px.png" alt="GitHub" style="height:15pt; padding-right:5px;">
@@ -91,6 +91,7 @@
       </a></li>
     </ul>
   </div>
+  -->
 
 
   <div class="main" id="main-intro">
@@ -117,7 +118,7 @@
     </p>
 
     <div style="text-align:center;">
-      <img src="imgs/01_schem1.svg" alt="Impaction and interception" style="max-width:400px;width:100%;padding:13px;padding-bottom:0px;fill:red;"></img>
+      <img src="imgs/01_schem1.svg" alt="Impaction and interception" style="max-width:400px;width:100%;padding:13px;padding-bottom:0px;"></img>
       <img src="imgs/01_schem2.svg" alt="Diffusion and electrostatic" style="max-width:400px;width:100%;padding:13px;padding-bottom:0px;"></img>
     </div>
 
@@ -706,40 +707,29 @@
 
     function scrollFunction() {
       f_width = $(window).width() > 1250  // flags if sidebar is present
-      if (f_width) {
-        document.getElementById("header").style.background = "rgba(252, 252, 252, 0)";
-        document.getElementById("header").style.boxShadow = "none";
-        document.getElementById("header").style.zIndex = "-1";   // move to back
+      document.getElementById("header").style.background = "rgba(252, 252, 252, 1)";
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
+        document.getElementById("header").style.boxShadow = "0px 0px 4px #AAA";  
       } else {
-        document.getElementById("header").style.zIndex = "20";  // move to front
-        document.getElementById("header").style.background = "rgba(252, 252, 252, 1)";
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
-          document.getElementById("header").style.boxShadow = "0px 0px 4px #AAA";  
-        } else {
-          document.getElementById("header").style.boxShadow = "none";
-        }
+        document.getElementById("header").style.boxShadow = "none";
       }
       
       // Color sidebar based on position.
       colorcode = getComputedStyle(document.documentElement).getPropertyValue("--a0")
       if (isInViewport(document.querySelector('#main-footer'))) {
-        document.getElementById("side-data").style.color = "#333";
-        document.getElementById("side-cite").style.color = colorcode;
+        document.getElementById("data-link-a").style.color = colorcode;
       } else if (isInViewport(document.querySelector('#main-data'))) {
-        document.getElementById("side-diy").style.color = "#333";
-        document.getElementById("side-data").style.color = colorcode;
-        document.getElementById("side-cite").style.color = "#333";
+        document.getElementById("nav-diy").style.color = "#333";
+        document.getElementById("data-link-a").style.color = colorcode;
       } else if (isInViewport(document.querySelector('#main-diy'))) {
-        document.getElementById("side-fvp").style.color = "#333";
-        document.getElementById("side-diy").style.color = colorcode;
-        document.getElementById("side-data").style.color = "#333";
+        document.getElementById("nav-fvp").style.color = "#333";
+        document.getElementById("nav-diy").style.color = colorcode;
+        document.getElementById("data-link-a").style.color = "#333";
       } else if (isInViewport(document.querySelector('#main-fvp'))) {
-        document.getElementById("side-intro").style.color = "#333";
-        document.getElementById("side-fvp").style.color = colorcode;
-        document.getElementById("side-diy").style.color = "#333";
+        document.getElementById("nav-fvp").style.color = colorcode;
+        document.getElementById("nav-diy").style.color = "#333";
       } else if (isInViewport(document.querySelector('#main-intro'))) {
-        document.getElementById("side-intro").style.color = colorcode;
-        document.getElementById("side-fvp").style.color = "#333";
+        document.getElementById("nav-fvp").style.color = "#333";
       }
     }
 

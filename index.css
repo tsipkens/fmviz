@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Pacifico&family=Open+Sans:wght@300;400;500;600;700&family=Nunito:wght@200;300;400;600;700&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Pacifico&family=Open+Sans:wght@200;300;400;500;600;700&family=Nunito:wght@200;300;400;600;700&family=Roboto:wght@300&display=swap');
 
 /* text highlighting */
 @keyframes yellowfade {
@@ -185,9 +185,6 @@ nav {
 
 .nav-list {
   list-style: none;
-  transition: visibility 0.5s, opacity 0.5s linear;
-  visibility: hidden;  /* overwritten for narrow displays below */
-  opacity: 0;
 }
 .nav-list li {
   display: inline-block;
@@ -205,38 +202,10 @@ nav {
   color: var(--a0);
 }
 
-.sidebar {
-  font-size: 10pt;
-  position: -webkit-sticky;
-  position: fixed;
-  top: 0px;
-  padding-top: 104px;
-  padding-left: 5%;
-  transition: visibility 0.5s, opacity 0.5s linear;
-  visibility: visible;
-  opacity: 1;
-  float: left;
-  width: 140px;
-  height: 100vh;
-}
-/* Swap sidebar / nav-list. */
-@media screen and (max-width: 1250px) {
-  .sidebar { visibility: hidden; opacity: 0; }
-  .nav-list { visibility: visible; opacity: 1; }
-}
-.side-list {
-  list-style: none;
-}
-.side-list li {
-  padding: 10px 0px;
-  vertical-align: middle;
-}
-
 a.anchor {
   display: block;
   position: relative;
   top: -90px;
-  visibility: hidden;
 }
 
 .footer {
@@ -312,11 +281,7 @@ div.main {
   width: 90%;
   padding-bottom: 50px;
   margin-top: 70px;
-  padding-left: 140px;
-}
-/* Only show add padding-left for large screens when sidenav visible. */
-@media screen and (max-width: 1250px) {
-  div.main { padding-left: 0px; }
+  padding-left: 0px;
 }
 
 div.control {
@@ -515,7 +480,7 @@ input[type="checkbox"]:checked:after {
   border-radius: 5px;
   pointer-events: none;
   max-width: 200px;
-  font-size: 9pt;
+  font-size: 10pt;
   font-weight: 300;
   box-shadow: 0px 0px 4px rgba(170,170,170,0.5);
   transition: all 0.1s ease 0s;
@@ -525,12 +490,12 @@ input[type="checkbox"]:checked:after {
   font-size: 12pt;
   font-weight: 700;
   color: var(--a0);
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
-.tooltip-s2, .tooltip-s3 {
+.tooltip-s2, .tooltip-s3, .tooltip-s4 {
   display: block;
-  line-height: 10.5pt;
+  line-height: 12pt;
 }
 
 .labels {
