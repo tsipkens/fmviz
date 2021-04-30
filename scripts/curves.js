@@ -39,7 +39,7 @@ var colorPen = function(keyCode) {
 
 // set the dimensions and margins of the graph
 var $container = $('#pen_curve'),
-  widthPenA = 0.95 * Math.min($container.width(), 870),
+  widthPenA = Math.min($container.width(), 870),
   heightPenA = $container.height()
 
 var marginPen = {  // margins of penetration curve plot
