@@ -57,8 +57,8 @@
         <li><a href="#hfvp" id="nav-fvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
         <li><a href="#hdiy" id="nav-diy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
         <li><a href="#htable" class="nav-link" id="data-link-a" onclick="highlightDataLink()">
-          <div style="display:flex;vertical-align:middle;">
-            <span><i class="fas fa-database" style="font-size:13pt"></i></span> <span style="padding-left:4px;">LINK TO DATA</span>
+          <div style="display:flex;vertical-align:middle;" id="nav-data">
+            <span><i class="fas fa-database" style="font-size:12pt"></i></span> <span style="padding-left:4px;">LINK TO DATA</span>
           </div>
         </a></li>
         <li><a href="https://github.com/tsipkens" class="nav-link">
@@ -693,21 +693,20 @@
       }
       
       // Color sidebar based on position.
-      colorcode = getComputedStyle(document.documentElement).getPropertyValue("--a0")
       if (isInViewport(document.querySelector('#main-footer'))) {
-        document.getElementById("data-link-a").style.color = colorcode;
+        document.getElementById("nav-data").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
       } else if (isInViewport(document.querySelector('#main-data'))) {
-        document.getElementById("nav-diy").style.color = "#333";
-        document.getElementById("data-link-a").style.color = colorcode;
+        document.getElementById("nav-diy").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
+        document.getElementById("nav-data").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
       } else if (isInViewport(document.querySelector('#main-diy'))) {
-        document.getElementById("nav-fvp").style.color = "#333";
-        document.getElementById("nav-diy").style.color = colorcode;
-        document.getElementById("data-link-a").style.color = "#333";
+        document.getElementById("nav-fvp").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
+        document.getElementById("nav-diy").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
+        document.getElementById("nav-data").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
       } else if (isInViewport(document.querySelector('#main-fvp'))) {
-        document.getElementById("nav-fvp").style.color = colorcode;
-        document.getElementById("nav-diy").style.color = "#333";
+        document.getElementById("nav-fvp").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
+        document.getElementById("nav-diy").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
       } else if (isInViewport(document.querySelector('#main-intro'))) {
-        document.getElementById("nav-fvp").style.color = "#333";
+        document.getElementById("nav-fvp").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
       }
     }
 
