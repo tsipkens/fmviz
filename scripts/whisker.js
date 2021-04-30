@@ -223,7 +223,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   var divToolTipS1 = divToolTip.append("div").attr("class", "tooltip-s1");  // name
   var divToolTipS2 = divToolTip.append("div").attr("class", "tooltip-s2");  // treatment
   var divToolTipS3 = divToolTip.append("div").attr("class", "tooltip-s3");  // code
-  var divToolTipS3 = divToolTip.append("div").attr("class", "tooltip-s4");  // quality
+  var divToolTipS4 = divToolTip.append("div").attr("class", "tooltip-s4");  // quality
 
   // Function to return printable text/line style for treatment.
   qualityText = function (d) {
