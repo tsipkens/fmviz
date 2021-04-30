@@ -493,7 +493,7 @@ input[type="checkbox"]:checked:after {
   padding-bottom: 4px;
 }
 
-.tooltip-s2, .tooltip-s3, .tooltip-s4 {
+.tooltip-s2, .tooltip-s3, .tooltip-s4, .tooltip-s5 {
   display: block;
   line-height: 12pt;
 }

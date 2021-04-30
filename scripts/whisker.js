@@ -224,6 +224,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   var divToolTipS2 = divToolTip.append("div").attr("class", "tooltip-s2");  // treatment
   var divToolTipS3 = divToolTip.append("div").attr("class", "tooltip-s3");  // code
   var divToolTipS4 = divToolTip.append("div").attr("class", "tooltip-s4");  // quality
+  var divToolTipS5 = divToolTip.append("div").attr("class", "tooltip-s5");
 
   // Function to return printable text/line style for treatment.
   qualityText = function (d) {
@@ -238,7 +239,15 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       Q = (10 ** (Math.log(Q) / Math.log(10))).toPrecision(2); // used instead of log10 to work in IE
     }
     return Q
-  } 
+  }
+  var layerText = function (d) {
+    console.log(d)
+    if ((d.Layers == "1") || (d.Layers == "-")) {
+      return ""
+    } else {
+      return "Layers  <span style='color:#AAA;'>" + d.Layers + "</span>"
+    }
+  }
   var treatmentText = function(d) {
     if (d.Treatment != 'None') {
       if (typeof(d.Treatment)=='undefined') {
@@ -303,6 +312,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       divToolTipS2.html("Code <span style='color:#AAA;'>" + d.CaseCode +"</span>");
       divToolTipS3.html(treatmentText(d));
       divToolTipS4.html("Quality <span style='color:#AAA;'>" + qualityText(d) + "</span>");
+      divToolTipS5.html(layerText(d));
     })
     .on('mouseout', function(d) {
       d3.select(this).transition()
