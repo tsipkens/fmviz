@@ -330,19 +330,21 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         return color(d.StructureCode);
       })
       .on('mouseover', function(d) {
+        var matrix = this.getScreenCTM()
+          .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
+        divToolTip.style("left", (window.pageXOffset + matrix.e + 15) + "px")
+          .style("top", (window.pageYOffset + matrix.f - 30) + "px");
+        divToolTipS1.html(d.SimpleName);
+        divToolTipS2.html("Code <span style='color:#AAA;'>" + d.CaseCode +"</span>");
+        divToolTipS3.html(treatmentText(d));
+        divToolTipS4.html("Quality <span style='color:#AAA;'>" + qualityText(d) + "</span>");
+        divToolTipS5.html(layerText(d));
         d3.select(this).transition()
           .duration(50)
           .attr('opacity', .85);
         divToolTip.transition()
           .duration(50)
           .style("opacity", 1);
-        divToolTip.style("left", d3.event.pageX + "px")
-          .style("top", d3.event.pageY + "px");
-        divToolTipS1.html(d.SimpleName);
-        divToolTipS2.html("Code <span style='color:#AAA;'>" + d.CaseCode +"</span>");
-        divToolTipS3.html(treatmentText(d));
-        divToolTipS4.html("Quality <span style='color:#AAA;'>" + qualityText(d) + "</span>");
-        divToolTipS5.html(layerText(d));
       })
       .on('mouseout', function(d) {
         d3.select(this).transition()
