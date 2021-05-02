@@ -233,10 +233,10 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       Q = "N/A";
     } else if (!(isFinite(Q))) {
       Q = "~∞";
-    } else if (Q < 1e-3) {
+    } else if (Q < (10 ** 1e-3)) {
       Q = "< 0.001";
     } else {
-      Q = (10 ** (Math.log(Q) / Math.log(10))).toPrecision(2); // used instead of log10 to work in IE
+      Q = Number((10 ** (Math.log(Q) / Math.log(10))).toPrecision(2)); // used instead of log10 to work in IE
     }
     return Q
   }
