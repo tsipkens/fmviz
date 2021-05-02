@@ -254,7 +254,12 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
     // Function to return printable text/line style for treatment.
     qualityText = function (d) {
-      Q = -1000 * Math.log(d.Filt9) / d.PressureDrop;
+      if (typeof d.value === "undefined") {
+        filt = d.Filt9;
+      } else {
+        filt = d.value;
+      }
+      Q = -1000 * Math.log(filt) / d.PressureDrop;
       if (isNaN(Q)) {
         Q = "N/A";
       } else if (!(isFinite(Q))) {
@@ -267,7 +272,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       return Q
     }
     var layerText = function (d) {
-      console.log(d)
       if ((d.Layers == "1") || (d.Layers == "-")) {
         return ""
       } else {
@@ -411,7 +415,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
           BasicCode: d.BasicCode,
           SampleCode: d.SampleCode,
           CaseCode: d.CaseCode,
-          Treatment: d.Treatment
+          Treatment: d.Treatment, 
+          Layers: d.Layers
         }
       })
 
