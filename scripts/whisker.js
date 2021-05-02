@@ -1,15 +1,15 @@
 // set the dimensions and margins of the graph
-var maxWidth = 800;
+var maxWidth = 950;
 var $container = $('#whisker-viz'),
-  widthWA = 0.95 * Math.min($container.width(), maxWidth),
+  widthWA = Math.min($container.width(), maxWidth),
   heightWA = $container.height()
 
 // set the dimensions and margins of the graph
 var marginW = {
     top: 10,
-    right: 85,
+    right: 120,
     bottom: 50,
-    left: 80
+    left: 120
   },
   widthW = widthWA - marginW.left - marginW.right,
   heightW = 400 - marginW.top - marginW.bottom;
@@ -241,7 +241,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     return Q
   }
   var layerText = function (d) {
-    console.log(d)
     if ((d.Layers == "1") || (d.Layers == "-")) {
       return ""
     } else {
@@ -302,7 +301,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .on('mouseover', function(d) {
       var matrix = this.getScreenCTM()
         .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
-      divToolTip.style("left", (window.pageXOffset + matrix.e + 15) + "px")
+      divToolTip.style("left", (window.pageXOffset + matrix.e + 10) + "px")
         .style("top", (window.pageYOffset + matrix.f - 30) + "px");
       divToolTipS1.html(d.SimpleName);
       divToolTipS2.html("Code <span style='color:#AAA;'>" + d.CaseCode +"</span>");

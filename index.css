@@ -480,7 +480,7 @@ input[type="checkbox"]:checked:after {
   border: 0.5px solid #BBB;
   border-radius: 5px;
   pointer-events: none;
-  max-width: 280px;
+  max-width: 160px;
   font-size: 10pt;
   font-weight: 300;
   box-shadow: 0px 0px 4px rgba(170,170,170,0.5);
@@ -492,6 +492,7 @@ input[type="checkbox"]:checked:after {
   font-weight: 700;
   color: var(--a0);
   padding-bottom: 4px;
+  line-height: 13pt;
 }
 
 .tooltip-s2, .tooltip-s3, .tooltip-s4, .tooltip-s5 {
