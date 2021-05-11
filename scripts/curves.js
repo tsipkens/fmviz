@@ -1,5 +1,83 @@
 
-var currentCodes = ["W5", "nW5", "K7"];  // default materials for dropdowns
+
+//-- HANDLE URL VARIABLE ----------------------------------------//
+// function to get URL variables
+function getUrlVars() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = decodeURI(value);
+  });
+  console.log(vars)
+  return vars;
+}
+function getUrlParam(parameter, defaultvalue){
+  var urlparameter = defaultvalue;
+  if(window.location.href.indexOf(parameter) > -1){
+      urlparameter = getUrlVars()[parameter];
+      }
+  return urlparameter;
+}
+function updateURLParameter(url, param, paramVal)
+{
+    var TheAnchor = null;
+    var newAdditionalURL = "";
+    var tempArray = url.split("?");
+    var baseURL = tempArray[0];
+    var additionalURL = tempArray[1];
+    var temp = "";
+
+    if (additionalURL) 
+    {
+        var tmpAnchor = additionalURL.split("#");
+        var TheParams = tmpAnchor[0];
+            TheAnchor = tmpAnchor[1];
+        if(TheAnchor)
+            additionalURL = TheParams;
+
+        tempArray = additionalURL.split("&");
+
+        for (var i=0; i<tempArray.length; i++)
+        {
+            if(tempArray[i].split('=')[0] != param)
+            {
+                newAdditionalURL += temp + tempArray[i];
+                temp = "&";
+            }
+        }        
+    }
+    else
+    {
+        var tmpAnchor = baseURL.split("#");
+        var TheParams = tmpAnchor[0];
+            TheAnchor  = tmpAnchor[1];
+
+        if(TheParams)
+            baseURL = TheParams;
+    }
+
+    if(TheAnchor)
+        paramVal += "#" + TheAnchor;
+
+    var rows_txt = temp + "" + param + "=" + paramVal;
+    return baseURL + "?" + newAdditionalURL + rows_txt;
+}
+function updateURLCodes (currentCodes) {
+    // update URL with all of the parameters
+  window.history.replaceState('', '', updateURLParameter(window.location.href, "l1", currentCodes[0]));
+  window.history.replaceState('', '', updateURLParameter(window.location.href, "l2", currentCodes[1]));
+  window.history.replaceState('', '', updateURLParameter(window.location.href, "l3", currentCodes[2]));
+}
+
+currentCodes = [" ", " ", " "]  // initialize as empty
+currentCodes[0] = getUrlParam("l1", "W5");  // default materials for dropdowns OR read from URL
+currentCodes[1] = getUrlParam("l2", "nW5");
+currentCodes[2] = getUrlParam("l3", "K7");
+
+// update URL with all of the parameters
+updateURLCodes(currentCodes);
+//-----------------------------------------------------------------//
+
+
 
 // Check if internet explorer.
 var isIE = false;
@@ -488,18 +566,21 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     currentCodes[0] = this.value;
     updateMaskColor(currentCodes[0], 0)
     updateCurve(currentCodes)
+    updateURLCodes(currentCodes);
   })
 
   d3.select("#select-code2").on("change", function() {
     currentCodes[1] = this.value;
     updateMaskColor(currentCodes[1], 1)
-    updateCurve(currentCodes)
+    updateCurve(currentCodes);
+    updateURLCodes(currentCodes);
   })
 
   d3.select("#select-code3").on("change", function() {
     currentCodes[2] = this.value;
     updateMaskColor(currentCodes[2], 2)
-    updateCurve(currentCodes)
+    updateCurve(currentCodes);
+    updateURLCodes(currentCodes);
   })
 
 })

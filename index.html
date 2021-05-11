@@ -35,7 +35,7 @@
   <link rel="icon" href="https://tsipkens.github.io/fmviz/imgs/icon.png" />
   <link rel="shortcut icon" href="https://tsipkens.github.io/fmviz/imgs/icon.png" />
 
-  <script src="https://kit.fontawesome.com/58cf1bb60d.js" crossorigin="anonymous"></script>
+  <link href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet">
 
   <!-- Load d3.js -->
   <script src="https://d3js.org/d3.v4.js"></script>
@@ -540,9 +540,10 @@
         </p>
       </div>
     </div>
-
+    
+    <a class="anchor" id="hviz2"></a>
     <div class="iframe-container2">
-      <iframe name="viz2" src="curves.html" frameborder="0" scrolling="no" style="visibility:hidden;" onload="this.style.visibility = 'visible';">
+      <iframe name="viz2" id="viz2" src="curves.html" frameborder="0" scrolling="no" style="visibility:hidden;" onload="this.style.visibility = 'visible';">
       </iframe>
     </div>
   </div>
@@ -556,7 +557,6 @@
     </p>
 
     <div class="ref" style="display:flex;vertical-align:middle;">
-
       <a id="data-link" href="https://github.com/tsipkens/fmviz/blob/main/data/fm.csv"><i class="fas fa-database" style="font-size:13pt"></i> FM.CSV</a>
     </div>
 
@@ -731,6 +731,12 @@
         (left + width) > window.pageXOffset
       );
     }
+
+    // copy URL parameters to curves.html
+    $(function() {
+      var search = window.location.search;
+      $("#viz2").attr("src", $("#viz2").attr("src") + search);
+    });
 
 
   </script>

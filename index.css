@@ -304,6 +304,29 @@ div.control {
   min-width: 10px;
 }
 
+.share-button {
+  font-family: 'Nunito', 'Open Sans', Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: 300;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-left: 8px;
+  margin-right: 8px;
+  border: 2px solid #E9EEF0;
+  border-radius: 5pt;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  background-color: white;
+}
+
+.share-button:hover {
+  box-shadow: 0px 0px 8px #E9EEF0;
+}
+
 select {
   font-family: 'Nunito', 'Open Sans', Arial, sans-serif;
   font-size: 11pt;

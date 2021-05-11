@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
 
+  <link href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet">
+
   <link href="index.css" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -106,13 +108,36 @@
             <b>ASTM Breathability</b> <span id="ASTMlevel">-</span>
           </div>
         </div>
+
+        <div>
+          <div style="display:inline-block;">
+            <button class="share-button" id="share-copy" onclick="shareLink(this);"><i class="fas fa-link"></i> Copy link to this mask</button>
+          </div>
+        </div>
       </div>
     </div>
-
 
     <div id="pen_curve"></div>
 
     <script src="scripts/curves.js"></script>
+
+    <script>
+      function shareLink(e) {
+        var dummy = document.body.appendChild(document.createElement("input"));
+        dummy.value = window.location.href;
+        dummy.focus();
+        dummy.select();
+        document.execCommand('copy');
+        dummy.parentNode.removeChild(dummy);
+
+        console.log(window.parent.location.href)
+        
+        e.style.border = "2px solid rgba(1, 216, 149, 1)"
+        setTimeout(function() { 
+          e.style.border = "2px solid #E9EEF0"
+        }, 500);
+      }
+    </script>
 
   </div>
 </body>
