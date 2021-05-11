@@ -123,14 +123,18 @@
 
     <script>
       function shareLink(e) {
+        txt = window.parent.location.href
+        txt.replace("curves.html", "");  // remove curves.html contribution (refers to main page)
+        txt = txt + "#hviz2";  // add page anchor, moves to this plot
+        
+        console.log(txt)
+        
         var dummy = document.body.appendChild(document.createElement("input"));
         dummy.value = window.location.href;
         dummy.focus();
         dummy.select();
         document.execCommand('copy');
         dummy.parentNode.removeChild(dummy);
-
-        console.log(window.parent.location.href)
         
         e.style.border = "2px solid rgba(1, 216, 149, 1)"
         setTimeout(function() { 
