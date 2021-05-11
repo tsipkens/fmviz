@@ -124,7 +124,7 @@
     <script>
       function shareLink(e) {
         txt = window.location.href;
-        txt.replace("curves.html", "");  // remove curves.html contribution (refers to main page)
+        txt = txt.replace("curves.html", "");  // remove curves.html contribution (refers to main page)
         txt = txt + "#hviz2";  // add page anchor, moves to this plot
         
         console.log(txt)
