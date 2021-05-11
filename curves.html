@@ -111,7 +111,7 @@
 
         <div>
           <div style="display:inline-block;">
-            <button class="share-button" id="share-copy" onclick="shareLink(this);"><i class="fas fa-link"></i> Copy link to this mask</button>
+            <button class="share-button" id="share-copy" onclick="shareLink(this);"><i class="far fa-clipboard" style="padding-right:2px;color:#666;"></i> Copy link to this mask</button>
           </div>
         </div>
       </div>
@@ -126,8 +126,6 @@
         txt = window.location.href;
         txt = txt.replace("curves.html", "");  // remove curves.html contribution (refers to main page)
         txt = txt + "#hviz2";  // add page anchor, moves to this plot
-        
-        console.log(txt)
 
         var dummy = document.body.appendChild(document.createElement("input"));
         dummy.value = txt;
