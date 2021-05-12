@@ -215,11 +215,16 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     }
   }
   var layerText = function(d) {
-    if (d.Layers == 1) {
-      return '';
+    if (d.StructureCode == 'ML') {
+      return '';  // do not show layers if already compiled multilayer mask
     } else {
-      return ', ' + d.Layers + ' layers';
+      if (d.Layers == 1) {
+        return '';  // don't show anything for a single layer
+      } else {
+        return ', ' + d.Layers + ' layers';  // append number of layers
+      }
     }
+    
   }
 
   // Fill all* summary variables.
