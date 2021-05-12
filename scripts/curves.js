@@ -214,13 +214,21 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       return '';
     }
   }
+  var layerText = function(d) {
+    if (d.Layers == 1) {
+      return '';
+    } else {
+      return ', ' + d.Layers + ' layers';
+    }
+  }
 
   // Fill all* summary variables.
   var allCodes = [],
     allMaterials = [];
   for (aa in data) {
     allCodes[aa] = data[aa].CaseCode;
-    allMaterials[aa] = data[aa].SimpleName + treatmentText(data[aa]) + " (" + data[aa].CaseCode + ")";
+    allMaterials[aa] = data[aa].SimpleName + treatmentText(data[aa]) 
+      + layerText(data[aa]) + " (" + data[aa].CaseCode + ")";
   }
 
   // Filter for unique entries.
@@ -234,6 +242,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   console.log(allCodes)
   console.log(allMaterials)
 
+  // Populate selects/dropdown boxes.
   var populateDropDown = function(dropDown) {
     for (ii in allCodes) {
       var el = document.createElement("option");
@@ -242,7 +251,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       dropDown.appendChild(el);
     }
   }
-
   populateDropDown(document.getElementById("select-code"));
   populateDropDown(document.getElementById("select-code2"));
   populateDropDown(document.getElementById("select-code3"));
