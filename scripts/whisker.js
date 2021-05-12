@@ -7,9 +7,9 @@ var $container = $('#whisker-viz'),
 // set the dimensions and margins of the graph
 var marginW = {
     top: 10,
-    right: 120,
+    right: 110,
     bottom: 50,
-    left: 120
+    left: 100
   },
   widthW = widthWA - marginW.left - marginW.right,
   heightW = 400 - marginW.top - marginW.bottom;
@@ -302,7 +302,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       var matrix = this.getScreenCTM()
         .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
       divToolTip.style("left", (window.pageXOffset + matrix.e + 10) + "px")
-        .style("top", (window.pageYOffset + matrix.f - 30) + "px");
+        .style("top", (window.pageYOffset + matrix.f - 40) + "px");
       divToolTipS1.html(d.SimpleName);
       divToolTipS2.html("Code <span style='color:#AAA;'>" + d.CaseCode +"</span>");
       divToolTipS3.html(treatmentText(d));
