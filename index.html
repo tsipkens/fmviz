@@ -706,30 +706,18 @@
       // Color sidebar based on position.
       if (isInViewport(document.querySelector('#main-footer'))) {
         document.getElementById("nav-data").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
-        document.getElementById("nav-data").style.color = "#000";
       } else if (isInViewport(document.querySelector('#main-data'))) {
         document.getElementById("nav-diy").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
-        document.getElementById("nav-diy").style.color = "#777";
         document.getElementById("nav-data").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
-        document.getElementById("nav-data").style.color = "#000";
       } else if (isInViewport(document.querySelector('#main-diy'))) {
         document.getElementById("nav-fvp").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
-        document.getElementById("nav-fvp").style.color = "#777";
         document.getElementById("nav-diy").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
-        document.getElementById("nav-diy").style.color = "#000";
         document.getElementById("nav-data").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
-        document.getElementById("nav-data").style.color = "#777";
       } else if (isInViewport(document.querySelector('#main-fvp'))) {
         document.getElementById("nav-fvp").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
-        document.getElementById("nav-fvp").style.color = "#000";
         document.getElementById("nav-diy").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
-        document.getElementById("nav-diy").style.color = "#777";
-        document.getElementById("nav-data").style.color = "#777";
       } else if (isInViewport(document.querySelector('#main-intro'))) {
         document.getElementById("nav-fvp").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
-        document.getElementById("nav-fvp").style.color = "#000";
-        document.getElementById("nav-diy").style.color = "#000";
-        document.getElementById("nav-data").style.color = "#000";
       }
     }
 
