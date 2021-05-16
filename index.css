@@ -194,7 +194,7 @@ nav {
 }
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: #777;
   transition: all 0.6s ease 0s;
   font-weight: 400;
   top: -500px;
