@@ -502,8 +502,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         })
       )
 
-    document.getElementById("pweight").innerHTML = pweight; // estimated weight (sum)
-    document.getElementById("pdrop").innerHTML = pdrop; // estimate pressure drop (sum)
+    document.getElementById("pweight").innerHTML = pweight; // estimated weight
+    document.getElementById("pdrop").innerHTML = parseInt(pdrop); // estimate pressure drop
 
     if (pdrop < 20) {
       document.getElementById("pdrop-level").innerHTML = "Very low";
