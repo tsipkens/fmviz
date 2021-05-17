@@ -670,12 +670,12 @@
           setTimeout(function() {
             content.style.display = "none";
           }, 500);
-          button.children[0].style = "transform:rotate(0deg);color:black;";
+          button.children[0].style = "transform:rotate(90deg);color:black;";
         } else {
           setTimeout(function() {
             content.style.display = "block";
             this.style.maxHeight = this.scrollHeight + "px";
-            button.children[0].style = "transform:rotate(90deg);color:var(--a0);";
+            button.children[0].style = "transform:rotate(270deg);color:var(--a0);";
           }.bind(this), 40);
         }
       });
