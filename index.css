@@ -620,7 +620,8 @@ iframe {
   font-weight: 700;
   color: #000;
   transition: all 0.5s;
-  font-size: 14pt;
+  font-size: 12pt;
+  transform: rotate(90deg);
 }
 
 .text-indent {
