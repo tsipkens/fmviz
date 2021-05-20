@@ -178,12 +178,6 @@ nav {
   text-align: right;
   width: 80%;
 }
-@media screen and (max-width: 850px) {
-  nav {
-    width: 65%;
-  }
-}
-
 .nav-list {
   list-style: none;
 }
@@ -203,6 +197,20 @@ nav {
 }
 .nav-link:hover {
   color: var(--a0);
+}
+
+@media screen and (max-width: 850px) {
+  nav {
+    width: 65%;
+  }
+  .nav-list li {
+    display: inline-block;
+    margin: 4px 10px;
+    padding: 0px 0px;
+    height: 20px;
+    vertical-align: middle;
+    border-bottom: 3px solid rgba(241, 67, 90, 0);
+  }
 }
 
 a.anchor {
