@@ -54,16 +54,16 @@
     <a href="#h1" id="logo">fmviz</a>
     <nav>
       <ul class="nav-list" id="nav-list-a">
-        <li><a href="#hfvp" id="nav-fvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
-        <li><a href="#hdiy" id="nav-diy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
-        <li><a href="#htable" class="nav-link" id="data-link-a" onclick="highlightDataLink()">
-          <div style="display:flex;vertical-align:middle;" id="nav-data">
+        <li id="nav-fvp"><a href="#hfvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
+        <li id="nav-diy"><a href="#hdiy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
+        <li id="data-link-a"><a href="#htable" class="nav-link" onclick="highlightDataLink()">
+          <div style="display:flex;vertical-align:middle;">
             <span><i class="fas fa-database" style="font-size:12pt"></i></span> <span style="padding-left:4px;">LINK TO DATA</span>
           </div>
         </a></li>
         <li><a href="https://github.com/tsipkens/fmviz" class="nav-link">
             <div style="display:flex;vertical-align:middle;">
-              <img src="imgs/GitHub-Mark-64px.png" alt="GitHub" style="height:15pt; padding-right:5px;">
+              <img src="imgs/GitHub-Mark-64px.png" alt="GitHub" style="height:13pt; padding-right:5px;">
               <span>@tsipkens</span>
             </div>
           </a></li>
@@ -705,19 +705,19 @@
       
       // Color sidebar based on position.
       if (isInViewport(document.querySelector('#main-footer'))) {
-        document.getElementById("nav-data").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
+        document.getElementById("data-link-a").style.borderBottom = "3px solid rgba(241, 67, 90, 1)";
       } else if (isInViewport(document.querySelector('#main-data'))) {
-        document.getElementById("nav-diy").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
-        document.getElementById("nav-data").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
+        document.getElementById("nav-diy").style.borderBottom = "3px solid rgba(241, 67, 90, 0)";
+        document.getElementById("data-link-a").style.borderBottom = "3px solid rgba(241, 67, 90, 1)";
       } else if (isInViewport(document.querySelector('#main-diy'))) {
-        document.getElementById("nav-fvp").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
-        document.getElementById("nav-diy").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
-        document.getElementById("nav-data").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
+        document.getElementById("nav-fvp").style.borderBottom = "3px solid rgba(241, 67, 90, 0)";
+        document.getElementById("nav-diy").style.borderBottom = "3px solid rgba(241, 67, 90, 1)";
+        document.getElementById("data-link-a").style.borderBottom = "3px solid rgba(241, 67, 90, 0)";
       } else if (isInViewport(document.querySelector('#main-fvp'))) {
-        document.getElementById("nav-fvp").style.borderBottom = "2px solid rgba(241, 67, 90, 1)";
-        document.getElementById("nav-diy").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
+        document.getElementById("nav-fvp").style.borderBottom = "3px solid rgba(241, 67, 90, 1)";
+        document.getElementById("nav-diy").style.borderBottom = "3px solid rgba(241, 67, 90, 0)";
       } else if (isInViewport(document.querySelector('#main-intro'))) {
-        document.getElementById("nav-fvp").style.borderBottom = "2px solid rgba(241, 67, 90, 0)";
+        document.getElementById("nav-fvp").style.borderBottom = "3px solid rgba(241, 67, 90, 0)";
       }
     }
 
