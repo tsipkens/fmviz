@@ -187,6 +187,7 @@ nav {
   height: 28px;
   vertical-align: middle;
   border-bottom: 3px solid rgba(241, 67, 90, 0);
+  transition: all 0.6s ease 0s;
 }
 .nav-link {
   text-decoration: none;
