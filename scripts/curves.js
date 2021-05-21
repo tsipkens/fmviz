@@ -149,7 +149,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
   // Add X axis
   var xPen = d3.scaleLog()
-    .domain([0.498, 8.116])
+    .domain([0.62, 8.116])
     .range([0, widthPen]);
   svgPen.append("g")
     .attr("transform", "translate(0," + heightPen + ")")
@@ -289,8 +289,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
   var formatSlicedData = function(slicedData) {
     var data2 = [];
-    var filtrNo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-    var channel = [0.498, 0.62, 0.796, 0.962, 1.191, 1.478, 1.909, 2.322, 2.756, 3.398, 4.221, 5.246, 6.491, 8.116]
+    var filtrNo = [2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]  // TO DO: Remove duplicate.
+    var channel = [0.62, 0.62, 0.796, 0.962, 1.191, 1.478, 1.909, 2.322, 2.756, 3.398, 4.221, 5.246, 6.491, 8.116]
     for (bb in filtrNo) {
       data2[bb] = {
         'x': channel[filtrNo[bb] - 1],
