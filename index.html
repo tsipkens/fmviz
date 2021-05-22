@@ -109,53 +109,20 @@
       will significantly reduce their filtration properties.
     </p>
 
-  </div>
-
-  <div class="main" id="main-fvp">
-
-    <a class="anchor" id="hfvp"></a>
-    <h2>FILTRATION & PRESSURE DROP</h2>
-
     <p>
-      This first graphic uses data from
-      <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a>
-      to examine the filtration properties of face masks alongside a
-      second important property: <b>pressure drop</b>.
-      Filtration has rather intuitive consequences for face masks. If a face
-      mask has poor filtration properties, particles (perhaps containing virus) are allowed to
-      pass through the fabric and reach the wearer, reducing the utility
-      of the mask.
-      The consequences of a poor pressure drop are less direct.
-      Pressure drop denotes resistance. In this respect,
-      a low pressure drop is preferable for two reasons: (1) it makes
-      for a more breathable mask, which is less likely to irritate the wearer, and
-      (2) it results in less leakage, improving
-      the overall utility of the mask.
+      This web app seeks to visualize the overall filtration measured for 
+      a range of common materials, using data from 
+      <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a>. 
+      Limited information is also provided in terms of sanitization treatments (e.g., laundering)
+      and their effect on material properties. Before continuing, we make several general notes:
     </p>
-
-    <p>
-      A good mask has a balance of both of these properties. The following plot considers
-      these properties for some common materials. Uncertainties in the data are generally larger for low
-      fitration efficiencies (negative filtration efficiencies occasionally reflect this; they
-      are artifacts of the measurements and are not physical).
-      Generally materials in the upper-left region of the plot (high filtration, low pressure drop)
-      are the best. N95 masks are located on the upper axis,
-      effectively filtering 100% of particles at these sizes.
-    </p>
-
-    <p>
-      Circles with thicker outlines indicate materials with some form of sanitization
-      treatment applied (e.g., laundered or heated).
-    </p>
-
-    <h3>Q&A</h3>
 
     <a class="anchor" id="leakage-note"></a>
     <div class="text-outside">
       <button type="button" class="collapsible"><span class="plus">﹥</span> <b>What about leakage around the mask?</b></button>
       <div class="text-indent">
         <p>
-          This is a key question.
+          <b style="color:var(--a0)">This is a key question!</b>
         </p>
 
         <p>
@@ -201,6 +168,33 @@
     </div>
 
     <div class="text-outside">
+      <button type="button" class="collapsible"><span class="plus">﹥</span> What flow rate was used?</button>
+      <div class="text-indent">
+        <p>
+          We used a flow rate of 1 LPM, yielding a face velocity of 4.9 cm/s,
+          below that used in the NIOSH N95 standard (8-9 cm/s).
+        </p>
+      </div>
+    </div>
+
+    <div class="text-outside">
+      <button type="button" class="collapsible"><span class="plus">﹥</span> What type of particle diameter do we use?</button>
+      <div class="text-indent">
+        <p>
+          There are multiple kinds of particle diameters that aerosol scientists use when 
+          making these kinds of measurements, which may differ a bit from the physical diameter.
+        </p>
+
+        <p>
+          We phrase things in terms of the aerodynamic diameter, which is related to the 
+          drag force on the particles. This is more relevant for the impaction and 
+          interception mechanisms, which are dominant for the size range considered 
+          here.
+        </p>
+      </div>
+    </div>
+
+    <div class="text-outside">
       <button type="button" class="collapsible"><span class="plus">﹥</span> Why are some of the materials identified by their physcial colour?</button>
       <div class="text-indent">
         <p>
@@ -220,59 +214,14 @@
         </p>
       </div>
     </div>
-
-    <a class="anchor" id="hqual"></a>
+    
     <div class="text-outside">
-      <button type="button" class="collapsible"><span class="plus">﹥</span> What do the dashed lines in the figure represent? The short answer: <b>quality</b>.</button>
+      <button type="button" class="collapsible"><span class="plus">﹥</span> What is up with the sample codes (e.g., W5, K2, nW3)?</button>
       <div class="text-indent">
         <p>
-          In the plot below, dashed lines correspond to lines of constant <b>quality</b>.
-        </p>
-
-        <p>
-          A good (or high) quality denotes a hybrid of good filtration
-          while maintaining a low pressure drop. Infinite quality would correspond
-          to a material that filters all of the particles, with no pressure drop.
-          Naturally, real materials have trouble realizing this ideal. Masks with
-          the highest quality in this study include N95-compliant and surgical masks.
-          N95-compliant masks in some cases essentially blocked 100% of particles
-          (within the limits of the current measurement apparatus), such that the quality approached ∞.
-          Calculations of quality, <i>Q</i>, use the natural number as a base
-          (this varies in the literature and should be checked between studies);
-          pressures drop, Δ<i>p</i>, in kPa;
-          and the filtration efficiency, η, as a fraction;
-          in the following expression:
-        </p>
-
-        <p>
-          <i>Q</i> = −ln(1 − η)/Δ<i>p</i>
-        </p>
-
-        <p>
-          For more details on how quality is defined and what it means, we refer the reader
-          to <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a> and the references
-          therein.
-        </p>
-      </div>
-    </div>
-
-    <div class="text-outside">
-      <button type="button" class="collapsible"><span class="plus">﹥</span> What flow rate was used?</button>
-      <div class="text-indent">
-        <p>
-          We used a flow rate of 1 LPM, yielding a face velocity of 4.9 cm/s,
-          below that used in the NIOSH N95 standard (8-9 cm/s).
-        </p>
-      </div>
-    </div>
-
-    <div class="text-outside">
-      <button type="button" class="collapsible"><span class="plus">﹥</span> What do the extra letters in brackets mean (e.g., W5)?</button>
-      <div class="text-indent">
-        <p>
-          Simply put, these are codes we assign to each case, composed of characters
+          Simply put, these are codes we assign to each material, composed of characters
           identifying a material, its structure, number of layers used during measurement,
-          and treatment applied (e.g., laundered), if any. While we provide these codes
+          and sanitization treatment applied (e.g., laundered), if any. While we provide these codes
           for reference back to the associated paper, in most instances the reader can
           ignore these codes.
         </p>
@@ -331,19 +280,83 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="main" id="main-fvp">
+
+    <a class="anchor" id="hfvp"></a>
+    <h2>FILTRATION & PRESSURE DROP</h2>
+
+    <p>
+      This first graphic uses data from
+      <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a>
+      to examine the filtration properties of face masks alongside a
+      second important property: <b>pressure drop</b>.
+      Filtration has rather intuitive consequences for face masks. If a face
+      mask has poor filtration properties, particles (perhaps containing virus) are allowed to
+      pass through the fabric and reach the wearer, reducing the utility
+      of the mask.
+      The consequences of a poor pressure drop are less direct.
+      Pressure drop denotes resistance. In this respect,
+      a low pressure drop is preferable for two reasons: (1) it makes
+      for a more breathable mask, which is less likely to irritate the wearer, and
+      (2) it results in less leakage, improving
+      the overall utility of the mask.
+    </p>
+
+    <p>
+      A good mask has a balance of both of these properties. The following plot considers
+      these properties for some common materials. Uncertainties in the data are generally larger for low
+      fitration efficiencies (negative filtration efficiencies occasionally reflect this; they
+      are artifacts of the measurements and are not physical).
+      Generally materials in the upper-left region of the plot (high filtration, low pressure drop)
+      are the best. N95 masks are located on the upper axis,
+      effectively filtering 100% of particles at these sizes.
+    </p>
+
+    <p>
+      Circles with thicker outlines indicate materials with some form of sanitization
+      treatment applied (e.g., laundered or heated).
+    </p>
+
+    <a class="anchor" id="hqual"></a>
     <div class="text-outside">
-      <button type="button" class="collapsible"><span class="plus">﹥</span> What type of particle diameter is used below?</button>
+      <button type="button" class="collapsible"><span class="plus">﹥</span> What do the dashed lines in the figure represent? The short answer: <b>quality</b>.</button>
       <div class="text-indent">
         <p>
-          We phrase things in terms of the aerodynamic diameter, which is more
-          relevant for the impaction and interception mechanisms.
+          In the plot below, dashed lines correspond to lines of constant <b>quality</b>.
+        </p>
+
+        <p>
+          A good (or high) quality denotes a hybrid of good filtration
+          while maintaining a low pressure drop. Infinite quality would correspond
+          to a material that filters all of the particles, with no pressure drop.
+          Naturally, real materials have trouble realizing this ideal. Masks with
+          the highest quality in this study include N95-compliant and surgical masks.
+          N95-compliant masks in some cases essentially blocked 100% of particles
+          (within the limits of the current measurement apparatus), such that the quality approached ∞.
+          Calculations of quality, <i>Q</i>, use the natural number as a base
+          (this varies in the literature and should be checked between studies);
+          pressures drop, Δ<i>p</i>, in kPa;
+          and the filtration efficiency, η, as a fraction;
+          in the following expression:
+        </p>
+
+        <p>
+          <i>Q</i> = −ln(1 − η)/Δ<i>p</i>
+        </p>
+
+        <p>
+          For more details on how quality is defined and what it means, we refer the reader
+          to <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a> and the references
+          therein.
         </p>
       </div>
     </div>
 
     <a class="anchor" id="hastm"></a>
     <div class="text-outside">
-      <button type="button" class="collapsible"><span class="plus">﹥</span> What are the referenced <b>ASTM Level</b> lines? Note some differences.</button>
+      <button type="button" class="collapsible"><span class="plus">﹥</span> What are the referenced <b>ASTM Level</b> lines?</button>
       <div class="text-indent">
         <p>
           This classification refers to whether or not the mask meets the
@@ -352,8 +365,9 @@
         </p>
 
         <p>
-          <b>Note</b> that the face velocity used for these measurements differs from the standard, such
-          that a correction is applied (approximately halving the pressure drop requirements).
+          <b>Note</b> that the face velocity used for these measurements <b></b>differs</b> 
+          from the standard, such that a correction 
+          is applied (approximately halving the pressure drop requirements).
           Part of that standard also restricts the filtration efficiency at
           0.3 micron, which is not considered in the provided classification.
         </p>
@@ -422,8 +436,6 @@
       can include up to <b>three layers</b>, the number recommended by the WHO.
     </p>
 
-    <h3>Q&A</h3>
-
     <div class="text-outside">
       <button type="button" class="collapsible"><span class="plus">﹥</span> How do we <b>estimate</b> the filtration efficiency of the combined layers?</button>
       <div class="text-indent">
@@ -447,11 +459,13 @@
       <button type="button" class="collapsible"><span class="plus">﹥</span> Do all of the curves have a similar trend?</button>
       <div class="text-indent">
         <p>
-          In short, yes. It is well-established that the filtration
-          efficiency consistently decreases as the particles get smaller (to the left)
+          In general, yes. It is well-established that the filtration
+          efficiency consistently decreases as the particles get smaller 
           for this size range.
           The most penetrating particle size (MPPS), that is, the minimum
-          in these kinds of curves, typically occurs in the 50-500 nm range and
+          in these kinds of curves, is located to the left of the shown domain and 
+          occurs when the balance of the diffusion and 
+          impaction mechanisms are at a minimum. This typically occurs in the 50-500 nm range and
           is the focus of several other similar studies (see references in
           <a href="https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1855321">Rogak et al. (2021)</a>). Here we
           focus on the larger particles, which remain relevant for bioaerosol applications.
