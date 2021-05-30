@@ -68,9 +68,10 @@ function updateURLCodes (currentCodes) {
   window.history.replaceState('', '', updateURLParameter(window.location.href, "l3", currentCodes[2]));
 }
 
+// Original codes: W5, nW5, K7
 currentCodes = [" ", " ", " "]  // initialize as empty
 currentCodes[0] = getUrlParam("l1", "W5");  // default materials for dropdowns OR read from URL
-currentCodes[1] = getUrlParam("l2", "nW5");
+currentCodes[1] = getUrlParam("l2", "nW5x2");
 currentCodes[2] = getUrlParam("l3", "K7");
 
 // update URL with all of the parameters
