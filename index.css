@@ -465,7 +465,7 @@ input[type="checkbox"]:checked:after {
 
 .label-mask-structure {
   position: absolute;
-  top: 17px;
+  top: 15px;
   height: 130px;
   text-align: center;
   writing-mode: vertical-rl;
