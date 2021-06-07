@@ -183,7 +183,7 @@ nav {
 }
 .nav-list li {
   display: inline-block;
-  padding: 12px 8px 0px;
+  padding: 16px 8px 0px;
   height: 30px;
   vertical-align: middle;
   border-bottom: 3px solid rgba(241, 67, 90, 0);
