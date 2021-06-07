@@ -174,16 +174,16 @@ header {
 }
 
 nav {
-  padding: 0px 5% 0px 0px;
+  padding: 0px 3% 0px 0px;
   text-align: right;
-  width: 80%;
+  width: 90%;
 }
 .nav-list {
   list-style: none;
 }
 .nav-list li {
   display: inline-block;
-  padding: 14px 10px 0px;
+  padding: 12px 8px 0px;
   height: 28px;
   vertical-align: middle;
   border-bottom: 3px solid rgba(241, 67, 90, 0);
@@ -200,7 +200,7 @@ nav {
   color: var(--a0);
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 750px) {
   nav {
     width: 65%;
   }
