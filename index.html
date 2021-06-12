@@ -53,23 +53,41 @@
   <header id="header">
     <a href="#h1" id="logo">fmviz</a>
     <nav>
+      <a class="nav-expand" onclick="openSideBar()"><i class="fas fa-bars" style="font-size:17pt"></i></a>
       <ul class="nav-list" id="nav-list-a">
         <li id="nav-fvp"><a href="#hfvp" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
         <li id="nav-diy"><a href="#hdiy" class="nav-link">DESIGN YOUR OWN MASK</a></li>
         <li id="data-link-a"><a href="#htable" class="nav-link" onclick="highlightDataLink()">
-          <div style="display:flex;vertical-align:middle;">
-            <span><i class="fas fa-database" style="font-size:12pt"></i></span> <span style="padding-left:4px;">LINK TO DATA</span>
+          <div style="display:inline-block;vertical-align:middle;">
+            <span><i class="fas fa-table" style="font-size:12pt"></i></span>
+            <span style="padding-left:4px;">LINK TO DATA</span>
           </div>
         </a></li>
         <li><a href="https://github.com/tsipkens/fmviz" class="nav-link">
-            <div style="display:flex;vertical-align:middle;">
-              <img src="imgs/GitHub-Mark-64px.png" alt="GitHub" style="height:13pt; padding-right:5px;">
-              <span>@tsipkens</span>
-            </div>
+            <img src="imgs/GitHub-Mark-64px.png" alt="GitHub" style="height:13pt; padding-right:5px;">
           </a></li>
       </ul>
     </nav>
   </header>
+
+  <div class="side-nav" id="side-nav-list">
+    <ul class="nav-list">
+      <li><a class="nav-expand" onclick="closeSideBar()">
+        <i class="fas fa-times" style="font-size:17pt"></i>
+      </a></li>
+      <li><a href="#hfvp" onclick="closeSideBar()" class="nav-link">FILTRATION & PRESSURE DROP</a></li>
+      <li><a href="#hdiy" onclick="closeSideBar()" class="nav-link">DESIGN YOUR OWN MASK</a></li>
+      <li><a href="#htable" onclick="closeSideBar()" class="nav-link" onclick="highlightDataLink()">
+        <div style="display:inline-block;vertical-align:middle;">
+          <span><i class="fas fa-table" style="font-size:12pt"></i></span>
+          <span style="padding-left:4px;">LINK TO DATA</span>
+        </div>
+      </a></li>
+      <li><a href="https://github.com/tsipkens/fmviz" class="nav-link">
+          <img src="imgs/GitHub-Mark-64px.png" alt="GitHub" style="height:13pt; padding-right:5px;">
+        </a></li>
+    </ul>
+  </div>
 
 
   <div class="main" id="main-intro">
@@ -774,6 +792,16 @@
       var search = window.location.search;
       $("#viz2").attr("src", $("#viz2").attr("src") + search);
     });
+
+    // For side bar navigation on narrow window.
+    function openSideBar () {
+      document.getElementById('side-nav-list').style.visibility = 'visible';
+      document.getElementById('side-nav-list').style.opacity = '1';
+    }
+    function closeSideBar () {
+      document.getElementById('side-nav-list').style.visibility = 'hidden';
+      document.getElementById('side-nav-list').style.opacity = '0';
+    }
 
 
   </script>

@@ -162,7 +162,6 @@ header {
   background-color: rgba(252, 252, 252, 1);
   margin: 0px;
   padding: 0px;
-  font-size: 10pt;
   z-index: 20;
   position: fixed;
   /* Set the navbar to fixed position */
@@ -178,8 +177,14 @@ nav {
   text-align: right;
   width: 90%;
 }
+.nav-expand {
+  display: none;
+}
 .nav-list {
   list-style: none;
+}
+#side-nav-list {
+  display: none;
 }
 .nav-list li {
   display: inline-block;
@@ -188,6 +193,7 @@ nav {
   vertical-align: middle;
   border-bottom: 3px solid rgba(241, 67, 90, 0);
   transition: all 0.6s ease 0s;
+  font-size: 10pt;
 }
 .nav-link {
   text-decoration: none;
@@ -201,16 +207,42 @@ nav {
 }
 
 @media screen and (max-width: 750px) {
-  nav {
-    width: 65%;
+  #nav-expand {
+    display: block;
+    padding: 8px 8px 0px;
+    height: 30px;
+  }
+  #side-nav-list {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 300ms, linear 300ms, opacity 300ms;
+    position: fixed;
+    background-color: rgba(252, 252, 252, 1);
+    margin: 0px;
+    padding: 0px;
+    z-index: 99;
+    position: fixed;
+    /* Set the navbar to fixed position */
+    top: 0;
+    right: 0;
+    /* Position the navbar at the top of the page */
+    height: 100%;
+    box-shadow: 0px 0px 4px #AAA;
+    text-align: right;
+    padding-left: 20px;
+  }
+  #nav-list-a {
+    display: none;
   }
   .nav-list li {
-    display: inline-block;
-    margin: 4px 10px;
+    display: block;
+    margin: 10px 15px;
     padding: 0px 0px;
     height: 20px;
-    vertical-align: middle;
-    border-bottom: 3px solid rgba(241, 67, 90, 0);
+  }
+  .nav-expand {
+    display: block;
   }
 }
 
