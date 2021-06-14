@@ -137,12 +137,16 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     }
     return colorcode;
   }
-  var colorkeys = [getCSSVar('--c7'), getCSSVar('--c6'), getCSSVar('--c5'), getCSSVar('--c2'), "url(#diagonal-stripe-2)", "url(#diagonal-stripe-1)"],
-    keycodes = ["W", "K", "CP", "nW", "nWH", "ML"],
-    keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multilayer (ML)"]
+  var colorkeys = [getCSSVar('--c7'), getCSSVar('--c6'), getCSSVar('--c5'), getCSSVar('--c2'), "url(#diagonal-stripe-2)", "url(#diagonal-stripe-1)"], 
+    colorkeys2 = [getCSSVar('--c7'), getCSSVar('--c6'), getCSSVar('--c5'), getCSSVar('--c2'), getCSSVar('--c2'), getCSSVar('--c4')], 
+    keyCodes = ["W", "K", "CP", "nW", "nWH", "ML"],
+    keys = ["Woven mat. (W)", "Knit (K)", "Cut pile (CP)", "Non-woven (nW)", "Non-woven, Halyard", "Multi-layer (ML)"];
   var color = d3.scaleOrdinal()
     .domain(keys)
     .range(colorkeys)
+  var color2 = d3.scaleOrdinal()
+    .domain(keyCodes)
+    .range(colorkeys2)
 
   // Add X axis label:
   svg.append("text")
@@ -301,8 +305,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .on('mouseover', function(d) {
       var matrix = this.getScreenCTM()
         .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
-      divToolTip.style("left", (window.pageXOffset + matrix.e + 9) + "px")
-        .style("top", (window.pageYOffset + matrix.f - 40) + "px");
+      divToolTip.style("left", (window.pageXOffset + matrix.e + 7.5 + d.Weight / 125) + "px")
+        .style("top", (window.pageYOffset + matrix.f - 30) + "px")
+        .style("border-left", "10px solid " + color2(d.StructureCode));
       divToolTipS1.html(d.SimpleName);
       divToolTipS2.html("Code <span style='color:#AAA;'>" + d.CaseCode +"</span>");
       divToolTipS3.html(treatmentText(d));

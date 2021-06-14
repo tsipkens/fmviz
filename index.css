@@ -544,6 +544,7 @@ input[type="checkbox"]:checked:after {
   background: #FDFDFD;
   color: #444;
   border: 0.5px solid #BBB;
+  border-left: 9px solid black;
   border-radius: 5px;
   pointer-events: none;
   max-width: 160px;
@@ -556,7 +557,7 @@ input[type="checkbox"]:checked:after {
 .tooltip-s1 {
   font-size: 12pt;
   font-weight: 700;
-  color: var(--a0);
+  color: black;
   padding-bottom: 4px;
   line-height: 13pt;
 }
