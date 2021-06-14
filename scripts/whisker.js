@@ -307,7 +307,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
       divToolTip.style("left", (window.pageXOffset + matrix.e + 7.5 + d.Weight / 125) + "px")
         .style("top", (window.pageYOffset + matrix.f - 30) + "px")
-        .style("border-left", "10px solid " + color2(d.StructureCode));
+        .style("border-left", "8px solid " + color2(d.StructureCode));
       divToolTipS1.html(d.SimpleName);
       divToolTipS2.html("Code <span style='color:#AAA;'>" + d.CaseCode +"</span>");
       divToolTipS3.html(treatmentText(d));

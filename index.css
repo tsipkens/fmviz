@@ -544,13 +544,13 @@ input[type="checkbox"]:checked:after {
   background: #FDFDFD;
   color: #444;
   border: 0.5px solid #BBB;
-  border-left: 9px solid black;
-  border-radius: 5px;
+  border-left: 8px solid black;
+  border-radius: 3px;
   pointer-events: none;
   max-width: 160px;
   font-size: 10pt;
   font-weight: 300;
-  box-shadow: 0px 0px 4px rgba(170,170,170,0.5);
+  box-shadow: -1px 0px 6px rgba(170,170,170,0.5);
   transition: all 0.1s ease 0s;
 }
 
