@@ -305,8 +305,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .on('mouseover', function(d) {
       var matrix = this.getScreenCTM()
         .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
-      divToolTip.style("left", (window.pageXOffset + matrix.e + 7.5 + d.Weight / 125) + "px")
-        .style("top", (window.pageYOffset + matrix.f - 30) + "px")
+      divToolTip.style("left", (window.pageXOffset + matrix.e + 9) + "px")
+        .style("top", (window.pageYOffset + matrix.f - 40) + "px")
         .style("border-left", "8px solid " + color2(d.StructureCode));
       divToolTipS1.html(d.SimpleName);
       divToolTipS2.html("Code <span style='color:#AAA;'>" + d.CaseCode +"</span>");
