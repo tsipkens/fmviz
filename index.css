@@ -261,12 +261,16 @@ a.anchor {
 
 .footer p {
   font-size: 9.5pt;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 .footer-sup {
-  font-size: 7pt;
+  display: inline-block;
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--a0);
+  padding-top: 12px;
 }
 
 .ref {
