@@ -227,7 +227,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         })
       )
     svg.append('text')
-      .html("ASTM Level 1")
+      .html("ASTM Level 1†")
       .attr("text-anchor", "middle")
       .attr('transform', 'translate(' + (x(dataL1[0].x) + 2.5) + ',' + height * 0.25 + ')rotate(90)')
       .attr("class", "axis")
@@ -250,9 +250,9 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         })
       )
     svg.append('text')
-      .html("ASTM Level 2")
+      .html("ASTM Level 2†")
       .attr("text-anchor", "middle")
-      .attr('transform', 'translate(' + (x(dataL2[0].x) + 2.5) + ',' + height * 0.87 + ')rotate(90)')
+      .attr('transform', 'translate(' + (x(dataL2[0].x) + 2.5) + ',' + height * 0.855 + ')rotate(90)')
       .attr("class", "axis")
 
 

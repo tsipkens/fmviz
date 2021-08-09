@@ -379,7 +379,7 @@
     </div>
 
     <a class="anchor" id="hastm"></a>
-    <div class="text-outside">
+    <div class="text-outside" id="tastm">
       <button type="button" class="collapsible"><span class="plus"><i class="fas fa-chevron-up"></i></span> What are the referenced <b>ASTM Level</b> lines?</button>
       <div class="text-indent">
         <p>
@@ -575,7 +575,7 @@
           This classification refers to whether or not the mask meets the
           breathability requirements of the
           <a href="https://www.astm.org/Standards/F3502.htm">ASTM F3502</a> standard,
-          as per the note <a href="#hastm">above</a>.
+          as per the <a href="#hastm" onclick="expandASTMNote()">note above</a>.
         </p>
       </div>
     </div>
@@ -685,6 +685,13 @@
         with the associated conditions.
       </p>
 
+      <p id="substar">
+        <span class="footer-sup">†</span> ASTM levels refer ONLY to 
+        pressure drop and are corrected for face velocity, such that 
+        actual levels differ from those reported in the standard. See 
+        <a href="#hastm" onclick="expandASTMNote()">this note</a> for more information. 
+      </p>
+
     </div>
   </div>
 
@@ -692,6 +699,28 @@
     /* To expand text Q&As */
     var coll = document.getElementsByClassName("text-outside");
     var i;
+
+    function expandText (item) {
+        item.classList.toggle("active");
+        var content = item.childNodes,
+          button = content[1],
+          content = content[3],
+          outside = item;
+        
+        if (content.style.display === "block") {
+          item.style.maxHeight = button.scrollHeight + "px";
+          setTimeout(function() {
+            content.style.display = "none";
+          }, 500);
+          button.children[0].style = "transform:rotate(180deg);color:black;";
+        } else {
+          setTimeout(function() {
+            content.style.display = "block";
+            item.style.maxHeight = item.scrollHeight + "px";
+            button.children[0].style = "transform:rotate(0deg);color:var(--a0);";
+          }.bind(item), 40);
+        }
+      }
 
     for (i = 0; i < coll.length; i++) {
 
@@ -701,27 +730,17 @@
       coll[i].style.maxHeight = (button.scrollHeight + 4) + "px";  // for first time, initialize maxHeight
 
       coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.childNodes,
-          button = content[1],
-          content = content[3],
-          outside = this;
-        
-        if (content.style.display === "block") {
-          this.style.maxHeight = button.scrollHeight + "px";
-          setTimeout(function() {
-            content.style.display = "none";
-          }, 500);
-          button.children[0].style = "transform:rotate(180deg);color:black;";
-        } else {
-          setTimeout(function() {
-            content.style.display = "block";
-            this.style.maxHeight = this.scrollHeight + "px";
-            button.children[0].style = "transform:rotate(0deg);color:var(--a0);";
-          }.bind(this), 40);
-        }
+        expandText(this)
       });
     }
+
+    /* specific expand for ASTM pressure drop note */
+    function expandASTMNote () {
+      var a = document.getElementById("tastm");
+      expandText(a);
+    }
+
+
 
     /* highlight data link on first click */
     function highlightDataLink() {
