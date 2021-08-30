@@ -170,6 +170,7 @@ header {
   width: 100%;
   box-shadow: white;
   transition: 0.3s;
+  opacity: 0.97;
 }
 
 nav {
