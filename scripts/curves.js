@@ -150,7 +150,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
   // Add X axis
   var xPen = d3.scaleLog()
-    .domain([0.398, 5.50])
+    .domain([0.4, 5.50])
     .range([0, widthPen]);
   svgPen.append("g")
     .attr("transform", "translate(0," + heightPen + ")")
