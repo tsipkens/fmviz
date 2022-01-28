@@ -186,7 +186,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .attr("text-anchor", "middle")
     .attr('x', widthPen / 2)
     .attr('y', heightPen + 35)
-    .text("Particle size [micron]");
+    .text("Particle size, aerodynamic diameter [micron]");
 
   // Y axis label:
   svgPen.append("text")
