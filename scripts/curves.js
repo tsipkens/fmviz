@@ -122,7 +122,7 @@ var $container = $('#pen_curve'),
   heightPenA = $container.height()
 
 var marginPen = {  // margins of penetration curve plot
-  top: 30,
+  top: 50,
   right: 55,
   bottom: 40,
   left: 65
@@ -150,13 +150,16 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
 
   // Add X axis
   var xPen = d3.scaleLog()
-    .domain([0.62, 8.116])
+    .domain([0.398, 5.50])
     .range([0, widthPen]);
   svgPen.append("g")
     .attr("transform", "translate(0," + heightPen + ")")
     .attr("class", "axis")
     .call(d3.axisBottom(xPen)
       .tickFormat(d3.format(1, "f")));
+  var xPen = d3.scaleLog()
+    .domain([0.62, 8.116])
+    .range([0, widthPen]);
   svgPen.append("g")
     .attr("class", "axis")
     .call(d3.axisTop(xPen)
@@ -186,7 +189,12 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
     .attr("text-anchor", "middle")
     .attr('x', widthPen / 2)
     .attr('y', heightPen + 35)
-    .text("Particle size (aerodynamic diameter) [micron]");
+    .text("Particle size (mobility diameter) [μm]");
+  svgPen.append("text")
+    .attr("text-anchor", "middle")
+    .attr('x', widthPen / 2)
+    .attr('y', -25)
+    .text("Particle size (aerodynamic diameter) [μm]");
 
   // Y axis label:
   svgPen.append("text")
