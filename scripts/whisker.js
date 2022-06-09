@@ -74,10 +74,10 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       return ({
         q1: q1,
         median: median,
-        q3: q3,
+        q3: Math.min(q3, Math.log(xDomain[1]) / Math.log(10)),
         interQuantileRange: interQuantileRange,
         min: min,
-        max: max
+        max: Math.min(max, Math.log(xDomain[1]) / Math.log(10))
       })
     })
     .entries(data)
@@ -111,7 +111,7 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
   svg.append("g")
     .attr("transform", "translate(0," + heightW + ")")
     .attr("class", "axis")
-    .call(d3.axisBottom(x).ticks(3)
+    .call(d3.axisBottom(x).ticks(2)
       .tickFormat(d3.format(1, "f")))
 
   // Check if internet explorer.
@@ -186,7 +186,6 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
       return (x(Math.pow(10, d.value.q1)))
     })
     .attr("width", function(d) {
-      ;
       return (x(Math.pow(10, d.value.q3)) - x(Math.pow(10, d.value.q1)))
     }) //console.log(x(d.value.q3)-x(d.value.q1))
     .attr("y", function(d) {
