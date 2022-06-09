@@ -14,7 +14,7 @@ var marginW = {
   widthW = widthWA - marginW.left - marginW.right,
   heightW = 400 - marginW.top - marginW.bottom;
 
-var xDomain = [0.5, 1e3]
+var xDomain = [0.5, 2e2]
 
 //Read the data
 // append the svg object to the body of the page
