@@ -216,6 +216,8 @@ d3.csv("https://raw.githubusercontent.com/tsipkens/fmviz/main/data/fm.csv", func
         return '';
       } else if (d.Treatment == 'IPA') {
         return ', ' + d.Treatment + '';
+      } else if (d.Treatment == 'Laundered and IPA') {
+        return ', ' + 'laundered and IPA' + '';
       } else {
         return ', ' + d.Treatment.toLowerCase() + '';
       }
