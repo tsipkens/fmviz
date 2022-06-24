@@ -45,6 +45,8 @@ if 1
     writetable(tblo, '../data/fm.csv');
 end
 
+disp('Complete.');
+
 
 %%
 %{
